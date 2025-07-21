@@ -6,6 +6,7 @@
   <title>İletişim | Beyaz Eşya Servisi</title>
   <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="config.js"></script>
 
   <style>
     body {
@@ -120,6 +121,7 @@
       font-weight: bold;
       animation: blink 2s infinite;
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      z-index: 999;
     }
 
     @keyframes blink {
@@ -149,13 +151,14 @@
 
 <body>
 
-  <a href="tel:+905372040191" class="phone-button">
+  <!-- Sabit telefon butonu -->
+  <a href="#" class="phone-button" id="telefonButon">
     <i class="fas fa-phone-alt"></i> Şimdi Arayın
   </a>
 
   <header>
     <div class="navbar">
-      <div class="logo">Beyaz Eşya Servisi</div>
+      <div class="logo" id="siteTitle">Servis</div>
       <div class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="hizmetler.html">Hizmetlerimiz</a>
@@ -171,17 +174,12 @@
     <h2><i class="fas fa-envelope-open-text"></i> İletişim Bilgileri</h2>
     <p>Servis talepleriniz, iş ortaklığı görüşmeleri veya bilgi almak için aşağıdaki iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
 
-    <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+905372040191">+90 (537) 204 01 91</a></div>
-    <div class="contact-item"><i class="fas fa-envelope"></i> akdoganoshxashhasmer42621@gmail.com</div>
-    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Çiftlikköy Mah. Atatürk Cad. No:10, Yenişehir/MERSİN</div>
-    <div class="contact-item"><i class="fas fa-clock"></i> Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı</div>
+    <div class="contact-item"><i class="fas fa-phone"></i> <a href="#" id="telefonLink"></a></div>
+    <div class="contact-item"><i class="fas fa-envelope"></i> <span id="emailText"></span></div>
+    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="adresText"></span></div>
+    <div class="contact-item"><i class="fas fa-clock"></i> <span id="saatlerText"></span></div>
 
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-telegram"></i></a>
-    </div>
+    <div class="social-icons" id="socialIcons"></div>
   </main>
 
   <footer>
@@ -193,9 +191,47 @@
       <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
-    <div style="margin-top: 6px;">&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</div>
-    <div style="font-size: 12px; margin-top: 4px;">Bu web sitesi yalnızca tanıtım amaçlıdır. Yetkili servis değildir.</div>
+    <div style="margin-top: 6px;">&copy; 2025 <span id="footerSirket">Servis</span>. Tüm Hakları Saklıdır.</div>
+    <div id="footerUyari" style="font-size: 12px; margin-top: 4px;"></div>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Site başlığı ve footer
+      document.getElementById("siteTitle").innerText = SIRKET_BILGI.siteAdi;
+      document.getElementById("footerSirket").innerText = SIRKET_BILGI.siteAdi;
+      document.getElementById("footerUyari").innerText = SIRKET_BILGI.footerUyari;
+
+      // Telefon
+      document.getElementById("telefonLink").href = `tel:${SIRKET_BILGI.telefon}`;
+      document.getElementById("telefonLink").textContent = SIRKET_BILGI.telefon;
+      document.getElementById("telefonButon").href = `tel:${SIRKET_BILGI.telefon}`;
+
+      // Mail, adres, saatler
+      document.getElementById("emailText").textContent = SIRKET_BILGI.email;
+      document.getElementById("adresText").textContent = SIRKET_BILGI.adres;
+      document.getElementById("saatlerText").textContent = SIRKET_BILGI.saatler;
+
+      // Sosyal medya
+      const icons = {
+        facebook: "fab fa-facebook",
+        instagram: "fab fa-instagram",
+        whatsapp: "fab fa-whatsapp",
+        telegram: "fab fa-telegram",
+        linkedin: "fab fa-linkedin",
+        twitter: "fab fa-twitter",
+        youtube: "fab fa-youtube"
+      };
+
+      const socialDiv = document.getElementById("socialIcons");
+      for (const key in SIRKET_BILGI.sosyal) {
+        const a = document.createElement("a");
+        a.href = SIRKET_BILGI.sosyal[key];
+        a.target = "_blank";
+        a.innerHTML = `<i class="${icons[key]}"></i>`;
+        socialDiv.appendChild(a);
+      }
+    });
+  </script>
 </body>
 </html>
