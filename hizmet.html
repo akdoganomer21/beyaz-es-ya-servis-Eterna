@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hizmet | Beyaz Eşya Servisi</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #f5f5f5; padding: 10px; text-align: center; }
+    nav a { margin: 0 10px; text-decoration: none; color: #333; }
+    .content { padding: 20px; }
+    footer small { display: block; margin-top: 10px; color: #777; }
+  </style>
+
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get("service");
+      if (service) {
+        document.title = service + " | Beyaz Eşya Servisi";
+        document.querySelector("h1").innerText = service;
+        document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
+        document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
+
+        document.getElementById("description").innerText = service + " için uzman kadromuzla garantisiz cihazlarınıza tamir ve bakım hizmeti sunuyoruz.";
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Hizmet</h1>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hizmetler.html">Hizmetlerimiz</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <p id="description">...</p>
+    <p><strong>Not:</strong> Firmamız yetkili servis değildir. Sadece garantisi bitmiş cihazlara hizmet sunmaktayız.</p>
+    <p><a href="tel:+90XXXXXXXXXX">Hemen Servis Çağır</a></p>
+  </div>
+
+  <footer>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hizmetler.html">Hizmetlerimiz</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+      <a href="kvkk.html">KVKK</a>
+    </nav>
+    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
+    <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
+  </footer>
+
+</body>
+</html>

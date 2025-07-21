@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İletişim | Beyaz Eşya Servisi</title>
+  <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+      color: #004d99;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      color: #004d99;
+      font-size: 20px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    .phone-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #28a745;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      animation: blink 2s infinite;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .phone-button {
+        bottom: 15px;
+        right: 15px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="tel:+905372040191" class="phone-button">
+    <i class="fas fa-phone-alt"></i> Şimdi Arayın
+  </a>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <div class="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="gizlilik-politikasi.html">Gizlilik</a>
+        <a href="kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2><i class="fas fa-envelope-open-text"></i> İletişim Bilgileri</h2>
+    <p>Servis talepleriniz, iş ortaklığı görüşmeleri veya bilgi almak için aşağıdaki iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
+
+    <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+905372040191">+90 (537) 204 01 91</a></div>
+    <div class="contact-item"><i class="fas fa-envelope"></i> akdoganomer42621@gmail.com</div>
+    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Çiftlikköy Mah. Atatürk Cad. No:10, Yenişehir/MERSİN</div>
+    <div class="contact-item"><i class="fas fa-clock"></i> Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı</div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hizmetler.html">Hizmetlerimiz</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
+      <a href="kvkk.html">KVKK</a>
+    </nav>
+    <div style="margin-top: 6px;">&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</div>
+    <div style="font-size: 12px; margin-top: 4px;">Bu web sitesi yalnızca tanıtım amaçlıdır. Yetkili servis değildir.</div>
+  </footer>
+
+</body>
+</html>

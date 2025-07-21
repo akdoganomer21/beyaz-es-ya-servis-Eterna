@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beyaz Eşya Servisi - Buzdolabı, Çamaşır Makinesi, Klima ve daha fazlası için uzman teknik destek." />
+  <meta name="keywords" content="Beyaz Eşya Servisi, Buzdolabı Tamiri, Klima Servisi, Kombi Bakımı" />
+  <meta name="author" content="" />
+  <title>Ana Sayfa | Beyaz Eşya Servisi</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #004d99;
+      color: white;
+      padding: 15px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      display: none;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .hero {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0 20px; /* kenar boşlukları .content ile aynı */
+    }
+
+    .hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    }
+
+
+
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .content {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+    }
+
+
+    .content h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #004d99;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .yorum {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .yorum img {
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .yorum-btn-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .yorum-btn-wrapper button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #dahaFazlaBtn {
+      background: #007acc;
+      color: white;
+    }
+
+    #dahaFazlaBtn:hover {
+      background: #005c99;
+    }
+
+    #kucultBtn {
+      background: #999;
+      color: white;
+    }
+
+    #kucultBtn:hover {
+      background: #777;
+    }
+
+    footer {
+      background: #004d99;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #ddd;
+    }
+  </style>
+
+  <script src="config.js"></script>
+  <script src="yorumlar.js"></script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <span class="logo" id="siteTitle">Beyaz Eşya Servisi</span>
+      <button class="nav-toggle" aria-label="Menü" onclick="toggleMenu()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="kvkk.html">KVKK</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <img src="servis-merkezi.jpg" alt="Teknik Servis" class="hero-image" />
+    <div class="hero-text">
+      <h1>Profesyonel Teknik Servis</h1>
+      <p>Beyaz Eşya Arızaları İçin Güvenilir Destek</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Hoş Geldiniz</h2>
+    <p>Buzdolabı, Çamaşır Makinesi, Klima, Kombi gibi ürünleriniz için teknik servis hizmeti sunuyoruz.</p>
+    <p><strong>Dikkat:</strong> Yetkili servis değiliz. Sadece garantisi bitmiş cihazlar için bakım, tamir ve arıza desteği sağlıyoruz.</p>
+    <p><a href="tel:+90XXXXXXXXXX">Hemen Ara</a></p>
+
+    <h2>Müşteri Yorumları</h2>
+    <div id="yorumlar"></div>
+    <div class="yorum-btn-wrapper">
+      <button id="dahaFazlaBtn">Daha Fazla Yorum</button>
+      <button id="kucultBtn" style="display:none;">Yorumları Gizle</button>
+    </div>
+  </div>
+
+    <!-- İletişime Geç Alanı -->
+<section style="background: #e6f0fa; padding: 40px 20px; text-align: center; margin-top: 40px; border-top: 2px solid #007acc;">
+    <h2 style="font-size: 26px; color: #004d99;">Bizimle İletişime Geçin</h2>
+    <p style="font-size: 18px; max-width: 700px; margin: 10px auto 20px; color: #333;">
+      Servis talepleriniz, ürün arızalarınız ya da merak ettiğiniz tüm konular için bizimle hemen iletişime geçin.
+    </p>
+    <a href="iletisim.html" style="
+      display: inline-block;
+      background: #007acc;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    " onmouseover="this.style.background='#005c99'" onmouseout="this.style.background='#007acc'">
+      İletişim Sayfasına Git
+    </a>
+  </section>
+  
+  <footer>
+    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
+    <small id="footerUyari">Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("siteTitle").innerText = SIRKET_BILGI.siteAdi;
+      document.getElementById("footerUyari").innerText = SIRKET_BILGI.footerUyari;
+
+      const yorumlarDiv = document.getElementById("yorumlar");
+      const btnGoster = document.getElementById("dahaFazlaBtn");
+      const btnGizle = document.getElementById("kucultBtn");
+
+      function puaniYildizla(puan) {
+        return "★".repeat(puan) + "☆".repeat(5 - puan);
+      }
+
+      function yorumlariYukle(adet) {
+        yorumlarDiv.innerHTML = "";
+        YORUMLAR.slice(0, adet).forEach((y) => {
+          const yorumHTML = `
+            <div class="yorum" itemscope itemtype="https://schema.org/Review">
+              <img src="${y.avatar}" alt="${y.isim}" width="50" height="50" loading="lazy">
+              <div>
+                <p><strong itemprop="author">${y.isim}</strong> <small>(${y.tarih})</small><br>
+                  <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <span itemprop="ratingValue">${y.puan}</span>/5 - <span>${puaniYildizla(y.puan)}</span>
+                  </span>
+                </p>
+                <p itemprop="reviewBody">${y.yorum}</p>
+              </div>
+            </div>`;
+          yorumlarDiv.insertAdjacentHTML("beforeend", yorumHTML);
+        });
+      }
+
+      yorumlariYukle(3);
+      btnGoster.style.display = "inline-block";
+      btnGizle.style.display = "none";
+
+      btnGoster.addEventListener("click", () => {
+        yorumlariYukle(YORUMLAR.length);
+        btnGoster.style.display = "none";
+        btnGizle.style.display = "inline-block";
+      });
+
+      btnGizle.addEventListener("click", () => {
+        yorumlariYukle(3);
+        btnGoster.style.display = "inline-block";
+        btnGizle.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
