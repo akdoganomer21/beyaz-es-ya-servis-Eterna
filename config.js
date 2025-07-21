@@ -7,7 +7,7 @@ const SIRKET_BILGI = {
       lng: 34.5203594
     },
     telefon: "+90 (537) 204 01 91",
-    email: "akdoganomerDA42621@gmail.com",
+    email: "akdoganomer213442621@gmail.com",
     siteAdi: "Beyaz Eşya Servisi",
     siteAciklama: "Buzdolabı, çamaşır makinesi, klima ve kombi için garantisiz teknik servis hizmeti.",
     footerUyari: "Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.",
