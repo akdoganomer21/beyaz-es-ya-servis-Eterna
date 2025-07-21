@@ -1,7 +1,7 @@
 const SIRKET_BILGI = {
     ad: "ÖMER AKDOĞAN Servis LTD. ŞTİ.",
     vergiNo: "1234567890",
-    adres: "Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN",
+    adres: "Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİ7N",
     konum: {
       lat: 36.7884118,
       lng: 34.5203594

@@ -1,0 +1,5 @@
+//push etmek için 
+
+git add .
+git commit -m "Güncelleme mesajı"
+git push
