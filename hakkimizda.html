@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Beyaz Eşya Servisi hakkında detaylı bilgi. Şirketimizin vizyonu, misyonu ve hizmet kapsamı." />
-  <meta name="keywords" content="Hakkımızda, Teknik Servis Bilgisi, Şirket Profili" />
-  <title>Hakkımızda | Beyaz Eşya Servisi</title>
+  <meta name="description" content="Hizmet verdiğimiz teknik servis kategorileri. Buzdolabı, çamaşır makinesi, kombi ve daha fazlası." />
+  <meta name="keywords" content="Hizmetler, Teknik Servis, Beyaz Eşya, Kombi, Klima, Tamir, Bakım" />
+  <title>Hizmetlerimiz | Beyaz Eşya Servisi</title>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -108,14 +108,24 @@
       border-radius: 6px;
     }
 
-    h2, h3 {
+    h1 {
+      font-size: 22px;
+      margin-bottom: 16px;
       color: #003366;
-      margin-top: 20px;
     }
 
     p {
-      margin: 10px 0;
+      margin: 12px 0;
       line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
       font-size: 15px;
     }
 
@@ -133,9 +143,14 @@
 
     footer nav a {
       color: white;
-      margin: 0 10px;
+      margin: 6px 10px;             /* dış boşluk */
+      padding: 12px 14px;           /* iç boşluk: dokunma alanı artırıldı */
       text-decoration: none;
+      display: inline-block;        /* padding çalışsın diye */
+      font-size: 14px;
+      line-height: 1.5;
     }
+
 
     footer nav a:hover {
       text-decoration: underline;
@@ -177,8 +192,8 @@
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <div class="navbar">
       <div class="logo">Beyaz Eşya Servisi</div>
@@ -186,7 +201,7 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
         <div class="dropdown">
-          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <a href="hizmetler.html">Hakkımızda</a>
           <div class="dropdown-content">
             <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
@@ -196,78 +211,76 @@
             <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
             <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
+          
+          
         </div>
-        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="hakkimizda.html">Hizmetlerimiz</a>
         <a href="iletisim.html">İletişim</a>
       </div>
     </div>
   </header>
 
   <main>
-    <h2>Hakkımızda</h2>
-    <p>Firmamız uzun yıllardır beyaz eşya sektöründe özel teknik servis hizmeti sunmaktadır. Deneyimli ve güler yüzlü ekibimizle, garantisi sona ermiş cihazlara güvenilir ve ekonomik çözümler sunmayı hedefliyoruz.</p>
-
-    <h3>Vizyonumuz</h3>
-    <p>Türkiye genelinde özel servis anlayışını yeniden tanımlayarak en güvenilir, hızlı ve ulaşılabilir servis firması olmak.</p>
-
-    <h3>Misyonumuz</h3>
-    <p>Müşteri memnuniyetini her şeyin önünde tutan, etik değerlere bağlı ve kaliteli hizmet sunan bir ekip olarak hizmet vermek.</p>
-
-    <h3>Şirket Bilgilerimiz</h3>
-    <p><strong>Şirket Adı:</strong> Beyaz Eşya Servisi Teknoloji ve Destek Hizmetleri</p>
-    <p><strong>Vergi No:</strong> 0123456789</p>
-    <p><strong>Adres:</strong> Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir / MERSİN</p>
-    <p><strong>Telefon:</strong> <a href="tel:+905372040191">+90 (537) 204 01 91</a></p>
-    <p><strong>E-posta:</strong> <a href="mailto:beyazesyaservis@example.com">beyazesyaservis@example.com</a></p>
+    <h1>Hizmetlerimiz</h1>
+    <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
+    <ol>
+      <li><strong>Buzdolabı Servisi:</strong> Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.</li>
+      <li><strong>Çamaşır Makinesi Tamiri:</strong> Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.</li>
+      <li><strong>Bulaşık Makinesi Bakımı:</strong> Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.</li>
+      <li><strong>Fırın Onarımı:</strong> Isıtmama, düğme sorunları, cam değişimi gibi işlemler.</li>
+      <li><strong>Klima Servisi:</strong> Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.</li>
+      <li><strong>Kombi Servisi:</strong> Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.</li>
+      <li><strong>Televizyon Tamiri:</strong> Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.</li>
+    </ol>
 
     <section style="padding: 40px 20px; background: #eef3f8;">
       <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: auto;">
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Beyza Sarı</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Hakkımızda sayfanızı okuyunca neden bu kadar güvenilir olduğunuzu anladım."</p>
+          <p style="font-weight: bold; color: #003366;">Aslı Güven</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet seçenekleri çok çeşitli. Tüm ihtiyaçlarımızı tek bir yerden çözebildik."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Halil Eren</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Firmanızın geçmişi ve değerleri çok etkileyici. Samimiyetiniz yansıyor."</p>
+          <p style="font-weight: bold; color: #003366;">Tamer Solmaz</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm beyaz eşya hizmetlerine aynı profesyonellikte yaklaşmanız büyük rahatlık."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Didem Öztürk</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Vizyon ve misyon kısmını okumak bile hizmet kalitenizi açıklıyor."</p>
+          <p style="font-weight: bold; color: #003366;">Derya Keskin</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Servis kategorilerini tek tek anlatmanız çok açıklayıcı. Aradığımız her şeyi bulduk."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Umut Tekin</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kurumsal bir yapıya sahip olmanız müşteri olarak bana güven veriyor."</p>
+          <p style="font-weight: bold; color: #003366;">Emre Koçyiğit</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet çeşitliliğiniz sayesinde tüm evi tek seferde kontrol ettirebildik."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Yelda Koç</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
+          <p style="font-weight: bold; color: #003366;">Nuray İpek</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Fırın, kombi, klima... Ne ararsak var. Hepsi için ayrı ayrı ustayla uğraşmadık."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Sami Tan</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Sadece servis değil, güven de veriyorsunuz. Bu da sizi farklı kılıyor."</p>
+          <p style="font-weight: bold; color: #003366;">Sefa Demirtaş</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm hizmetlerinizde aynı kaliteyi görmek çok etkileyici. Her biri ayrı özenli."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Melis Arıkan</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Hakkınızda kısmını okuduktan sonra daha büyük bir güvenle servis çağırdım."</p>
+          <p style="font-weight: bold; color: #003366;">İrem Yazıcı</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Web siteniz sayesinde hizmet türlerine hızlıca ulaşabiliyorum. Kullanışlı tasarım."</p>
         </div>
     
         <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Volkan Yiğit</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Firmanızın temel değerlerini paylaşmanız harika. Başarınız tesadüf değil."</p>
+          <p style="font-weight: bold; color: #003366;">Yunus Kaptan</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet başlıklarının açıklamaları çok net. Seçim yaparken hiç zorlanmadım."</p>
         </div>
     
       </div>
     </section>
     
-    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş cihazlara yönelik özel servis hizmeti sunmaktadır.</p>
+    <p><strong>NOT: </strong>Detaylı bilgi için her hizmetin ilgili sayfasını ziyaret edebilir veya <a href="iletisim.html">iletişim</a> kurabilirsiniz.</p>
   </main>
 
   <footer>
@@ -288,5 +301,6 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   </script>
+
 </body>
 </html>
