@@ -3,141 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri ve bize ulaşmak için yöntemler." />
   <title>İletişim | Beyaz Eşya Servisi</title>
-  <script src="config.js"></script>
+  <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background: #f9f9f9;
-      color: #222;
+      background: #f4f4f4;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    header, footer {
+    header {
       background: #003366;
       color: white;
-      text-align: center;
-      padding: 12px;
+      padding: 12px 20px;
     }
 
-    nav {
-      margin-top: 8px;
+    .navbar {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
       font-size: 14px;
     }
 
-    nav a:hover {
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 24px auto;
-      padding: 20px;
+      max-width: 800px;
+      margin: 30px auto;
       background: white;
-      border-radius: 6px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
-    h1 {
-      font-size: 20px;
-      margin-bottom: 14px;
-      color: #003366;
+    .contact-item {
+      margin: 10px 0;
     }
 
-    p {
-      margin-bottom: 10px;
-      font-size: 15px;
-      line-height: 1.5;
+    .contact-label {
+      font-weight: bold;
     }
 
-    .info-line {
-      margin: 8px 0;
-      font-size: 15px;
-    }
-
-    .phone-button {
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
+    .simple-call-button {
+      display: inline-block;
+      margin: 20px auto 30px auto;
       background: #28a745;
       color: white;
-      padding: 10px 14px;
+      padding: 10px 18px;
       border-radius: 6px;
+      font-size: 14px;
       text-decoration: none;
       font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
       font-size: 13px;
-      animation: blink 2s infinite;
-      box-shadow: 0 0 6px rgba(0,0,0,0.2);
-      z-index: 999;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+    footer nav a {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
     }
 
-    footer small {
-      display: block;
-      margin-top: 6px;
-      font-size: 12px;
-      color: #ccc;
+    footer nav a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
-      nav {
-        display: flex;
+      .navbar {
         flex-direction: column;
-        gap: 6px;
+        gap: 10px;
       }
-
-      main {
-        margin: 16px;
-        padding: 16px;
-      }
-
-      .phone-button {
-        font-size: 12px;
-        padding: 9px 12px;
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <a href="#" class="phone-button" id="telefonButon">Şimdi Arayın</a>
 
   <header>
-    <h1 id="siteTitle">Servis</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-      <a href="gizlilik-politikasi.html">Gizlilik</a>
-      <a href="kvkk.html">KVKK</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo" id="siteTitle">Servis</div>
+      <div class="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="gizlilik-politikasi.html">Gizlilik</a>
+        <a href="kvkk.html">KVKK</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <h1>İletişim Bilgileri</h1>
-    <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Tüm taleplerinize en kısa sürede dönüş sağlamaktan memnuniyet duyarız.</p>
+    <h2>İletişim Bilgileri</h2>
+    <p>
+      Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz.
+      Tüm başvurulara aynı gün içinde dönüş yapılmaktadır.
+      Size en yakın servis bölgemizden en kısa sürede hizmet almanız sağlanır.
+      Taleplerinize göre teknik ekip yönlendirmesi yapılabilir.
+      Sorularınızı iletmekten çekinmeyin; memnuniyetiniz önceliğimizdir.
+    </p>
 
-    <div class="info-line" id="telefonLink"></div>
-    <div class="info-line" id="emailText"></div>
-    <div class="info-line" id="adresText"></div>
-    <div class="info-line" id="saatlerText"></div>
+    <div class="contact-item"><span class="contact-label">Telefon:</span> <a href="#" id="telefonLink"></a></div>
+    <div class="contact-item"><span class="contact-label">E-posta:</span> <span id="emailText"></span></div>
+    <div class="contact-item"><span class="contact-label">Adres:</span> <span id="adresText"></span></div>
+    <div class="contact-item"><span class="contact-label">Çalışma Saatleri:</span> <span id="saatlerText"></span></div>
   </main>
+
+  <!-- Sabit değil, sayfa içi buton -->
+  <div style="text-align:center;">
+    <a href="#" class="simple-call-button" id="telefonButon">Şimdi Arayın</a>
+  </div>
 
   <footer>
     <nav>
@@ -148,21 +160,30 @@
       <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
-    <small>&copy; 2025 <span id="footerSirket">Servis</span>. Tüm Hakları Saklıdır.</small>
-    <small id="footerUyari"></small>
+    <div style="margin-top: 6px;">&copy; 2025 <span id="footerSirket">Servis</span>. Tüm Hakları Saklıdır.</div>
+    <div id="footerUyari" style="font-size: 12px; margin-top: 4px;"></div>
   </footer>
 
   <script>
+    const SIRKET_BILGI = {
+      siteAdi: "Beyaz Eşya Servisi",
+      telefon: "+90 (537) 204 01 91",
+      email: "wsqwjhfsqwjhss@gmail.com",
+      adres: "Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN",
+      saatler: "Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı",
+      footerUyari: "Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir."
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("siteTitle").innerText = SIRKET_BILGI.siteAdi;
       document.getElementById("footerSirket").innerText = SIRKET_BILGI.siteAdi;
       document.getElementById("footerUyari").innerText = SIRKET_BILGI.footerUyari;
-
-      document.getElementById("telefonLink").innerHTML = "<strong>Telefon:</strong> <a href='tel:" + SIRKET_BILGI.telefon + "'>" + SIRKET_BILGI.telefon + "</a>";
-      document.getElementById("telefonButon").href = "tel:" + SIRKET_BILGI.telefon;
-      document.getElementById("emailText").innerHTML = "<strong>E-Posta:</strong> " + SIRKET_BILGI.email;
-      document.getElementById("adresText").innerHTML = "<strong>Adres:</strong> " + SIRKET_BILGI.adres;
-      document.getElementById("saatlerText").innerHTML = "<strong>Çalışma Saatleri:</strong> " + SIRKET_BILGI.saatler;
+      document.getElementById("telefonLink").href = `tel:${SIRKET_BILGI.telefon}`;
+      document.getElementById("telefonLink").textContent = SIRKET_BILGI.telefon;
+      document.getElementById("telefonButon").href = `tel:${SIRKET_BILGI.telefon}`;
+      document.getElementById("emailText").textContent = SIRKET_BILGI.email;
+      document.getElementById("adresText").textContent = SIRKET_BILGI.adres;
+      document.getElementById("saatlerText").textContent = SIRKET_BILGI.saatler;
     });
   </script>
 </body>
