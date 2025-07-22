@@ -3,183 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri ve bize ulaşmak için yöntemler." />
   <title>İletişim | Beyaz Eşya Servisi</title>
-  <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <script src="config.js"></script>
-
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      background: #f9f9f9;
+      color: #222;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    header {
+    header, footer {
       background: #003366;
       color: white;
-      padding: 15px 20px;
+      text-align: center;
+      padding: 12px;
     }
 
-    .navbar {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    nav {
+      margin-top: 8px;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 16px;
-      font-size: 15px;
-    }
-
-    .nav-links a {
+    nav a {
       color: white;
       text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
     }
 
-    .nav-links a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
 
     main {
       flex: 1;
-      max-width: 960px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 20px;
       background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 6px;
     }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .contact-item i {
-      margin-right: 10px;
-      color: #004d99;
-    }
-
-    .social-icons {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .social-icons a {
-      margin: 0 6px;
-      color: #004d99;
+    h1 {
       font-size: 20px;
+      margin-bottom: 14px;
+      color: #003366;
     }
 
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
+    p {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
-    footer nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    footer nav a:hover {
-      text-decoration: underline;
+    .info-line {
+      margin: 8px 0;
+      font-size: 15px;
     }
 
     .phone-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 16px;
+      right: 16px;
       background: #28a745;
       color: white;
-      padding: 10px 16px;
+      padding: 10px 14px;
       border-radius: 6px;
-      font-size: 14px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
       font-weight: bold;
+      font-size: 13px;
       animation: blink 2s infinite;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
       z-index: 999;
     }
 
     @keyframes blink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.4; }
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ccc;
     }
 
     @media (max-width: 600px) {
-      .navbar {
+      nav {
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
       }
 
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
+      main {
+        margin: 16px;
+        padding: 16px;
       }
 
       .phone-button {
-        bottom: 15px;
-        right: 15px;
-        font-size: 13px;
+        font-size: 12px;
+        padding: 9px 12px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Sabit telefon butonu -->
-  <a href="#" class="phone-button" id="telefonButon">
-    <i class="fas fa-phone-alt"></i> Şimdi Arayın
-  </a>
+  <a href="#" class="phone-button" id="telefonButon">Şimdi Arayın</a>
 
   <header>
-    <div class="navbar">
-      <div class="logo" id="siteTitle">Servis</div>
-      <div class="nav-links">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="hizmetler.html">Hizmetlerimiz</a>
-        <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="iletisim.html">İletişim</a>
-        <a href="gizlilik-politikasi.html">Gizlilik</a>
-        <a href="kvkk.html">KVKK</a>
-      </div>
-    </div>
+    <h1 id="siteTitle">Servis</h1>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hizmetler.html">Hizmetlerimiz</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
+      <a href="kvkk.html">KVKK</a>
+    </nav>
   </header>
 
   <main>
-    <h2><i class="fas fa-envelope-open-text"></i> İletişim Bilgileri</h2>
-    <p>Servis talepleriniz, iş ortaklığı görüşmeleri veya bilgi almak için aşağıdaki iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
+    <h1>İletişim Bilgileri</h1>
+    <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Tüm taleplerinize en kısa sürede dönüş sağlamaktan memnuniyet duyarız.</p>
 
-    <div class="contact-item"><i class="fas fa-phone"></i> <a href="#" id="telefonLink"></a></div>
-    <div class="contact-item"><i class="fas fa-envelope"></i> <span id="emailText"></span></div>
-    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="adresText"></span></div>
-    <div class="contact-item"><i class="fas fa-clock"></i> <span id="saatlerText"></span></div>
-
-    <div class="social-icons" id="socialIcons"></div>
+    <div class="info-line" id="telefonLink"></div>
+    <div class="info-line" id="emailText"></div>
+    <div class="info-line" id="adresText"></div>
+    <div class="info-line" id="saatlerText"></div>
   </main>
 
   <footer>
@@ -191,46 +148,21 @@
       <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
-    <div style="margin-top: 6px;">&copy; 2025 <span id="footerSirket">Servis</span>. Tüm Hakları Saklıdır.</div>
-    <div id="footerUyari" style="font-size: 12px; margin-top: 4px;"></div>
+    <small>&copy; 2025 <span id="footerSirket">Servis</span>. Tüm Hakları Saklıdır.</small>
+    <small id="footerUyari"></small>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Site başlığı ve footer
       document.getElementById("siteTitle").innerText = SIRKET_BILGI.siteAdi;
       document.getElementById("footerSirket").innerText = SIRKET_BILGI.siteAdi;
       document.getElementById("footerUyari").innerText = SIRKET_BILGI.footerUyari;
 
-      // Telefon
-      document.getElementById("telefonLink").href = `tel:${SIRKET_BILGI.telefon}`;
-      document.getElementById("telefonLink").textContent = SIRKET_BILGI.telefon;
-      document.getElementById("telefonButon").href = `tel:${SIRKET_BILGI.telefon}`;
-
-      // Mail, adres, saatler
-      document.getElementById("emailText").textContent = SIRKET_BILGI.email;
-      document.getElementById("adresText").textContent = SIRKET_BILGI.adres;
-      document.getElementById("saatlerText").textContent = SIRKET_BILGI.saatler;
-
-      // Sosyal medya
-      const icons = {
-        facebook: "fab fa-facebook",
-        instagram: "fab fa-instagram",
-        whatsapp: "fab fa-whatsapp",
-        telegram: "fab fa-telegram",
-        linkedin: "fab fa-linkedin",
-        twitter: "fab fa-twitter",
-        youtube: "fab fa-youtube"
-      };
-
-      const socialDiv = document.getElementById("socialIcons");
-      for (const key in SIRKET_BILGI.sosyal) {
-        const a = document.createElement("a");
-        a.href = SIRKET_BILGI.sosyal[key];
-        a.target = "_blank";
-        a.innerHTML = `<i class="${icons[key]}"></i>`;
-        socialDiv.appendChild(a);
-      }
+      document.getElementById("telefonLink").innerHTML = "<strong>Telefon:</strong> <a href='tel:" + SIRKET_BILGI.telefon + "'>" + SIRKET_BILGI.telefon + "</a>";
+      document.getElementById("telefonButon").href = "tel:" + SIRKET_BILGI.telefon;
+      document.getElementById("emailText").innerHTML = "<strong>E-Posta:</strong> " + SIRKET_BILGI.email;
+      document.getElementById("adresText").innerHTML = "<strong>Adres:</strong> " + SIRKET_BILGI.adres;
+      document.getElementById("saatlerText").innerHTML = "<strong>Çalışma Saatleri:</strong> " + SIRKET_BILGI.saatler;
     });
   </script>
 </body>
