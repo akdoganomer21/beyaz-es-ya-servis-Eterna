@@ -6,10 +6,15 @@
   <meta name="description" content="KVKK kapsamında kullanıcı verilerinin korunması politikamız. Kişisel veriler nasıl işlenir, kimlerle paylaşılır ve hangi önlemler alınır?" />
   <meta name="keywords" content="KVKK, Kişisel Verilerin Korunması, Gizlilik Politikası, Beyaz Eşya Servisi" />
   <title>KVKK | Beyaz Eşya Servisi</title>
+
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: sans-serif;
       background: #f9f9f9;
       color: #222;
@@ -18,26 +23,50 @@
       min-height: 100vh;
     }
 
-    header, footer {
+    header {
       background: #003366;
       color: white;
-      text-align: center;
-      padding: 12px;
+      padding: 12px 20px;
     }
 
-    .nav {
-      margin-top: 8px;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 8px;
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
       font-size: 14px;
     }
 
-    .nav a:hover {
-      text-decoration: underline;
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
     }
 
     main {
@@ -67,6 +96,29 @@
 
     li {
       margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 14px;
+    }
+
+    footer nav {
+      margin-bottom: 8px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
     }
 
     footer small {
@@ -77,10 +129,20 @@
     }
 
     @media (max-width: 600px) {
-      .nav {
-        display: flex;
+      .nav-links {
+        display: none;
         flex-direction: column;
-        gap: 6px;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
       }
 
       main {
@@ -90,16 +152,18 @@
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <h1>Beyaz Eşya Servisi</h1>
-    <div class="nav">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-      <a href="kvkk.html">KVKK</a>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
     </div>
   </header>
 
@@ -109,19 +173,12 @@
 
     <ol>
       <li><strong>Veri Toplanmaması:</strong> Web sitemiz üzerinden kullanıcı adı, soyadı, e-posta, telefon numarası gibi doğrudan kişisel veri toplanmamaktadır.</li>
-      
       <li><strong>Anonim Bilgi Kullanımı:</strong> IP adresi, tarayıcı türü, ekran çözünürlüğü gibi bilgiler yalnızca ziyaret istatistikleri için anonim şekilde analiz edilir.</li>
-      
       <li><strong>Form ve Kayıt Alanı Yoktur:</strong> Sitemizde hiçbir form, kullanıcı kaydı ya da giriş alanı bulunmaz. Dolayısıyla sistemde veri saklanmaz.</li>
-      
       <li><strong>Üçüncü Taraflarla Veri Paylaşımı:</strong> Hiçbir kişisel veri, reklam amaçlı ya da ticari bir sebeple 3. taraf kuruluşlara iletilmez.</li>
-      
       <li><strong>Çerez Politikası:</strong> Sayfa deneyimini artırmak için yalnızca zorunlu (oturum bazlı) çerezler kullanılabilir. Takip veya reklam çerezi yoktur.</li>
-      
       <li><strong>Veri Güvenliği:</strong> Web sitemiz güvenli HTTPS protokolü ile çalışır. Tüm erişimler şifreli ve güvenli bağlantı ile gerçekleşir.</li>
-      
       <li><strong>Yasal Uyum:</strong> KVKK başta olmak üzere tüm güncel veri koruma yasalarına tam uyum sağlanmaktadır.</li>
-      
       <li><strong>Hizmet Sınırlaması:</strong> Sitemiz yalnızca garantisi sona ermiş ürünler için bilgilendirme ve teknik servis yönlendirmesi sağlar. Yetkili servis değildir.</li>
     </ol>
 
@@ -129,14 +186,22 @@
   </main>
 
   <footer>
-    <div class="nav">
+    <nav>
       <a href="index.html">Ana Sayfa</a>
       <a href="hizmetler.html">Hizmetlerimiz</a>
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="iletisim.html">İletişim</a>
-    </div>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
+      <a href="kvkk.html">KVKK</a>
+    </nav>
     <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
     <small>Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.</small>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
