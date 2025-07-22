@@ -1,58 +1,177 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Beyaz Eşya Servisi hakkında detaylı bilgi. Şirketimizin vizyonu, misyonu ve hizmet kapsamı.">
-  <meta name="keywords" content="Hakkımızda, Teknik Servis Bilgisi, Şirket Profili">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beyaz Eşya Servisi hakkında detaylı bilgi. Şirketimizin vizyonu, misyonu ve hizmet kapsamı." />
+  <meta name="keywords" content="Hakkımızda, Teknik Servis Bilgisi, Şirket Profili" />
   <title>Hakkımızda | Beyaz Eşya Servisi</title>
 
-  <!-- Favicon ve Apple Touch Icon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Style -->
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #f5f5f5; padding: 10px; text-align: center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #333; }
-    .content { padding: 20px; }
-    footer small { display: block; margin-top: 10px; color: #777; }
-  </style>
-  <script src="config.js"></script>
-</head>
-<body>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+    }
+
+    h2, h3 {
+      color: #003366;
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 14px;
+    }
+
+    footer nav {
+      margin-bottom: 8px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      main {
+        margin: 16px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
   <header>
-    <h1>Beyaz Eşya Servisi</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
   </header>
 
-  <div class="content">
+  <main>
     <h2>Hakkımızda</h2>
-    <p>Firmamız uzun yıllardır beyaz eşya sektöründe teknik servis hizmeti sunmaktadır. Deneyimli ekibimiz ile hızlı, güvenilir ve garantisi olmayan cihazlara yönelik tamir/bakım hizmetleri sunuyoruz.</p>
-    
+    <p>Firmamız uzun yıllardır beyaz eşya sektöründe özel teknik servis hizmeti sunmaktadır. Deneyimli ve güler yüzlü ekibimizle, garantisi sona ermiş cihazlara güvenilir ve ekonomik çözümler sunmayı hedefliyoruz.</p>
+
     <h3>Vizyonumuz</h3>
-    <p>Türkiye genelinde en güvenilir ve ulaşılabilir özel teknik servis olmak.</p>
+    <p>Türkiye genelinde özel servis anlayışını yeniden tanımlayarak en güvenilir, hızlı ve ulaşılabilir servis firması olmak.</p>
 
     <h3>Misyonumuz</h3>
-    <p>Kaliteli hizmet anlayışı ile müşteri memnuniyetini ön planda tutmak.</p>
+    <p>Müşteri memnuniyetini her şeyin önünde tutan, etik değerlere bağlı ve kaliteli hizmet sunan bir ekip olarak hizmet vermek.</p>
 
     <h3>Şirket Bilgilerimiz</h3>
-    <p><strong>Şirket Adı:</strong> <span id="sirketAd"></span></p>
-    <p><strong>Vergi No:</strong> <span id="vergiNo"></span></p>
-    <p><strong>Adres:</strong> <span id="adres"></span></p>
-    <p><strong>Telefon:</strong> <a id="telefon" href="#"></a></p>
-    <p><strong>E-posta:</strong> <a id="email" href="#"></a></p>
-    
+    <p><strong>Şirket Adı:</strong> Beyaz Eşya Servisi Teknoloji ve Destek Hizmetleri</p>
+    <p><strong>Vergi No:</strong> 0123456789</p>
+    <p><strong>Adres:</strong> Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir / MERSİN</p>
+    <p><strong>Telefon:</strong> <a href="tel:+905372040191">+90 (537) 204 01 91</a></p>
+    <p><strong>E-posta:</strong> <a href="mailto:beyazesyaservis@example.com">beyazesyaservis@example.com</a></p>
 
-    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi bitmiş cihazlara hizmet sunmaktadır.</p>
-  </div>
+    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş cihazlara yönelik özel servis hizmeti sunmaktadır.</p>
+  </main>
 
   <footer>
     <nav>
@@ -60,7 +179,7 @@
       <a href="hizmetler.html">Hizmetlerimiz</a>
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="iletisim.html">İletişim</a>
-      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
     <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
@@ -68,16 +187,9 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("sirketAd").innerText = SIRKET_BILGI.ad;
-      document.getElementById("vergiNo").innerText = SIRKET_BILGI.vergiNo;
-      document.getElementById("adres").innerText = SIRKET_BILGI.adres;
-      document.getElementById("telefon").innerText = SIRKET_BILGI.telefon;
-      document.getElementById("telefon").href = "tel:" + SIRKET_BILGI.telefon;
-      document.getElementById("email").innerText = SIRKET_BILGI.email;
-      document.getElementById("email").href = "mailto:" + SIRKET_BILGI.email;
-    });
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
   </script>
-  
 </body>
 </html>
