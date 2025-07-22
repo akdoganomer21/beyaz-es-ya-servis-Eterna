@@ -5,15 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KVKK kapsamında kişisel verilerin işlenmesi ve korunması politikamız hakkında detaylı bilgi." />
   <title>Ana Sayfa | Beyaz Eşya Servisi</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: sans-serif;
       background: #f9f9f9;
@@ -22,13 +15,11 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
     header {
       background: #003366;
       color: white;
       padding: 12px 20px;
     }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -36,37 +27,24 @@
       flex-wrap: wrap;
       max-width: 1100px;
       margin: auto;
-      position: relative;
     }
-
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
+    .logo { font-size: 20px; font-weight: bold; }
     .nav-links {
       display: flex;
       gap: 16px;
       font-size: 14px;
       align-items: center;
     }
-
     .nav-links a {
       color: white;
       text-decoration: none;
       padding: 8px;
-      position: relative;
     }
-
     .nav-links a:hover {
       background-color: #005599;
       border-radius: 4px;
     }
-
-    .dropdown {
-      position: relative;
-    }
-
+    .dropdown { position: relative; }
     .dropdown-content {
       display: none;
       position: absolute;
@@ -77,22 +55,14 @@
       z-index: 100;
       min-width: 200px;
     }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
+    .dropdown:hover .dropdown-content { display: block; }
     .dropdown-content a {
       display: block;
       padding: 8px 16px;
       color: #003366;
       text-decoration: none;
-      white-space: nowrap;
     }
-
-    .dropdown-content a:hover {
-      background-color: #eef6ff;
-    }
+    .dropdown-content a:hover { background-color: #eef6ff; }
 
     .burger {
       display: none;
@@ -105,12 +75,9 @@
 
     main {
       flex: 1;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 24px auto;
       padding: 20px;
-      background: white;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
 
     h1, h2, h3 {
@@ -124,6 +91,17 @@
       font-size: 15px;
     }
 
+    .icon-box {
+      text-align: center;
+      flex: 1 1 150px;
+    }
+
+    .icon-box svg {
+      width: 36px;
+      height: 36px;
+      fill: #28a745;
+    }
+
     footer {
       background: #003366;
       color: white;
@@ -132,19 +110,13 @@
       font-size: 14px;
     }
 
-    footer nav {
-      margin-bottom: 8px;
-    }
-
+    footer nav { margin-bottom: 8px; }
     footer nav a {
       color: white;
       margin: 0 10px;
       text-decoration: none;
     }
-
-    footer nav a:hover {
-      text-decoration: underline;
-    }
+    footer nav a:hover { text-decoration: underline; }
 
     footer small {
       display: block;
@@ -161,29 +133,14 @@
         background-color: #003366;
         margin-top: 10px;
       }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .burger {
-        display: block;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: #004080;
-      }
-
-      .dropdown-content a {
-        color: #fff;
-      }
+      .nav-links.show { display: flex; }
+      .burger { display: block; }
+      .dropdown-content { position: static; box-shadow: none; background: #004080; }
+      .dropdown-content a { color: #fff; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="navbar">
       <div class="logo">Beyaz Eşya Servisi</div>
@@ -209,95 +166,67 @@
   </header>
 
   <main>
-    <!-- Hero Bölümü -->
     <section style="text-align: center; padding: 40px 20px;">
-      <h1 style="font-size: 26px; color: #003366;">Güvenilir ve Hızlı Teknik Servis Hizmeti</h1>
-      <p style="font-size: 16px; margin-top: 16px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h1 style="font-size: 26px;">Güvenilir ve Hızlı Teknik Servis Hizmeti</h1>
+      <p style="font-size: 16px; max-width: 700px; margin: 16px auto;">
         Beyaz eşyalarınızda yaşadığınız tüm teknik sorunlarda yanınızdayız. Garantisi sona ermiş cihazlar için aynı gün yerinde servis imkânı sunuyoruz.
       </p>
       <a href="tel:+905372040191" style="display: inline-block; margin-top: 24px; background: #28a745; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px;">
-        <i class="fa-solid fa-phone"></i> Bizi Hemen Arayın
+        📞 Bizi Hemen Arayın
       </a>
     </section>
-  
-    <!-- Hizmet Alanları -->
+
     <section style="padding: 40px 20px; background: #eef3f8;">
-      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Hizmet Alanlarımız</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; margin: auto;">
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Buzdolabı Teknik Servisi</h3>
-          <p style="font-size: 14px;">Soğutma problemi, ses yapma, elektrik kesintisi gibi tüm arızalar için servis.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Çamaşır Makinesi Tamiri</h3>
-          <p style="font-size: 14px;">Sıkmıyor, su almıyor ya da sesli çalışıyorsa teknik çözüm bizde.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Bulaşık Makinesi Bakımı</h3>
-          <p style="font-size: 14px;">Yıkamıyor, su kaçırıyor ya da çalışmıyor mu? Yerinde servis imkanı.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Fırın Onarımı</h3>
-          <p style="font-size: 14px;">Isıtmıyor, düğme bozuldu ya da ışık yanmıyor mu? Bizi arayın.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Klima Servisi</h3>
-          <p style="font-size: 14px;">Yaz-kış sorunsuz çalışan klimalar için bakım ve arıza servisi.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Kombi Servisi</h3>
-          <p style="font-size: 14px;">Petek ısıtmıyor, su ısınmıyor gibi sorunlar için yerinde destek.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Televizyon Tamiri</h3>
-          <p style="font-size: 14px;">Görüntü gitmesi, açılmama ya da ses problemleri için uzman çözüm.</p>
-        </div>
+      <h2 style="text-align: center;">Hizmet Alanlarımız</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div class="icon-box"><h3>Buzdolabı Teknik Servisi</h3><p>Soğutmuyor, ses yapıyor, arızalanıyor? Biz hallederiz.</p></div>
+        <div class="icon-box"><h3>Çamaşır Makinesi Tamiri</h3><p>Su almıyor, sıkmıyor, çalışmıyor mu? Bizde çözüm var.</p></div>
+        <div class="icon-box"><h3>Bulaşık Makinesi Bakımı</h3><p>Yıkama yapmıyor veya su kaçırıyor? Servis desteği bizden.</p></div>
+        <div class="icon-box"><h3>Fırın Onarımı</h3><p>Isınmıyor, camı çatladı veya tuşlar çalışmıyor mu? Bize bırakın.</p></div>
+        <div class="icon-box"><h3>Klima Servisi</h3><p>Serinletmiyor veya koku yapıyor? Uzman ekiplerimiz hazır.</p></div>
+        <div class="icon-box"><h3>Kombi Servisi</h3><p>Petekler ısıtmıyor, su ısınmıyor mu? Hemen çözelim.</p></div>
+        <div class="icon-box"><h3>Televizyon Tamiri</h3><p>Görüntü yok, ses bozuk veya ekran kırık? Arayın, gelelim.</p></div>
       </div>
     </section>
-  
-    <!-- Neden Bizi Tercih Etmelisiniz -->
+
     <section style="padding: 40px 20px;">
-      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Neden Bizi Tercih Etmelisiniz?</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-headset" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">7/24 Hizmet</p>
+      <h2 style="text-align: center;">Neden Bizi Tercih Etmelisiniz?</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div class="icon-box">
+          <svg viewBox="0 0 512 512"><path d="M496 384h-96c-8.8 0-16 7.2-16 16v64H128v-64c0-8.8-7.2-16-16-16H16V80c0-8.8 7.2-16 16-16h96v64c0 8.8 7.2 16 16 16h224c8.8 0 16-7.2 16-16V64h96c8.8 0 16 7.2 16 16v304z"/></svg>
+          <p>7/24 Hizmet</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-shield-halved" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">1 Yıl Garanti</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 512 512"><path d="M466.5 83.7l-198.8 344c-3.4 5.8-9.6 9.3-16.3 9.3s-12.9-3.5-16.3-9.3l-114.3-198c-3.7-6.5-1.5-14.7 5-18.4s14.7-1.5 18.4 5L256 392.6 448.1 72c4.3-7.4 13.6-9.9 21-5.6s9.9 13.6 5.6 21z"/></svg>
+          <p>1 Yıl Garanti</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-stopwatch" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">20 Dakikada Geliş</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 512 512"><path d="M464 256c0 114.9-93.1 208-208 208S48 370.9 48 256 141.1 48 256 48s208 93.1 208 208z"/></svg>
+          <p>20 Dakikada Geliş</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-face-smile" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">%100 Mutluluk</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256c0 137 111 248 248 248s248-111 248-248C504 119 393 8 256 8z"/></svg>
+          <p>%100 Mutluluk</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-hand-holding-dollar" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">En Uygun Fiyat</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 576 512"><path d="M548.6 144H416c-17.7 0-32 14.3-32 32v16H192v-16c0-17.7-14.3-32-32-32H27.4C12.3 144 0 156.3 0 171.4v169.2C0 384 28.7 416 64 416h448c35.3 0 64-28.7 64-64V171.4c0-15.1-12.3-27.4-27.4-27.4z"/></svg>
+          <p>En Uygun Fiyat</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-check-circle" style="font-size: 28px; color: #28a745;"></i>
-          <p style="margin-top: 10px; font-weight: bold;">%100 Güvenilir</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 512 512"><path d="M466.5 83.7L267.7 427.7c-3.4 5.8-9.6 9.3-16.3 9.3s-12.9-3.5-16.3-9.3L112 240l48-48 104 182.3L416 112l50.5-28.3z"/></svg>
+          <p>%100 Güvenilir</p>
         </div>
       </div>
     </section>
-  
-    <!-- Kapanış  Banner -->
+
     <section style="padding: 30px 20px; background: #003366; color: white; text-align: center;">
-      <h2 style="font-size: 20px;">Tüm Beyaz Eşyalar İçin Servis Hizmeti</h2>
-      <p style="margin: 16px 0;">Buzdolabından klimaya, kombiden fırına kadar geniş hizmet yelpazemizle yanınızdayız.</p>
+      <h2>Tüm Beyaz Eşyalar İçin Servis Hizmeti</h2>
+      <p>Buzdolabından klimaya, kombiden fırına kadar geniş hizmet yelpazemizle yanınızdayız.</p>
       <a href="hizmetler.html" style="display: inline-block; margin-top: 12px; background: white; color: #003366; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
         Tüm Hizmetleri Gör
       </a>
     </section>
   </main>
-  
-  
-  
 
   <footer>
     <nav>
