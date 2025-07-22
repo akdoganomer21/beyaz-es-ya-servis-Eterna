@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>İletişim | Beyaz Eşya Servisi</title>
   <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: sans-serif;
       background: #f4f4f4;
       color: #333;
@@ -22,7 +25,7 @@
     header {
       background: #003366;
       color: white;
-      padding: 15px 20px;
+      padding: 12px 20px;
     }
 
     .navbar {
@@ -35,7 +38,7 @@
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
     }
 
@@ -48,42 +51,21 @@
     .nav-links a {
       color: white;
       text-decoration: none;
-      padding: 10px;
+      padding: 8px;
     }
 
     .nav-links a:hover {
-      text-decoration: underline;
+      background: #005599;
+      border-radius: 4px;
     }
 
     .burger {
       display: none;
-      font-size: 24px;
-      color: white;
+      font-size: 22px;
       background: none;
       border: none;
+      color: white;
       cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .burger {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #003366;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-links a {
-        text-align: center;
-        border-top: 1px solid #004d99;
-      }
     }
 
     main {
@@ -93,7 +75,7 @@
       background: white;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     .contact-item {
@@ -103,32 +85,28 @@
       font-size: 16px;
     }
 
-    .contact-item i {
-      margin-right: 12px;
-      color: #004d99;
-      font-size: 18px;
-      width: 24px;
+    .contact-item span {
+      display: inline-block;
+      min-width: 22px;
       text-align: center;
+      margin-right: 12px;
     }
 
     .call-button {
-      display: inline-flex;
+      margin: 20px auto;
+      background: #28a745;
+      color: white;
+      font-size: 16px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
       align-items: center;
       gap: 8px;
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 6px;
-      font-size: 15px;
-      cursor: pointer;
       text-decoration: none;
-      margin: 20px auto 30px;
-    }
-
-    .call-button i {
-      font-size: 16px;
+      justify-content: center;
+      max-width: max-content;
     }
 
     footer {
@@ -147,6 +125,7 @@
       color: white;
       margin: 0 10px;
       text-decoration: none;
+      font-size: 15px;
     }
 
     footer nav a:hover {
@@ -154,18 +133,20 @@
     }
 
     @media (max-width: 600px) {
-      .contact-item {
+      .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        background: #003366;
+        margin-top: 10px;
       }
 
-      .contact-item i {
-        margin-bottom: 4px;
+      .nav-links.show {
+        display: flex;
       }
 
-      .call-button {
-        font-size: 14px;
-        padding: 10px 14px;
+      .burger {
+        display: block;
       }
     }
   </style>
@@ -175,7 +156,7 @@
   <header>
     <div class="navbar">
       <div class="logo">Beyaz Eşya Servisi</div>
-      <button class="burger" id="menuToggle" aria-label="Menüyü Aç/Kapat">☰</button>
+      <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
         <a href="hizmetler.html">Hizmetlerimiz</a>
@@ -186,19 +167,15 @@
   </header>
 
   <main>
-    <h2><i class="fas fa-envelope-open-text"></i> İletişim Bilgileri</h2>
-    <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Tüm sorularınıza hızlı şekilde dönüş yapılır. Güvenli ve kaliteli servis anlayışımızla size yardımcı olmaktan memnuniyet duyarız.</p>
+    <h2>İletişim Bilgileri</h2>
+    <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Ekibimiz size mümkün olan en kısa sürede dönüş yapacaktır. İster arayın, ister e-posta gönderin, size yardımcı olmaktan memnuniyet duyarız.</p>
 
-    <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+905372040191">+90 (537) 204 01 91</a></div>
-    <div class="contact-item"><i class="fas fa-envelope"></i> beyazesyaservis@example.com</div>
-    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN</div>
-    <div class="contact-item"><i class="fas fa-clock"></i> Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı</div>
+    <div class="contact-item"><span>📞</span><a href="tel:+905372040191" style="color:#004080; text-decoration: underline;">+90 (537) 204 01 91</a></div>
+    <div class="contact-item"><span>✉️</span>beyazesyaservis@example.com</div>
+    <div class="contact-item"><span>📍</span>Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN</div>
+    <div class="contact-item"><span>⏰</span>Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı</div>
 
-    <div style="text-align: center;">
-      <a href="tel:+905372040191" class="call-button">
-        <i class="fas fa-phone-alt"></i> Şimdi Arayın
-      </a>
-    </div>
+    <a class="call-button" href="tel:+905372040191">📞 Şimdi Arayın</a>
   </main>
 
   <footer>
@@ -210,15 +187,14 @@
       <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
-    <div style="margin-top: 6px;">&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</div>
-    <div style="font-size: 12px; margin-top: 4px;">Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</div>
+    <div>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</div>
+    <div style="font-size: 13px; margin-top: 5px;">Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</div>
   </footer>
 
   <script>
-    document.getElementById("menuToggle").addEventListener("click", () => {
+    function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
-    });
+    }
   </script>
-
 </body>
 </html>
