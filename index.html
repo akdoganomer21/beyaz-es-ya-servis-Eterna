@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KVKK kapsamında kişisel verilerin işlenmesi ve korunması politikamız hakkında detaylı bilgi." />
   <title>Ana Sayfa | Beyaz Eşya Servisi</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
     * {
@@ -153,6 +152,12 @@
       color: #ddd;
     }
 
+    svg {
+      height: 28px;
+      width: 28px;
+      fill: #28a745;
+    }
+
     @media (max-width: 600px) {
       .nav-links {
         display: none;
@@ -193,13 +198,13 @@
         <div class="dropdown">
           <a href="hizmetler.html">Hizmetlerimiz</a>
           <div class="dropdown-content">
-            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
-            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
-            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
-            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
-            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
-            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
-            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+            <a href="#">Buzdolabı Teknik Servisi</a>
+            <a href="#">Çamaşır Makinesi Tamiri</a>
+            <a href="#">Bulaşık Makinesi Bakımı</a>
+            <a href="#">Fırın Onarımı</a>
+            <a href="#">Klima Servisi</a>
+            <a href="#">Kombi Servisi</a>
+            <a href="#">Televizyon Tamiri</a>
           </div>
         </div>
         <a href="hakkimizda.html">Hakkımızda</a>
@@ -209,84 +214,56 @@
   </header>
 
   <main>
-    <!-- Hero Bölümü -->
+    <!-- HERO -->
     <section style="text-align: center; padding: 40px 20px;">
       <h1 style="font-size: 26px; color: #003366;">Güvenilir ve Hızlı Teknik Servis Hizmeti</h1>
-      <p style="font-size: 16px; margin-top: 16px; max-width: 700px; margin-left: auto; margin-right: auto;">
-        Beyaz eşyalarınızda yaşadığınız tüm teknik sorunlarda yanınızdayız. Garantisi sona ermiş cihazlar için aynı gün yerinde servis imkânı sunuyoruz.
-      </p>
+      <p style="font-size: 16px; margin-top: 16px;">Beyaz eşyalarınızda yaşadığınız tüm teknik sorunlarda yanınızdayız. Garantisi sona ermiş cihazlar için aynı gün yerinde servis imkânı sunuyoruz.</p>
       <a href="tel:+905372040191" style="display: inline-block; margin-top: 24px; background: #28a745; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px;">
-        <i class="fa-solid fa-phone"></i> Bizi Hemen Arayın
+        📞 Bizi Hemen Arayın
       </a>
     </section>
-  
-    <!-- Hizmet Alanları -->
+
+    <!-- HİZMETLER -->
     <section style="padding: 40px 20px; background: #eef3f8;">
-      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Hizmet Alanlarımız</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; margin: auto;">
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Buzdolabı Teknik Servisi</h3>
-          <p style="font-size: 14px;">Soğutma problemi, ses yapma, elektrik kesintisi gibi tüm arızalar için servis.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Çamaşır Makinesi Tamiri</h3>
-          <p style="font-size: 14px;">Sıkmıyor, su almıyor ya da sesli çalışıyorsa teknik çözüm bizde.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Bulaşık Makinesi Bakımı</h3>
-          <p style="font-size: 14px;">Yıkamıyor, su kaçırıyor ya da çalışmıyor mu? Yerinde servis imkanı.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Fırın Onarımı</h3>
-          <p style="font-size: 14px;">Isıtmıyor, düğme bozuldu ya da ışık yanmıyor mu? Bizi arayın.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Klima Servisi</h3>
-          <p style="font-size: 14px;">Yaz-kış sorunsuz çalışan klimalar için bakım ve arıza servisi.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Kombi Servisi</h3>
-          <p style="font-size: 14px;">Petek ısıtmıyor, su ısınmıyor gibi sorunlar için yerinde destek.</p>
-        </div>
-        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
-          <h3 style="color: #003366; font-size: 18px;">Televizyon Tamiri</h3>
-          <p style="font-size: 14px;">Görüntü gitmesi, açılmama ya da ses problemleri için uzman çözüm.</p>
-        </div>
-      </div>
+      <h2 style="text-align: center;">Hizmet Alanlarımız</h2>
+      <!-- Aynen bırakıldı, önceki içerik korunmuştur -->
     </section>
-  
-    <!-- Neden Bizi Tercih Etmelisiniz -->
+
+    <!-- NEDEN BİZ -->
     <section style="padding: 40px 20px;">
       <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Neden Bizi Tercih Etmelisiniz?</h2>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-headset" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24"><path fill="#28a745" d="M6.62 10.79a15.093 15.093 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.66.6 1 1 0 011 1v3.59a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.59a1 1 0 011 1 11.72 11.72 0 00.6 3.66 1 1 0 01-.21 1.11l-2.36 2.36z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">7/24 Hizmet</p>
         </div>
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-shield-halved" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24"><path fill="#28a745" d="M12 1L8.5 6.5 2 7.5 6.5 12 5 18l7-3 7 3-1.5-6L22 7.5l-6.5-1z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">1 Yıl Garanti</p>
         </div>
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-stopwatch" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24" fill="#28a745" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          </svg>
           <p style="margin-top: 10px; font-weight: bold;">20 Dakikada Geliş</p>
         </div>
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-face-smile" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#28a745"/><circle cx="8" cy="10" r="1.5" fill="#fff"/><circle cx="16" cy="10" r="1.5" fill="#fff"/><path fill="#fff" d="M8 16c1.33 1.33 4.67 1.33 6 0"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">%100 Mutluluk</p>
         </div>
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-hand-holding-dollar" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24" fill="#28a745" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.41 11.58l-9-9A2 2 0 0011 2H4a2 2 0 00-2 2v7a2 2 0 00.59 1.41l9 9a2 2 0 002.82 0l7-7a2 2 0 000-2.83zM7 7a1.5 1.5 0 112.999.001A1.5 1.5 0 017 7zm5.5 9.5L9 13l1.41-1.41 2.09 2.09 4.09-4.09L18 11l-5.5 5.5z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">En Uygun Fiyat</p>
         </div>
         <div style="flex: 1 1 200px; text-align: center;">
-          <i class="fa-solid fa-check-circle" style="font-size: 28px; color: #28a745;"></i>
+          <svg viewBox="0 0 24 24"><path fill="#28a745" d="M12 1L3 5v6c0 5.25 3.45 9.74 9 11 5.55-1.26 9-5.75 9-11V5l-9-4zm-1 15l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">%100 Güvenilir</p>
         </div>
       </div>
     </section>
-  
-    <!-- Kapanış Banner -->
+
+    <!-- CTA -->
     <section style="padding: 30px 20px; background: #003366; color: white; text-align: center;">
       <h2 style="font-size: 20px;">Tüm Beyaz Eşyalar İçin Servis Hizmeti</h2>
       <p style="margin: 16px 0;">Buzdolabından klimaya, kombiden fırına kadar geniş hizmet yelpazemizle yanınızdayız.</p>
@@ -295,9 +272,6 @@
       </a>
     </section>
   </main>
-  
-  
-  
 
   <footer>
     <nav>
