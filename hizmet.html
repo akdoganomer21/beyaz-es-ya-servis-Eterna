@@ -213,6 +213,32 @@
       <span id="title">Hizmet</span>
     </h1>
     <div id="description" style="display: none;"></div>
+    <div id="çamaşır-makinesi" style="display: none; min-height: 800px; max-width: 1200px; margin: auto; padding: 20px;">
+      <p>Çamaşır makineleri, günlük yaşamın vazgeçilmez ev eşyalarından biridir. Ancak zamanla ortaya çıkan arızalar kullanıcıların hayat kalitesini doğrudan etkiler. Sık rastlanan problemler arasında tamburun dönmemesi, makinenin suyu almaması ya da boşaltmaması, gürültülü çalışma, su sızdırma, elektriksel sorunlar ve kötü koku oluşumu yer alır. Bu gibi durumlarda profesyonel müdahale gereklidir. Teknik ekibimiz, tüm marka ve model çamaşır makinelerine yerinde tamir hizmeti sunarak kullanıcıların zaman kaybını minimuma indirir.</p>
+    
+      <p>Gerekli durumlarda cihazın kontrol paneli, motoru, pompası veya ısıtıcı parçaları test edilerek, arıza tespiti detaylı biçimde yapılır. Yanlış deterjan kullanımı ya da aşırı yükleme de arıza sebeplerindendir. Biz, cihazın iç temizliğinden elektronik sistemine kadar her noktayı inceleriz.</p>
+    
+      <p>Yalnızca garantisi sona ermiş cihazlara müdahale edilmektedir. Yerinde servis hizmetimiz sayesinde kullanıcılar cihazlarını kargo ile göndermeden onarım sürecini takip edebilir. Kullanıcıya bakım tavsiyeleri ve kullanım önerileri de sunulur. Her işlem kayıt altına alınır ve orijinal ya da garantili parça kullanımı sağlanır. Cihaz ömrü uzatılır, maliyet düşürülür.</p>
+    
+      <p>Sayfa mobil cihazlarda 1 saniyenin altında açılacak şekilde optimize edilmiştir. Speed Index ve diğer tüm performans değerleri maksimum skordadır. Kod yapısı sade, içerik gereksiz yüklerden arındırılmıştır. Kullanıcılar aradıkları bilgiye hızlıca ulaşır, geçişlerde gecikme yaşamaz.</p>
+    
+      <p><strong>Not:</strong> Firmamız yetkili servis değildir. Sadece garantisi bitmiş cihazlara hizmet sunmaktayız.</p>
+    
+      <p><a href="tel:+90XXXXXXXXXX">Hemen Servis Çağır</a></p>
+    
+      <section style="padding: 40px 20px; background: #eef3f8;">
+        <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+          <!-- Her yorum kutusu -->
+          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+            <p style="font-weight: bold; color: #003366;">Seçil Yaman</p>
+            <p style="font-size: 14px; line-height: 1.6;">"Makinem sıkma yapmıyordu. Teknik ekip motoru kontrol etti ve hemen çözdü. Çok memnun kaldım."</p>
+          </div>
+          <!-- Diğer yorumlar buraya aynı formatla eklenebilir -->
+          <!-- ... -->
+        </div>
+      </section>
+    </div>
     
   </main>
 
@@ -420,47 +446,6 @@
         `;
         document.getElementById("description").style.display = "block";
     }
-
-    else if (service === "Çamaşır Makinesi Tamiri") {
-  document.getElementById("description").innerHTML = `
-  <div style="max-width: 1200px; margin: auto; padding: 20px; min-height: 800px;">
-    <p>Çamaşır makineleri, günlük yaşamın vazgeçilmez ev eşyalarından biridir. Ancak zamanla ortaya çıkan arızalar kullanıcıların hayat kalitesini doğrudan etkiler. Sık rastlanan problemler arasında tamburun dönmemesi, makinenin suyu almaması ya da boşaltmaması, gürültülü çalışma, su sızdırma, elektriksel sorunlar ve kötü koku oluşumu yer alır. Bu gibi durumlarda profesyonel müdahale gereklidir. Teknik ekibimiz, tüm marka ve model çamaşır makinelerine yerinde tamir hizmeti sunarak kullanıcıların zaman kaybını minimuma indirir.</p>
-
-    <p>Gerekli durumlarda cihazın kontrol paneli, motoru, pompası veya ısıtıcı parçaları test edilerek, arıza tespiti detaylı biçimde yapılır. Yanlış deterjan kullanımı ya da aşırı yükleme de arıza sebeplerindendir. Biz, cihazın iç temizliğinden elektronik sistemine kadar her noktayı inceleriz.</p>
-
-    <p>Yalnızca garantisi sona ermiş cihazlara müdahale edilmektedir. Yerinde servis hizmetimiz sayesinde kullanıcılar cihazlarını kargo ile göndermeden onarım sürecini takip edebilir. Kullanıcıya bakım tavsiyeleri ve kullanım önerileri de sunulur. Her işlem kayıt altına alınır ve orijinal ya da garantili parça kullanımı sağlanır. Cihaz ömrü uzatılır, maliyet düşürülür.</p>
-
-    <p>Sayfa mobil cihazlarda 1 saniyenin altında açılacak şekilde optimize edilmiştir. Speed Index ve diğer tüm performans değerleri maksimum skordadır. Kod yapısı sade, içerik gereksiz yüklerden arındırılmıştır. Kullanıcılar aradıkları bilgiye hızlıca ulaşır, geçişlerde gecikme yaşamaz.</p>
-
-    <p><strong>Not:</strong> Firmamız yetkili servis değildir. Sadece garantisi bitmiş cihazlara hizmet sunmaktayız.</p>
-
-    <p><a href="tel:+90XXXXXXXXXX">Hemen Servis Çağır</a></p>
-  </div>
-
-  <section style="padding: 40px 20px; background: #eef3f8;">
-    <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: auto;">
-      ${[
-        { name: "Seçil Yaman", text: "Makinem sıkma yapmıyordu. Teknik ekip motoru kontrol etti ve hemen çözdü. Çok memnun kaldım." },
-        { name: "Yusuf Acar", text: "Çamaşır makinem su almıyordu. Servis hortumu ve ventili kontrol edip hemen müdahale etti. Profesyoneller." },
-        { name: "Bilge Soylu", text: "Makine programı ortasında duruyordu. Anakart sorunu olduğunu tespit ettiler ve değiştirdiler. Sorunsuz çalışıyor." },
-        { name: "Erkan Yıldırım", text: "Makinem çok ses yapıyordu. Amortisörleri değiştirildi, şimdi sessiz çalışıyor. Ustalar çok iyi." },
-        { name: "Nuran Aydın", text: "Kapak kilitlenmiyordu. Hemen gelip kilidi değiştirdiler, çok pratik bir çözümdü." },
-        { name: "Tolga Korkmaz", text: "Ekranda hata kodu çıkıyordu. Uzaktan bile sorunu tahmin edip hazırlıklı geldiler. Harikasınız." },
-        { name: "Şule Ateş", text: "Makine tambur dönmüyordu. Kısa sürede kayışı değiştirdiler. Güvenilir ve hızlı servis." },
-        { name: "Hasan Çetin", text: "Makine suyu tahliye etmiyordu. Pompa tıkalıymış, hemen temizlendi. Gerçekten kaliteli hizmet." }
-      ].map(comment => `
-        <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">${comment.name}</p>
-          <p style="font-size: 14px; line-height: 1.6;">"${comment.text}"</p>
-        </div>
-      `).join("")}
-    </div>
-  </section>
-  `;
-
-  document.getElementById("description").style.display = "block";
-}
 
     else if (service === "Fırın Onarımı") {
         document.getElementById("description").innerHTML = `
@@ -709,6 +694,12 @@
 
       }
     };
+  const urlParams = new URLSearchParams(window.location.search);
+  const service = urlParams.get('service');
+
+  if (service === "Çamaşır Makinesi Tamiri") {
+    document.getElementById("çamaşır-makinesi").style.display = "block";
+  }
   </script>
 
 
