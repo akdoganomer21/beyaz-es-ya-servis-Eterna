@@ -1,7 +1,8 @@
-//push etmek için 
+// push etmek için 
 
-git add .
-git commit -m "Güncelleme mesajı"
-git push
+// git add .
+// git commit -m "Güncelleme mesajı"
+// git push
 
-//kodu çalıştırmak için
+// kodu çalıştırmak için
+// open with live server

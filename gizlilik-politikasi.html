@@ -1,66 +1,189 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Beyaz Eşya Servisi gizlilik politikası. Kişisel verilerin korunması ve güvenliği hakkında bilgi.">
-  <meta name="keywords" content="Gizlilik Politikası, Veri Güvenliği, Kişisel Bilgiler, Beyaz Eşya Servisi">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beyaz Eşya Servisi gizlilik politikası. Kişisel verilerin korunması ve güvenliği hakkında bilgi." />
+  <meta name="keywords" content="Gizlilik Politikası, Veri Güvenliği, Kişisel Bilgiler, Beyaz Eşya Servisi" />
   <title>Gizlilik Politikası | Beyaz Eşya Servisi</title>
 
-  <!-- Favicon ve Apple Touch Icon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Style -->
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #f5f5f5; padding: 10px; text-align: center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #333; }
-    .content { padding: 20px; }
-    footer small { display: block; margin-top: 10px; color: #777; }
-  </style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Gizlilik Politikası",
-    "description": "Beyaz Eşya Servisi gizlilik politikası hakkında detaylı bilgi. Kişisel veri güvenliği ve kullanıcı hakları.",
-    "author": {
-      "@type": "Organization",
-      "name": "Beyaz Eşya Servisi"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Beyaz Eşya Servisi"
-    },
-    "datePublished": "2025-01-01"
-  }
-  </script>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+    }
+
+    h1, h2 {
+      color: #003366;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 14px;
+    }
+
+    footer nav {
+      margin-bottom: 8px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      main {
+        margin: 16px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Beyaz Eşya Servisi</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
   </header>
 
-  <div class="content">
+  <main>
     <h2>Gizlilik Politikası</h2>
-    <p>Bu web sitesi üzerinden toplanan kişisel veriler, üçüncü şahıslarla paylaşılmaz. Web sitemizi ziyaret ettiğinizde cihaz bilgileri ve IP adresiniz gibi temel veriler anonim olarak toplanabilir.</p>
 
-    <p>Gizliliğiniz bizim için önemlidir. Bilgileriniz yalnızca hizmet kalitesini artırmak amacıyla kullanılmaktadır. Verileriniz, KVKK kapsamında saklanır ve asla ticari amaçla paylaşılmaz.</p>
+    <p>Web sitemizi ziyaret ettiğinizde, gizliliğinize ve kişisel verilerinizin korunmasına büyük önem veririz. İşte uyguladığımız temel gizlilik ilkeleri:</p>
 
-    <p>Web sitemizi kullanarak bu politikayı kabul etmiş sayılırsınız. Dilerseniz bizimle iletişime geçerek verilerinizin silinmesini talep edebilirsiniz.</p>
+    <ol>
+      <li><strong>Veri Toplanmaz:</strong> Web sitemizde ad, soyad, e-posta, telefon gibi kişisel bilgiler toplanmaz.</li>
+      <li><strong>İstatistik Amaçlı Bilgiler:</strong> IP adresi, cihaz türü gibi anonim veriler yalnızca analiz ve geliştirme amacıyla toplanır.</li>
+      <li><strong>Çerez Kullanımı:</strong> Zorunlu oturum çerezleri dışında hiçbir takip ya da reklam çerezi kullanılmaz.</li>
+      <li><strong>Form veya Giriş Alanı Yoktur:</strong> Kullanıcı kaydı, giriş ya da form alanı bulunmaz. Hiçbir veri saklanmaz.</li>
+      <li><strong>Reklam Amaçlı Paylaşım Yapılmaz:</strong> Hiçbir bilgi üçüncü şahıs ya da firmalarla paylaşılmaz.</li>
+      <li><strong>HTTPS Güvenliği:</strong> Sitemiz, şifreli HTTPS bağlantısı ile korunur. Veri akışı güvenlidir.</li>
+      <li><strong>Veri Silme Hakkı:</strong> Bizimle iletişime geçerek anonim verilerinizin analizlerden çıkarılmasını talep edebilirsiniz.</li>
+      <li><strong>Güncelleme:</strong> Gizlilik politikası ihtiyaç halinde güncellenebilir. Tüm değişiklikler burada yayınlanır.</li>
+    </ol>
 
-    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Yalnızca garantisi sona ermiş cihazlara teknik servis hizmeti vermektedir.</p>
-  </div>
+    <p>Bu politikayı kabul etmiyorsanız web sitemizi kullanmamanız önerilir. Daha fazla bilgi için <a href="iletisim.html">İletişim</a> sayfamızı ziyaret edebilirsiniz.</p>
+
+    <p><strong>UYARI:</strong> Bu web sitesi yalnızca garantisi bitmiş cihazlar için hizmet sunar. Yetkili servis değildir.</p>
+  </main>
 
   <footer>
     <nav>
@@ -68,12 +191,18 @@
       <a href="hizmetler.html">Hizmetlerimiz</a>
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="iletisim.html">İletişim</a>
-      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
     <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
     <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
