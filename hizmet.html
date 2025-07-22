@@ -191,6 +191,7 @@
         <div class="dropdown">
           <a href="hizmetler.html">Hizmetlerimiz</a>
           <div class="dropdown-content">
+            <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
             <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
             <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
@@ -306,6 +307,56 @@
         `;
         document.getElementById("description").style.display = "block";
     }
+    else if (service === "Beyaz Eşya Servisi") {
+  document.getElementById("description").innerHTML = `
+  <p>Beyaz eşyalar, modern yaşamın en temel ihtiyaçlarını karşılayan cihazlardır. Ancak zamanla yoğun kullanım, voltaj dalgalanmaları, su kalitesi ve çevresel faktörler gibi nedenlerle bu cihazlarda arızalar ortaya çıkabilir. Ani durmalar, su sızıntıları, soğutmama ya da ısıtmama gibi sorunlar hem günlük yaşantınızı aksatır hem de cihazın ömrünü kısaltabilir. Bu nedenle uzman müdahale büyük önem taşır.</p>
+
+  <p>Firmamız, tüm beyaz eşyalar için kapsamlı teknik servis hizmeti sunmaktadır. Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, kurutma makinesi, ankastre ürünler ve daha fazlası için marka-model fark etmeksizin bakım ve onarım hizmeti veriyoruz. Servis sürecinde öncelikle arıza tespiti yapılır, ardından cihazın motoru, fanı, rezistansı, elektronik kartı, su ve gaz devresi gibi parçalar detaylı şekilde incelenir.</p>
+
+  <p>Yerinde tamir hizmetimizle zamandan tasarruf edebilir, cihazınızı aynı gün tekrar kullanmaya başlayabilirsiniz. Kullanılan yedek parçalar orijinal veya eşdeğer kaliteye sahip olup, işçilikte hijyen ve güvenlik standartlarına uygunluk ön plandadır. Ayrıca bakım yaptırılan cihazların enerji verimliliği artar, arıza riski azalır.</p>
+
+  <p>Servis ekibimiz, randevu sonrasında en kısa sürede adresinize ulaşmakta ve size detaylı bir servis raporu sunmaktadır. İster periyodik bakım, ister acil arıza durumlarında; eğitimli teknisyenlerimizle her zaman yanınızdayız. Garantisi sona ermiş cihazlar için sunduğumuz bu hizmette müşteri memnuniyeti önceliğimizdir.</p>
+
+  <p>Unutmayın, beyaz eşyalarınızın sağlıklı çalışması hem günlük işlerinizin aksamaması hem de cihazların ömrünün uzaması açısından kritiktir. Profesyonel bir servis deneyimi için hemen bizimle iletişime geçin.</p>
+
+  <section style="padding: 40px 20px; background: #eef3f8;">
+    <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: auto;">
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Ayşe Demir</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Buzdolabımız aniden çalışmayı bıraktı. Aynı gün geldiler, sorunu çözüp gittiler."</p>
+      </div>
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Murat Özkan</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Tüm beyaz eşyalarımıza bakım yaptırdık. Her biri sessiz ve düzgün çalışıyor artık."</p>
+      </div>
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Melike Koç</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Çamaşır makinemiz sıkma yapmıyordu, parçayı değiştirdiler. İlgili ve bilgili ekip."</p>
+      </div>
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Tuncay Aksoy</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Her sorunumuzu çözdüler. Bundan sonra başka servis aramam."</p>
+      </div>
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Gülşen Yavuz</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Fırınım ısıtma yapmıyordu. Gerekli yedek parça hemen temin edildi. Tavsiye ederim."</p>
+      </div>
+
+      <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <p style="font-weight: bold; color: #003366;">Yılmaz Çetin</p>
+        <p style="font-size: 14px; line-height: 1.6;">"Sadece kombi değil, bulaşık makinesi için de yardımcı oldular. Hepsi tek ekipten."</p>
+      </div>
+
+    </div>
+  </section>
+  `;
+}
 
     else if (service === "Buzdolabı Teknik Servisi" || service === "Buzdolabı Servisi") {
         document.getElementById("description").innerHTML = `
