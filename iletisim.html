@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>İletişim | Beyaz Eşya Servisi</title>
   <meta name="description" content="Beyaz Eşya Servisi iletişim bilgileri." />
-
+  
   <style>
     * {
       margin: 0;
@@ -29,12 +29,13 @@
     }
 
     .navbar {
-      max-width: 1100px;
-      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
     }
 
     .logo {
@@ -45,18 +46,51 @@
     .nav-links {
       display: flex;
       gap: 16px;
-      font-size: 15px;
+      font-size: 14px;
+      align-items: center;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       padding: 8px;
+      position: relative;
     }
 
     .nav-links a:hover {
-      background: #005599;
+      background-color: #005599;
       border-radius: 4px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      color: #003366;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
     }
 
     .burger {
@@ -76,6 +110,18 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #003366;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
     }
 
     .contact-item {
@@ -113,23 +159,29 @@
       background: #003366;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 16px 12px;
       font-size: 14px;
     }
 
     footer nav {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     footer nav a {
       color: white;
       margin: 0 10px;
       text-decoration: none;
-      font-size: 15px;
     }
 
     footer nav a:hover {
       text-decoration: underline;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ddd;
     }
 
     @media (max-width: 600px) {
@@ -137,7 +189,7 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #003366;
+        background-color: #003366;
         margin-top: 10px;
       }
 
@@ -147,6 +199,16 @@
 
       .burger {
         display: block;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #004080;
+      }
+
+      .dropdown-content a {
+        color: #fff;
       }
     }
   </style>
@@ -159,7 +221,18 @@
       <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
-        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <div class="dropdown">
+          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <div class="dropdown-content">
+            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="iletisim.html">İletişim</a>
       </div>
@@ -187,8 +260,8 @@
       <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
-    <div>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</div>
-    <div style="font-size: 13px; margin-top: 5px;">Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</div>
+    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
+    <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
   </footer>
 
   <script>

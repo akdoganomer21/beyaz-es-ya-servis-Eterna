@@ -1,53 +1,232 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Beyaz Eşya Servisi olarak Buzdolabı, Çamaşır Makinesi, Klima ve diğer ürünler için hizmetler sunuyoruz.">
-  <meta name="keywords" content="Beyaz Eşya Hizmetleri, Teknik Servis, Tamir, Bakım">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hizmet verdiğimiz teknik servis kategorileri. Buzdolabı, çamaşır makinesi, kombi ve daha fazlası." />
+  <meta name="keywords" content="Hizmetler, Teknik Servis, Beyaz Eşya, Kombi, Klima, Tamir, Bakım" />
   <title>Hizmetlerimiz | Beyaz Eşya Servisi</title>
 
-  <!-- Favicon ve Apple Touch Icon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Style -->
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #f5f5f5; padding: 10px; text-align: center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #333; }
-    .content { padding: 20px; }
-    ul li { margin-bottom: 8px; }
-    footer small { display: block; margin-top: 10px; color: #777; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      color: #003366;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #003366;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 14px;
+    }
+
+    footer nav {
+      margin-bottom: 8px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #004080;
+      }
+
+      .dropdown-content a {
+        color: #fff;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Beyaz Eşya Servisi</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <div class="dropdown">
+          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <div class="dropdown-content">
+            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
   </header>
 
-  <div class="content">
-    <h2>Hizmetlerimiz</h2>
-    <ul>
-        <li><a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a></li>
-        <li><a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Arıza Tespiti ve Tamiri</a></li>
-        <li><a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a></li>
-        <li><a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a></li>
-        <li><a href="hizmet.html?service=Klima+Servisi">Klima Montaj, Bakım ve Tamiri</a></li>
-        <li><a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Teknik Servisi</a></li>
-        <li><a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a></li>
-      </ul>
-      
-    <p><strong>Not:</strong> Sadece garantisi sona ermiş cihazlar için hizmet verilmektedir. Yetkili servis değiliz.</p>
-    <p><a href="tel:+90XXXXXXXXXX">Servis Talep Etmek İçin Hemen Ara</a></p>
-  </div>
+  <main>
+    <h1>Hizmetlerimiz</h1>
+    <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
+    <ol>
+      <li><strong>Buzdolabı Servisi:</strong> Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.</li>
+      <li><strong>Çamaşır Makinesi Tamiri:</strong> Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.</li>
+      <li><strong>Bulaşık Makinesi Bakımı:</strong> Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.</li>
+      <li><strong>Fırın Onarımı:</strong> Isıtmama, düğme sorunları, cam değişimi gibi işlemler.</li>
+      <li><strong>Klima Servisi:</strong> Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.</li>
+      <li><strong>Kombi Servisi:</strong> Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.</li>
+      <li><strong>Televizyon Tamiri:</strong> Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.</li>
+    </ol>
+    <p>Detaylı bilgi için her hizmetin ilgili sayfasını ziyaret edebilir veya <a href="iletisim.html">iletişim</a> kurabilirsiniz.</p>
+  </main>
 
   <footer>
     <nav>
@@ -55,12 +234,18 @@
       <a href="hizmetler.html">Hizmetlerimiz</a>
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="iletisim.html">İletişim</a>
-      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
       <a href="kvkk.html">KVKK</a>
     </nav>
     <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
     <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>

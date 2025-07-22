@@ -4,122 +4,318 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KVKK kapsamında kişisel verilerin işlenmesi ve korunması politikamız hakkında detaylı bilgi." />
-  <title>KVKK | Beyaz Eşya Servisi</title>
+  <title>Ana Sayfa | Beyaz Eşya Servisi</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #222;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    header, footer {
+    header {
       background: #003366;
       color: white;
-      padding: 12px 16px;
-      text-align: center;
+      padding: 12px 20px;
     }
 
-    nav a {
-      color: white;
-      margin: 0 8px;
-      text-decoration: none;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
       font-size: 14px;
+      align-items: center;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      position: relative;
     }
 
-    .content {
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      color: #003366;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
       max-width: 900px;
-      margin: 30px auto;
+      margin: 24px auto;
       padding: 20px;
       background: white;
-      border-radius: 8px;
+      border-radius: 6px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #003366;
       margin-bottom: 16px;
     }
 
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 12px;
+      font-size: 14px;
+    }
+
+    footer nav {
+      margin-bottom: 8px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
     footer small {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       font-size: 12px;
       color: #ddd;
     }
 
     @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 6px 0;
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
       }
-      .content {
-        padding: 15px;
-        margin: 20px 10px;
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #004080;
+      }
+
+      .dropdown-content a {
+        color: #fff;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Beyaz Eşya Servisi</h1>
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hizmetler.html">Hizmetlerimiz</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="iletisim.html">İletişim</a>
-    <a href="kvkk.html">KVKK</a>
-  </nav>
-</header>
+  <header>
+    <div class="navbar">
+      <div class="logo">Beyaz Eşya Servisi</div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <div class="dropdown">
+          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <div class="dropdown-content">
+            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
+  </header>
 
-<main class="content">
-  <h2>Kişisel Verilerin Korunması Politikası (KVKK)</h2>
-  <p>Web sitemiz, kullanıcılarının kişisel verilerini korumaya büyük önem verir. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında yürürlükteki düzenlemelere tam uyum sağlamayı hedeflemekteyiz.</p>
+  <main>
+    <!-- Hero Bölümü -->
+    <section style="text-align: center; padding: 40px 20px;">
+      <h1 style="font-size: 26px; color: #003366;">Güvenilir ve Hızlı Teknik Servis Hizmeti</h1>
+      <p style="font-size: 16px; margin-top: 16px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        Beyaz eşyalarınızda yaşadığınız tüm teknik sorunlarda yanınızdayız. Garantisi sona ermiş cihazlar için aynı gün yerinde servis imkânı sunuyoruz.
+      </p>
+      <a href="tel:+905372040191" style="display: inline-block; margin-top: 24px; background: #28a745; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px;">
+        <i class="fa-solid fa-phone"></i> Bizi Hemen Arayın
+      </a>
+    </section>
+  
+    <!-- Hizmet Alanları -->
+    <section style="padding: 40px 20px; background: #eef3f8;">
+      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Hizmet Alanlarımız</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; margin: auto;">
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Buzdolabı Teknik Servisi</h3>
+          <p style="font-size: 14px;">Soğutma problemi, ses yapma, elektrik kesintisi gibi tüm arızalar için servis.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Çamaşır Makinesi Tamiri</h3>
+          <p style="font-size: 14px;">Sıkmıyor, su almıyor ya da sesli çalışıyorsa teknik çözüm bizde.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Bulaşık Makinesi Bakımı</h3>
+          <p style="font-size: 14px;">Yıkamıyor, su kaçırıyor ya da çalışmıyor mu? Yerinde servis imkanı.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Fırın Onarımı</h3>
+          <p style="font-size: 14px;">Isıtmıyor, düğme bozuldu ya da ışık yanmıyor mu? Bizi arayın.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Klima Servisi</h3>
+          <p style="font-size: 14px;">Yaz-kış sorunsuz çalışan klimalar için bakım ve arıza servisi.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Kombi Servisi</h3>
+          <p style="font-size: 14px;">Petek ısıtmıyor, su ısınmıyor gibi sorunlar için yerinde destek.</p>
+        </div>
+        <div style="flex: 1 1 260px; background: white; padding: 20px; border-radius: 6px;">
+          <h3 style="color: #003366; font-size: 18px;">Televizyon Tamiri</h3>
+          <p style="font-size: 14px;">Görüntü gitmesi, açılmama ya da ses problemleri için uzman çözüm.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Neden Bizi Tercih Etmelisiniz -->
+    <section style="padding: 40px 20px;">
+      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Neden Bizi Tercih Etmelisiniz?</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-headset" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">7/24 Hizmet</p>
+        </div>
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-shield-halved" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">1 Yıl Garanti</p>
+        </div>
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-stopwatch" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">20 Dakikada Geliş</p>
+        </div>
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-face-smile" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">%100 Mutluluk</p>
+        </div>
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-hand-holding-dollar" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">En Uygun Fiyat</p>
+        </div>
+        <div style="flex: 1 1 200px; text-align: center;">
+          <i class="fa-solid fa-check-circle" style="font-size: 28px; color: #28a745;"></i>
+          <p style="margin-top: 10px; font-weight: bold;">%100 Güvenilir</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Kapanış Banner -->
+    <section style="padding: 30px 20px; background: #003366; color: white; text-align: center;">
+      <h2 style="font-size: 20px;">Tüm Beyaz Eşyalar İçin Servis Hizmeti</h2>
+      <p style="margin: 16px 0;">Buzdolabından klimaya, kombiden fırına kadar geniş hizmet yelpazemizle yanınızdayız.</p>
+      <a href="hizmetler.html" style="display: inline-block; margin-top: 12px; background: white; color: #003366; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+        Tüm Hizmetleri Gör
+      </a>
+    </section>
+  </main>
+  
+  
+  
 
-  <h3>1. Kişisel Veri Toplanmamakta</h3>
-  <p>Web sitemiz üzerinden ad, soyad, e-posta adresi, telefon numarası gibi kişisel veriler toplanmaz. Ziyaretçilerimiz herhangi bir form doldurmak ya da bilgi girişi yapmak zorunda değildir.</p>
+  <footer>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hizmetler.html">Hizmetlerimiz</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="gizlilik-politikasi.html">Gizlilik</a>
+      <a href="kvkk.html">KVKK</a>
+    </nav>
+    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
+    <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
+  </footer>
 
-  <h3>2. Anonim Veriler</h3>
-  <p>IP adresi, cihaz türü ve tarayıcı tipi gibi anonim veriler yalnızca genel trafik istatistikleri amacıyla işlenebilir. Bu bilgiler üçüncü şahıslarla paylaşılmaz.</p>
-
-  <h3>3. Amaçla Sınırlı İşleme</h3>
-  <p>Toplanabilecek tüm anonim veriler yalnızca sistem güvenliği ve hizmet kalitesini artırmak amacıyla işlenmektedir. Veriler, mevzuata aykırı şekilde hiçbir kurum ya da kişiyle paylaşılmaz.</p>
-
-  <h3>4. Üçüncü Taraf Servisler</h3>
-  <p>Site trafiğini analiz etmek amacıyla yalnızca Google Analytics gibi güvenilir servisler kullanılabilir. Ancak bu servislerde de hiçbir kişisel veri tanımlanamaz şekilde aktarılır.</p>
-
-  <h3>5. Güvenlik</h3>
-  <p>Web sitemiz SSL sertifikası ile korunmaktadır. Ziyaretçilerimiz ile sunucular arasındaki veri iletişimi şifrelenmiş bağlantı üzerinden gerçekleştirilir.</p>
-
-  <h3>6. Güncellemeler</h3>
-  <p>KVKK politikamız, yasal gereklilikler doğrultusunda zaman zaman güncellenebilir. Güncel metin her zaman bu sayfa üzerinden yayınlanır.</p>
-
-  <p><strong>UYARI:</strong> Bu site yalnızca garantisi sona ermiş ürünlere yönelik hizmet sunmaktadır. Yetkili servis değildir. Herhangi bir marka ile resmi bağlantısı bulunmamaktadır.</p>
-</main>
-
-<footer>
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hizmetler.html">Hizmetlerimiz</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="iletisim.html">İletişim</a>
-    <a href="kvkk.html">KVKK</a>
-  </nav>
-  <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
-  <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
-</footer>
-
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

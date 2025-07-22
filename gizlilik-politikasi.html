@@ -6,9 +6,12 @@
   <meta name="description" content="Beyaz Eşya Servisi gizlilik politikası. Kişisel verilerin korunması ve güvenliği hakkında bilgi." />
   <meta name="keywords" content="Gizlilik Politikası, Veri Güvenliği, Kişisel Bilgiler, Beyaz Eşya Servisi" />
   <title>Gizlilik Politikası | Beyaz Eşya Servisi</title>
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: sans-serif;
@@ -32,6 +35,7 @@
       flex-wrap: wrap;
       max-width: 1100px;
       margin: auto;
+      position: relative;
     }
 
     .logo {
@@ -43,17 +47,50 @@
       display: flex;
       gap: 16px;
       font-size: 14px;
+      align-items: center;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       padding: 8px;
+      position: relative;
     }
 
     .nav-links a:hover {
       background-color: #005599;
       border-radius: 4px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      color: #003366;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
     }
 
     .burger {
@@ -75,9 +112,9 @@
     }
 
     h1, h2 {
-      color: #003366;
-      margin-bottom: 16px;
       font-size: 22px;
+      margin-bottom: 16px;
+      color: #003366;
     }
 
     p {
@@ -141,14 +178,18 @@
         display: block;
       }
 
-      main {
-        margin: 16px;
-        padding: 16px;
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #004080;
+      }
+
+      .dropdown-content a {
+        color: #fff;
       }
     }
   </style>
 </head>
-
 <body>
 
   <header>
@@ -157,7 +198,18 @@
       <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
-        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <div class="dropdown">
+          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <div class="dropdown-content">
+            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="iletisim.html">İletişim</a>
       </div>
@@ -166,7 +218,6 @@
 
   <main>
     <h2>Gizlilik Politikası</h2>
-
     <p>Web sitemizi ziyaret ettiğinizde, gizliliğinize ve kişisel verilerinizin korunmasına büyük önem veririz. İşte uyguladığımız temel gizlilik ilkeleri:</p>
 
     <ol>
@@ -181,7 +232,6 @@
     </ol>
 
     <p>Bu politikayı kabul etmiyorsanız web sitemizi kullanmamanız önerilir. Daha fazla bilgi için <a href="iletisim.html">İletişim</a> sayfamızı ziyaret edebilirsiniz.</p>
-
     <p><strong>UYARI:</strong> Bu web sitesi yalnızca garantisi bitmiş cihazlar için hizmet sunar. Yetkili servis değildir.</p>
   </main>
 
@@ -203,6 +253,5 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   </script>
-
 </body>
 </html>
