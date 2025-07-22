@@ -3,90 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kullanıcı verilerinin nasıl işlendiği hakkında bilgi.">
-  <meta name="keywords" content="KVKK, Kişisel Veri, Koruma, Beyaz Eşya Servisi">
   <title>KVKK | Beyaz Eşya Servisi</title>
+  <meta name="description" content="Beyaz Eşya Servisi kişisel verileri toplamaz. KVKK politikasını burada bulabilirsiniz.">
+  <link rel="icon" href="favicon.ico" />
+  <script src="config.js"></script>
 
-  <!-- Favicon ve Apple Touch Icon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Style -->
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #f5f5f5; padding: 10px; text-align: center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #333; }
-    .content { padding: 20px; }
-    footer small { display: block; margin-top: 10px; color: #777; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 15px 20px;
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 16px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      flex: 1;
+    }
+
+    main h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    main p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 16px 10px;
+      font-size: 14px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
+      main {
+        margin: 20px;
+        padding: 16px;
+      }
+    }
   </style>
-
-  <!-- Structured Data: Article + FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Kişisel Verilerin Korunması Politikası",
-    "description": "Bu sayfa, Beyaz Eşya Servisi'nin KVKK kapsamında kullanıcı verileri ile ilgili politikasını açıklamaktadır.",
-    "author": {
-      "@type": "Organization",
-      "name": "Beyaz Eşya Servisi"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Beyaz Eşya Servisi"
-    },
-    "datePublished": "2025-01-01"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Siteniz kişisel veri topluyor mu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hayır. Web sitemiz üzerinden hiçbir kişisel veri (ad, soyad, e-posta, telefon) toplanmamaktadır."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Hangi veriler anonim olarak toplanır?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "IP adresi ve cihaz türü gibi anonim veriler, sadece istatistiksel analiz amaçlı toplanabilir."
-      }
-    }, {
-      "@type": "Question",
-      "name": "KVKK kapsamında nasıl korunuyorum?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "KVKK’ya uygun olarak, hiçbir kullanıcı verisi saklanmaz veya üçüncü taraflarla paylaşılmaz."
-      }
-    }]
-  }
-  </script>
 </head>
 <body>
 
   <header>
-    <h1>Beyaz Eşya Servisi</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hizmetler.html">Hizmetlerimiz</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo" id="siteTitle">Site Adı</div>
+      <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="kvkk.html">KVKK</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="content">
+  <main>
     <h2>Kişisel Verilerin Korunması (KVKK)</h2>
-    <p>Web sitemizde herhangi bir kişisel veri toplanmamaktadır. Ziyaretçilerimizden ad, soyad, telefon, e-posta gibi bilgiler alınmaz.</p>
-    <p>Web sitemiz yalnızca bilgilendirme amacıyla hizmet vermekte olup, kullanıcı verisi girişi gerektirmez.</p>
-    <p>IP adresi ve cihaz bilgileri sadece anonim analiz amacıyla Google Analytics gibi üçüncü parti araçlar tarafından işlenebilir.</p>
-    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş cihazlara hizmet sunulmaktadır.</p>
-  </div>
+    <p>Web sitemizde hiçbir kişisel veri (ad, soyad, e-posta, telefon vb.) toplanmaz.</p>
+    <p>Web sitemiz sadece bilgilendirme amacıyla yayın yapmaktadır ve veri girişi gerektirmez.</p>
+    <p>IP adresi veya cihaz bilgileri yalnızca anonim analiz amacıyla kullanılabilir.</p>
+    <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş ürünlere hizmet sunulmaktadır.</p>
+  </main>
 
   <footer>
     <nav>
@@ -95,11 +144,18 @@
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="iletisim.html">İletişim</a>
       <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
-      <a href="kvkk.html">KVKK</a>
     </nav>
-    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
-    <small>Bu web sitesi yalnızca garantisi olmayan ürünlere hizmet sunmaktadır. Yetkili servis değildir.</small>
+    <small id="footerUyari">Yükleniyor...</small>
+    <small>&copy; 2025 <span id="footerSirket">Firma</span>. Tüm Hakları Saklıdır.</small>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("siteTitle").innerText = SIRKET_BILGI.siteAdi;
+      document.getElementById("footerSirket").innerText = SIRKET_BILGI.siteAdi;
+      document.getElementById("footerUyari").innerText = SIRKET_BILGI.footerUyari;
+    });
+  </script>
 
 </body>
 </html>
