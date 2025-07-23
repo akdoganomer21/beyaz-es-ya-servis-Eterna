@@ -223,6 +223,7 @@
       }
     }
   </style>
+
 </head>
 <body>
 
@@ -368,5 +369,128 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   </script>
+  
+  <script type="application/ld+json">
+    {
+      "founder": {
+        "@type": "Person",
+        "name": "Ömer Akdoğan"
+      }      
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Beyaz Eşya Servisi",
+          "image": "https://beyaz-esya-servis-eterna.netlify.app/logo.png",
+          "url": "https://beyaz-esya-servis-eterna.netlify.app/",
+          "telephone": "+90 (537) 204 01 91",
+          "email": "destek@beyazesyaservisi.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Çiftlikköy Mahallesi Atatürk Caddesi No:10",
+            "addressLocality": "Yenişehir",
+            "addressRegion": "Mersin",
+            "postalCode": "33100",
+            "addressCountry": "TR"
+          },
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "priceRange": "₺₺",
+          "sameAs": [
+            "https://www.instagram.com/servishizmeti",
+            "https://www.facebook.com/servishizmeti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Gizlilik Politikası",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/gizlilik-politikasi.html"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Gizlilik Politikası | Beyaz Eşya Servisi",
+          "description": "Kişisel verilerinizin güvenliği ve gizliliği hakkında detaylı bilgi. Çerez politikamız, veri saklama ve paylaşım esaslarımız bu sayfada açıklanmıştır.",
+          "author": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://beyaz-esya-servis-eterna.netlify.app/logo.png"
+            }
+          },
+          "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/gizlilik-politikasi.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Web siteniz kullanıcı verisi topluyor mu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hayır, ad, soyad, e-posta gibi kişisel bilgiler toplanmaz. Yalnızca anonim istatistiksel veriler analiz amacıyla kullanılabilir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Çerez politikası nedir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sadece zorunlu oturum çerezleri kullanılmakta, takip veya reklam çerezleri kullanılmamaktadır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Veri silme talebi nasıl yapılır?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "İletişim sayfamız üzerinden bize ulaşarak anonim verilerinizin analizden çıkarılmasını talep edebilirsiniz."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Nazlı Erden"
+          },
+          "reviewBody": "Gizlilik politikanız sayesinde verilerimin nasıl kullanıldığını çok net öğrendim. Çok profesyonel."
+        },
+        {
+          "@type": "QAPage",
+          "mainEntity": {
+            "@type": "Question",
+            "name": "Gizlilik politikası neden önemlidir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kullanıcıların siteye güvenle girmesini sağlar. Hangi bilgilerin nasıl kullanıldığını şeffaf şekilde açıklamak yasal ve etik açıdan gereklidir."
+            }
+          }
+        }
+      ]
+    }
+  </script>
+    
 </body>
 </html>

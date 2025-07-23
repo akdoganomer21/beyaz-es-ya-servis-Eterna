@@ -220,6 +220,7 @@
       }
     }
   </style>
+  
 </head>
 
 <body>
@@ -368,6 +369,116 @@
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
+  </script>
+  
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Beyaz Eşya Servisi",
+            "url": "https://beyaz-esya-servis-eterna.netlify.app/",
+            "image": "https://beyaz-esya-servis-eterna.netlify.app/logo.png",
+            "telephone": "+90 (537) 204 01 91",
+            "email": "beyazesyaservis@example.com",
+            "priceRange": "₺₺",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Çiftlikköy Mahallesi Atatürk Caddesi No:10",
+              "addressLocality": "Yenişehir",
+              "addressRegion": "Mersin",
+              "postalCode": "33100",
+              "addressCountry": "TR"
+            },
+            "openingHours": "Mo-Sa 09:00-18:00",
+            "sameAs": [
+              "https://www.facebook.com/servishizmeti",
+              "https://www.instagram.com/servishizmeti"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Ana Sayfa",
+                "item": "https://beyaz-esya-servis-eterna.netlify.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Hakkımızda",
+                "item": "https://beyaz-esya-servis-eterna.netlify.app/hakkimizda.html"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "headline": "Hakkımızda | Beyaz Eşya Servisi",
+            "description": "Beyaz Eşya Servisi hakkında detaylı bilgi. Şirketimizin vizyonu, misyonu ve hizmet kapsamı.",
+            "author": {
+              "@type": "Organization",
+              "name": "Beyaz Eşya Servisi"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Beyaz Eşya Servisi",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://beyaz-esya-servis-eterna.netlify.app/logo.png"
+              }
+            },
+            "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/hakkimizda.html"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Beyaz Eşya Servisi yetkili servis mi?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Hayır, firmamız sadece garantisi bitmiş ürünlere özel teknik servis hizmeti sunmaktadır."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Servis hizmeti nerelerde verilmektedir?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Servisimiz başta Mersin olmak üzere çevre ilçelere de teknik destek sunmaktadır."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Beyza Sarı"
+            },
+            "reviewBody": "Hakkımızda sayfanızı okuyunca neden bu kadar güvenilir olduğunuzu anladım."
+          },
+          {
+            "@type": "QAPage",
+            "mainEntity": {
+              "@type": "Question",
+              "name": "Neden Beyaz Eşya Servisi'ni tercih etmeliyim?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kurumsal yaklaşım, uygun fiyat, tecrübeli teknisyen kadrosu ve müşteri memnuniyeti odaklı çalışmamız en önemli nedenlerdir."
+              }
+            }
+          }
+        ]
+      }
   </script>
 </body>
 </html>

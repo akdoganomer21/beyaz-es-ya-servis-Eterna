@@ -224,7 +224,9 @@
       }
     }
   </style>
+
 </head>
+
 <body>
 
   <header>
@@ -369,5 +371,120 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Kişisel Verilerin Korunması Politikası",
+          "description": "KVKK kapsamında kullanıcı verilerinin nasıl işlendiği, saklandığı ve korunduğu hakkında detaylı bilgilendirme.",
+          "author": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg"
+            }
+          },
+          "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/kvkk.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "KVKK",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/kvkk.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Kişisel veriler toplanıyor mu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hayır, sitemizde kullanıcıdan doğrudan kişisel veri toplanmamaktadır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Çerez kullanılıyor mu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sadece zorunlu oturum çerezleri kullanılmakta, reklam çerezi bulunmamaktadır."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "name": "Beyaz Eşya Servisi",
+          "image": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg",
+          "telephone": "+905372040191",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Atatürk Mahallesi Servis Sk. No:3",
+            "addressLocality": "Adana",
+            "addressRegion": "TR",
+            "postalCode": "01000",
+            "addressCountry": "TR"
+          },
+          "url": "https://beyaz-esya-servis-eterna.netlify.app/",
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "priceRange": "₺₺",
+          "sameAs": [
+            "https://www.facebook.com/servishizmeti",
+            "https://www.instagram.com/servishizmeti"
+          ]
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Yasemin Tuncel"
+          },
+          "reviewBody": "KVKK bilgilendirme metni sade ve anlaşılır. Herkesin rahatça anlayabileceği bir dille yazılmış.",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "KVKK Bilgilendirme"
+          }
+        },
+        {
+          "@type": "QAPage",
+          "mainEntity": {
+            "@type": "Question",
+            "name": "Siteniz üzerinden hangi veriler işleniyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hiçbir doğrudan kişisel veri işlenmemektedir. IP adresi gibi anonim bilgiler sadece istatistiksel amaçlarla analiz edilmektedir."
+            }
+          }
+        }
+      ]
+    }
+  </script>  
+
 </body>
+
 </html>
