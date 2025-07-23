@@ -829,7 +829,7 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
       const params = new URLSearchParams(window.location.search);
       const service = decodeURIComponent(params.get("service") || "");
       console.log("Seçilen hizmet:", service);
@@ -860,26 +860,28 @@
       });
   
       // Seçilen hizmete göre doğru içeriği göster
-      if (service === "Çamaşır Makinesi Tamiri") {
+      // Seçilen hizmete göre doğru içeriği göster
+      if (service.includes("Çamaşır")) {
         document.getElementById("çamaşır-makinesi").style.display = "block";
-      } else if (service === "Bulaşık Makinesi Bakımı") {
+      } else if (service.includes("Bulaşık")) {
         document.getElementById("bulasik-makinesi-bakimi").style.display = "block";
-      } else if (service === "Buzdolabı Teknik Servisi") {
+      } else if (service.includes("Buzdolabı Teknik")) {
         document.getElementById("buzdolabi-teknik-servisi").style.display = "block";
-      } else if (service === "Buzdolabı Servisi") {
+      } else if (service.includes("Buzdolabı Servisi")) {
         document.getElementById("buzdolabi-servisi").style.display = "block";
-      } else if (service === "Klima Servisi") {
+      } else if (service.includes("Klima")) {
         document.getElementById("klima-servisi").style.display = "block";
-      } else if (service === "Kombi Servisi") {
+      } else if (service.includes("Kombi")) {
         document.getElementById("kombi-servisi").style.display = "block";
-      } else if (service === "Fırın Onarımı") {
+      } else if (service.includes("Fırın")) {
         document.getElementById("firin-onarimi").style.display = "block";
-      } else if (service === "Televizyon Tamiri") {
+      } else if (service.includes("Televizyon")) {
         document.getElementById("televizyon-tamiri").style.display = "block";
-      } else if (service === "Beyaz Eşya Servisi") {
+      } else if (service.includes("Beyaz")) {
         document.getElementById("beyaz-esya-servisi").style.display = "block";
       }
-    };
+
+    });
   </script>  
   
   
