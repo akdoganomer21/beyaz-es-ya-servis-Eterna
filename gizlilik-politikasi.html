@@ -374,12 +374,16 @@
   
   <script type="application/ld+json">
     {
-      "founder": {
-        "@type": "Person",
-        "name": "Ömer Akdoğan"
-      }      
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Beyaz Eşya Servisi",
+          "founder": {
+            "@type": "Person",
+            "name": "Ömer Akdoğan"
+          }
+        },
         {
           "@type": "LocalBusiness",
           "name": "Beyaz Eşya Servisi",
@@ -435,7 +439,8 @@
               "url": "https://beyaz-esya-servis-eterna.netlify.app/logo.png"
             }
           },
-          "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/gizlilik-politikasi.html"
+          "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/gizlilik-politikasi.html",
+          "datePublished": "2025-07-23"
         },
         {
           "@type": "FAQPage",
@@ -477,7 +482,11 @@
             "@type": "Person",
             "name": "Nazlı Erden"
           },
-          "reviewBody": "Gizlilik politikanız sayesinde verilerimin nasıl kullanıldığını çok net öğrendim. Çok profesyonel."
+          "reviewBody": "Gizlilik politikanız sayesinde verilerimin nasıl kullanıldığını çok net öğrendim. Çok profesyonel.",
+          "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "Beyaz Eşya Servisi"
+          }
         },
         {
           "@type": "QAPage",
@@ -487,12 +496,19 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Kullanıcıların siteye güvenle girmesini sağlar. Hangi bilgilerin nasıl kullanıldığını şeffaf şekilde açıklamak yasal ve etik açıdan gereklidir."
-            }
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Admin"
+            },
+            "datePublished": "2025-07-23",
+            "upvoteCount": 4
           }
         }
       ]
     }
   </script>
+    
     
 </body>
 </html>
