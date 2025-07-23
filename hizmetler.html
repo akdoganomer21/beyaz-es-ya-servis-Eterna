@@ -219,6 +219,51 @@
         color: #fff;
       }
     }
+    .hizmet-listesi {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.hizmet-listesi li {
+  background-color: #f0f8ff;
+  border-left: 5px solid #003366;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.hizmet-listesi li:hover {
+  background-color: #e6f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hizmet-listesi a {
+  color: #003366;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.hizmet-listesi a::after {
+  content: " →";
+  font-weight: normal;
+  font-size: 16px;
+  color: #0077cc;
+}
+
+.hizmet-listesi span {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
   </style>
 </head>
 <body>
@@ -253,48 +298,57 @@
   <main>
     <h1>Hizmetlerimiz</h1>
     <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
-    <ul style="padding-left: 20px; list-style: none;">
+    <ul class="hizmet-listesi">
       <li>
-        • <a href="hizmet.html?service=Beyaz+Eşya+Servisi" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Beyaz Eşya Servisi
-        </a>: Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri.
+        <a href="hizmet.html?service=Beyaz+Eşya+Servisi">
+          <strong>Beyaz Eşya Servisi</strong>
+        </a>
+        <span>: Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Buzdolabı Servisi
-        </a>: Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.
+        <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">
+          <strong>Buzdolabı Servisi</strong>
+        </a>
+        <span>: Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Çamaşır Makinesi Tamiri
-        </a>: Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.
+        <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">
+          <strong>Çamaşır Makinesi Tamiri</strong>
+        </a>
+        <span>: Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Bulaşık Makinesi Bakımı
-        </a>: Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.
+        <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">
+          <strong>Bulaşık Makinesi Bakımı</strong>
+        </a>
+        <span>: Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Fırın+Onarımı" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Fırın Onarımı
-        </a>: Isıtmama, düğme sorunları, cam değişimi gibi işlemler.
+        <a href="hizmet.html?service=Fırın+Onarımı">
+          <strong>Fırın Onarımı</strong>
+        </a>
+        <span>: Isıtmama, düğme sorunları, cam değişimi gibi işlemler.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Klima+Servisi" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Klima Servisi
-        </a>: Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.
+        <a href="hizmet.html?service=Klima+Servisi">
+          <strong>Klima Servisi</strong>
+        </a>
+        <span>: Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Kombi+Servisi" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Kombi Servisi
-        </a>: Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.
+        <a href="hizmet.html?service=Kombi+Servisi">
+          <strong>Kombi Servisi</strong>
+        </a>
+        <span>: Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.</span>
       </li>
       <li>
-        • <a href="hizmet.html?service=Televizyon+Tamiri" title="Detay sayfasına git" style="font-weight: bold; color: #003366; text-decoration: none;">
-          Televizyon Tamiri
-        </a>: Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.
+        <a href="hizmet.html?service=Televizyon+Tamiri">
+          <strong>Televizyon Tamiri</strong>
+        </a>
+        <span>: Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.</span>
       </li>
     </ul>
+    
     
     
 
