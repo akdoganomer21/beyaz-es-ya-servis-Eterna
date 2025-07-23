@@ -120,38 +120,75 @@
       font-size: 15px;
     }
 
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
     footer {
       background: #003366;
       color: white;
       text-align: center;
-      padding: 16px 12px;
+      padding: 24px 12px;
       font-size: 14px;
+      font-family: sans-serif;
     }
 
-    footer nav {
+    footer .brand {
+      font-size: 18px;
+      font-weight: bold;
       margin-bottom: 8px;
     }
 
-    footer nav a {
-    color: white;
-    margin: 6px 10px;             /* dış boşluk */
-    padding: 12px 14px;           /* iç boşluk: dokunma alanı artırıldı */
-    text-decoration: none;
-    display: inline-block;        /* padding çalışsın diye */
-    font-size: 14px;
-    line-height: 1.5;
+    footer .tagline {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ddd;
     }
 
+    footer nav {
+      margin-bottom: 12px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 6px 10px;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
     footer nav a:hover {
       text-decoration: underline;
+    }
+
+    footer .social {
+      margin: 12px 0;
+    }
+
+    footer .social a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #ddd;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    footer .social a:hover {
+      color: #ffffff;
     }
 
     footer small {
       display: block;
       margin-top: 6px;
       font-size: 12px;
-      color: #ddd;
+      color: #bbb;
     }
 
     @media (max-width: 600px) {
@@ -277,20 +314,50 @@
     <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş cihazlara yönelik özel servis hizmeti sunmaktadır.</p>
   </main>
 
-  <footer>
-    <nav>
-      <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="hizmetler.html">Hizmetlerimiz</a>
-        <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="iletisim.html">İletişim</a>
-        <a href="gizlilik-politikasi.html">Gizlilik</a>
-        <a href="kvkk.html">KVKK</a>
-      </nav>
-    </nav>
-    <small>&copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.</small>
-    <small>Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.</small>
+  <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <!-- Hizmetler -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
+          <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
+          <li><a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri" style="color: #ddd; text-decoration: none;">Çamaşır Makinesi Tamiri</a></li>
+          <li><a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı" style="color: #ddd; text-decoration: none;">Bulaşık Makinesi Bakımı</a></li>
+          <li><a href="hizmet.html?service=Fırın+Onarımı" style="color: #ddd; text-decoration: none;">Fırın Onarımı</a></li>
+          <li><a href="hizmet.html?service=Klima+Servisi" style="color: #ddd; text-decoration: none;">Klima Servisi</a></li>
+          <li><a href="hizmet.html?service=Kombi+Servisi" style="color: #ddd; text-decoration: none;">Kombi Servisi</a></li>
+          <li><a href="hizmet.html?service=Televizyon+Tamiri" style="color: #ddd; text-decoration: none;">Televizyon Tamiri</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kurumsal -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
+          <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
+          <li><a href="gizlilik-politikasi.html" style="color: #ddd; text-decoration: none;">Gizlilik Politikası</a></li>
+          <li><a href="kvkk.html" style="color: #ddd; text-decoration: none;">KVKK</a></li>
+        </ul>
+      </div>
+  
+      <!-- Destek -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
+        <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
+        <p style="font-size: 20px; font-weight: bold; color: #fff;">+90 (537) 204 01 91</p>
+        <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
+      </div>
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; font-size: 12px; color: #ccc;">
+      &copy; 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır. Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
+    </div>
   </footer>
+  
+  
+  
 
   <script>
     function toggleMenu() {
