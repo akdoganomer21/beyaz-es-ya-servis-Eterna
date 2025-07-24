@@ -436,6 +436,7 @@
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
         <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
     </div>
@@ -455,38 +456,55 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   
-    // Şirket verileri merkezi olarak buradan yönetilir
+    // Merkezi şirket verileri
     const siteData = {
       businessName: "Beyaz Eşya Servisi",
       phone: "+905372040191",
       formattedPhone: "+90 (537) 204 01 91",
-      address: "Atatürk Mahallesi Servis Sk. No:3, Adana",
+      address: {
+        street: "Atatürk Mahallesi Servis Sk. No:3",
+        city: "Adana",
+        region: "TR",
+        postalCode: "01000"
+      },
       websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
-      vergiNo: "1234567890",
+      logo: "favicon.svg",
+      vergiNo: "1234567890"
     };
   
     // DOM yüklendiğinde tüm alanları güncelle
     document.addEventListener("DOMContentLoaded", function () {
-      // Arama butonu linki güncelle
+      // Arama butonu
       const callBtn = document.getElementById("call-button");
       if (callBtn) {
         callBtn.setAttribute("href", `tel:${siteData.phone}`);
       }
   
-      // Footer alanlarını güncelle
+      // Footer telefon
       const footerPhone = document.getElementById("footerPhone");
       if (footerPhone) {
-        footerPhone.innerText = siteData.phoneFormatted;
+        footerPhone.textContent = siteData.formattedPhone;
       }
   
+      // Footer adres
+      const footerAdres = document.getElementById("footerAdres");
+      if (footerAdres) {
+        footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city} ${siteData.address.postalCode}`;
+      }
+  
+      // Footer şirket adı
       const footerCompany = document.getElementById("footerCompany");
       if (footerCompany) {
-        footerCompany.innerText = siteData.businessName;
+        footerCompany.textContent = siteData.businessName;
+      }
+  
+      // Favicon güncellemesi
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) {
+        logoEl.setAttribute("href", siteData.logo);
       }
     });
-  </script>
-  
-  
+  </script>  
 
   <script type="application/ld+json">
   {

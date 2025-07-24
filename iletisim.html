@@ -274,8 +274,8 @@
   <header>
     <div class="navbar">
       <div class="logo">
-        <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
-      </div>
+        <a href="index.html" style="color: white; text-decoration: none;" id="firmaAdi">Beyaz Eşya Servisi</a>
+        </div>
       <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
@@ -302,12 +302,21 @@
     <h2>İletişim Bilgileri</h2>
     <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Ekibimiz size mümkün olan en kısa sürede dönüş yapacaktır. İster arayın, ister e-posta gönderin, size yardımcı olmaktan memnuniyet duyarız.</p>
 
-    <div class="contact-item"><span>📞</span><a href="tel:+905372040191" style="color:#004080; text-decoration: underline;">+90 (537) 204 01 91</a></div>
-    <div class="contact-item"><span>✉️</span>beyazesyaservis@example.com</div>
-    <div class="contact-item"><span>📍</span>Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN</div>
-    <div class="contact-item"><span>⏰</span>Pzt-Cmt: 09:00 - 19:00 | Pazar: Kapalı</div>
+    <div class="contact-item">
+      <span>📞</span>
+      <a id="iletisimTel" style="color:#004080; text-decoration: underline;">Telefon</a>
+    </div>
+    <div class="contact-item">
+      <span>✉️</span>
+      <span id="iletisimMail">E-posta</span>
+    </div>
+    <div class="contact-item">
+      <span>📍</span>
+      <span id="iletisimAdres">Adres</span>
+    </div>
+    
 
-    <a class="call-button" href="tel:+905372040191">📞 Şimdi Arayın</a>
+    <a class="call-button" id="callBtn" href="#">📞 Şimdi Arayın</a>
   </main>
 
   <section style="padding: 40px 20px; background: #eef3f8;">
@@ -390,7 +399,8 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p style="font-size: 20px; font-weight: bold; color: #fff;">+90 (537) 204 01 91</p>
+        <p id="footerTel" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc; margin-top: 8px;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
     </div>
@@ -408,7 +418,46 @@
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
+
+    const siteData = {
+      name: "Beyaz Eşya Servisi",
+      phone: "+905372040191",
+      formattedPhone: "+90 (537) 204 01 91",
+      email: "beyazesyaservis@example.com",
+      address: "Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir/MERSİN",
+      logo: "favicon.svg",
+      year: new Date().getFullYear()
+    };
+  
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("#firmaAdi").forEach(el => el.textContent = siteData.name);
+      
+      const callBtn = document.getElementById("callBtn");
+      if (callBtn) callBtn.href = `tel:${siteData.phone}`;
+
+      const tel1 = document.getElementById("iletisimTel");
+      if (tel1) {
+        tel1.textContent = siteData.formattedPhone;
+        tel1.href = `tel:${siteData.phone}`;
+      }
+      const tel2 = document.getElementById("footerTel");
+      if (tel2) tel2.textContent = siteData.formattedPhone;
+  
+      const mail = document.getElementById("iletisimMail");
+      if (mail) mail.textContent = siteData.email;
+  
+      const adres = document.getElementById("iletisimAdres");
+      if (adres) adres.textContent = siteData.address;
+  
+      const footerYil = document.getElementById("footerYil");
+      if (footerYil) footerYil.textContent = siteData.year;
+
+      const footerAdres = document.getElementById("footerAdres");
+      if (footerAdres) footerAdres.textContent = siteData.address;  
+      
+    });
   </script>
+
 
   <script type="application/ld+json">
   {

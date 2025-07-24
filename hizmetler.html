@@ -405,7 +405,8 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p style="font-size: 20px; font-weight: bold; color: #fff;">+90 (537) 204 01 91</p>
+        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc; margin-top: 8px;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
     </div>
@@ -420,70 +421,61 @@
   </footer>
 
   <script>
+    // Menü aç/kapa fonksiyonu
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
   
+    // Merkezi şirket verileri
+    const siteData = {
+      businessName: "Beyaz Eşya Servisi",
+      phone: "+905372040191",
+      formattedPhone: "+90 (537) 204 01 91",
+      address: {
+        street: "Atatürk Mahallesi Servis Sk. No:3",
+        city: "Adana",
+        region: "TR",
+        postalCode: "01000"
+      },
+      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+      logo: "favicon.svg",
+      vergiNo: "1234567890"
+    };
+  
+    // DOM yüklendiğinde tüm alanları güncelle
     document.addEventListener("DOMContentLoaded", function () {
-      const hizmetler = [
-        {
-          ad: "Beyaz Eşya Servisi",
-          link: "hizmet.html?service=Beyaz+Eşya+Servisi",
-          aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
-        },
-        {
-          ad: "Buzdolabı Servisi",
-          link: "hizmet.html?service=Buzdolabı+Teknik+Servisi",
-          aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
-        },
-        {
-          ad: "Çamaşır Makinesi Tamiri",
-          link: "hizmet.html?service=Çamaşır+Makinesi+Tamiri",
-          aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
-        },
-        {
-          ad: "Bulaşık Makinesi Bakımı",
-          link: "hizmet.html?service=Bulaşık+Makinesi+Bakımı",
-          aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
-        },
-        {
-          ad: "Fırın Onarımı",
-          link: "hizmet.html?service=Fırın+Onarımı",
-          aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
-        },
-        {
-          ad: "Klima Servisi",
-          link: "hizmet.html?service=Klima+Servisi",
-          aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
-        },
-        {
-          ad: "Kombi Servisi",
-          link: "hizmet.html?service=Kombi+Servisi",
-          aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
-        },
-        {
-          ad: "Televizyon Tamiri",
-          link: "hizmet.html?service=Televizyon+Tamiri",
-          aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
-        }
-      ];
+      // Arama butonu
+      const callBtn = document.getElementById("call-button");
+      if (callBtn) {
+        callBtn.setAttribute("href", `tel:${siteData.phone}`);
+      }
   
-      const container = document.getElementById("hizmetListesi");
+      // Footer telefon
+      const footerPhone = document.getElementById("footerPhone");
+      if (footerPhone) {
+        footerPhone.textContent = siteData.formattedPhone;
+      }
   
-      if (container) {
-        hizmetler.forEach(hizmet => {
-          const li = document.createElement("li");
-          li.innerHTML = `
-            <a href="${hizmet.link}">
-              <strong>${hizmet.ad}</strong>
-            </a>
-            <span>${hizmet.aciklama}</span>
-          `;
-          container.appendChild(li);
-        });
+      // Footer adres
+      const footerAdres = document.getElementById("footerAdres");
+      if (footerAdres) {
+        footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city} ${siteData.address.postalCode}`;
+      }
+  
+      // Footer şirket adı
+      const footerCompany = document.getElementById("footerCompany");
+      if (footerCompany) {
+        footerCompany.textContent = siteData.businessName;
+      }
+  
+      // Favicon güncellemesi
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) {
+        logoEl.setAttribute("href", siteData.logo);
       }
     });
   </script>
+  
   
 
   <script type="application/ld+json">
