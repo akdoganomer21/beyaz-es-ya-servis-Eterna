@@ -266,7 +266,7 @@
   </header>
 
   <main>
-    <h2>Gizlilik Politikası</h2>
+    <h1>Gizlilik Politikası</h1>
     <p>Web sitemizi ziyaret ettiğinizde, gizliliğinize ve kişisel verilerinizin korunmasına büyük önem veririz. İşte uyguladığımız temel gizlilik ilkeleri:</p>
 
     <ol>
@@ -395,19 +395,16 @@
     };
   
     document.addEventListener("DOMContentLoaded", function () {
-      const callBtn = document.getElementById("call-button");
-      if (callBtn) callBtn.setAttribute("href", `tel:${siteData.phone}`);
-  
       const footerTel = document.getElementById("footerTel");
       if (footerTel) footerTel.textContent = siteData.formattedPhone;
-  
-      const navbarFirma = document.getElementById("navbarFirma");
-      if (navbarFirma) navbarFirma.textContent = siteData.businessName;
   
       const footerAdres = document.getElementById("footerAdres");
       if (footerAdres) {
         footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city} ${siteData.address.postalCode}`;
       }
+  
+      const navbarFirma = document.getElementById("navbarFirma");
+      if (navbarFirma) navbarFirma.textContent = siteData.businessName;
   
       const footerCompany = document.getElementById("footerCompany");
       if (footerCompany) footerCompany.textContent = siteData.businessName;
@@ -415,7 +412,7 @@
       const logoEl = document.querySelector("link[rel='icon']");
       if (logoEl) logoEl.setAttribute("href", siteData.logo);
     });
-    </script>
+  </script>  
 
   <script type="application/ld+json">
     {

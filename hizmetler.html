@@ -270,6 +270,7 @@
 <body>
 
   <header>
+
     <div class="navbar">
       <div class="logo">Beyaz Eşya Servisi</div>
       <button class="burger" onclick="toggleMenu()">☰</button>
@@ -287,71 +288,19 @@
             <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
             <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
-          
-          
         </div>
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="iletisim.html">İletişim</a>
       </div>
     </div>
+
   </header>
 
   <main>
+
     <h1>Hizmetlerimiz</h1>
     <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
-    <ul class="hizmet-listesi">
-      <li>
-        <a href="hizmet.html?service=Beyaz+Eşya+Servisi">
-          <strong>Beyaz Eşya Servisi</strong>
-        </a>
-        <span>Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">
-          <strong>Buzdolabı Servisi</strong>
-        </a>
-        <span>Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">
-          <strong>Çamaşır Makinesi Tamiri</strong>
-        </a>
-        <span>Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">
-          <strong>Bulaşık Makinesi Bakımı</strong>
-        </a>
-        <span>Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Fırın+Onarımı">
-          <strong>Fırın Onarımı</strong>
-        </a>
-        <span>Isıtmama, düğme sorunları, cam değişimi gibi işlemler.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Klima+Servisi">
-          <strong>Klima Servisi</strong>
-        </a>
-        <span>Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Kombi+Servisi">
-          <strong>Kombi Servisi</strong>
-        </a>
-        <span>Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.</span>
-      </li>
-      <li>
-        <a href="hizmet.html?service=Televizyon+Tamiri">
-          <strong>Televizyon Tamiri</strong>
-        </a>
-        <span>Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.</span>
-      </li>
-    </ul>
-    
-    
-    
+    <ul class="hizmet-listesi" id="hizmetListesi"></ul>
 
     <section style="padding: 40px 20px; background: #eef3f8;">
       <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
@@ -401,8 +350,8 @@
     </section>
     
     <p><strong>NOT: </strong>Detaylı bilgi için her hizmetin ilgili sayfasını ziyaret edebilir veya <a href="iletisim.html">iletişim</a> kurabilirsiniz.</p>
+
   </main>
-  
   
 
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
@@ -453,10 +402,87 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
+  // Menü aç/kapa
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  // Hizmetler dizisi ve listeleme
+  const hizmetler = [
+    {
+      ad: "Beyaz Eşya Servisi",
+      aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
+    },
+    {
+      ad: "Buzdolabı Teknik Servisi",
+      aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
+    },
+    {
+      ad: "Çamaşır Makinesi Tamiri",
+      aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
+    },
+    {
+      ad: "Bulaşık Makinesi Bakımı",
+      aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
+    },
+    {
+      ad: "Fırın Onarımı",
+      aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
+    },
+    {
+      ad: "Klima Servisi",
+      aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
+    },
+    {
+      ad: "Kombi Servisi",
+      aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
+    },
+    {
+      ad: "Televizyon Tamiri",
+      aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
     }
+  ];
+
+  function encodeForUrl(text) {
+    return encodeURIComponent(text);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hizmetleri listele
+    const hizmetListesi = document.getElementById("hizmetListesi");
+    if (hizmetListesi) {
+      hizmetler.forEach(hizmet => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `hizmet.html?service=${encodeForUrl(hizmet.ad)}`;
+        link.innerHTML = `<strong>${hizmet.ad}</strong>`;
+        const desc = document.createElement("span");
+        desc.textContent = hizmet.aciklama;
+        li.appendChild(link);
+        li.appendChild(desc);
+        hizmetListesi.appendChild(li);
+      });
+    }
+
+    // Şirket verilerini footer’a yerleştir
+    const siteData = {
+      name: "Beyaz Eşya Servisi",
+      phone: "+905372040191",
+      formattedPhone: "+90 (537) 204 01 91",
+      email: "beyazesyaservis@example.com",
+      address: "Çiftlikköy Mahallesi Atatürk Caddesi No:10, Yenişehir / MERSİN",
+      url: "https://beyaz-esya-servis-eterna.netlify.app/",
+      logo: "favicon.svg"
+    };
+
+    const tel = document.getElementById("footerTel");
+    const adres = document.getElementById("footerAdres");
+
+    if (tel) tel.textContent = siteData.formattedPhone;
+    if (adres) adres.textContent = siteData.address;
+  });
   </script>
+
 
 </body>
 </html>
