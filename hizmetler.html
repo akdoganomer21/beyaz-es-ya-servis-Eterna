@@ -233,51 +233,70 @@
       .dropdown-content a {
         color: #fff;
       }
+      
     }
     .hizmet-listesi {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
 
-.hizmet-listesi li {
-  background-color: #f0f8ff;
-  border-left: 5px solid #003366;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+    .hizmet-listesi li {
+      background-color: #f0f8ff;
+      border-left: 5px solid #003366;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
 
-.hizmet-listesi li:hover {
-  background-color: #e6f3ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+    .hizmet-listesi li:hover {
+      background-color: #e6f3ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-.hizmet-listesi a {
-  color: #003366;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 4px;
-}
+    .hizmet-listesi a {
+      color: #003366;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
 
-.hizmet-listesi a::after {
-  content: " →";
-  font-weight: normal;
-  font-size: 16px;
-  color: #0077cc;
-}
+    .hizmet-listesi a::after {
+      content: " →";
+      font-weight: normal;
+      font-size: 16px;
+      color: #0077cc;
+    }
 
-.hizmet-listesi span {
-  display: block;
-  font-size: 14px;
-  color: #333;
-  line-height: 1.5;
-}
+    .hizmet-listesi span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .sticky-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: background 0.3s ease;
+    }
+
+    .sticky-call:hover {
+      background-color: #218838;
+    }
 
 
   </style>
@@ -430,69 +449,47 @@
   </footer>
 
   <script>
-  // Menü aç/kapa
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-
-  // Hizmetler dizisi ve listeleme
-  const hizmetler = [
-    {
-      ad: "Beyaz Eşya Servisi",
-      aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
-    },
-    {
-      ad: "Buzdolabı Teknik Servisi",
-      aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
-    },
-    {
-      ad: "Çamaşır Makinesi Tamiri",
-      aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
-    },
-    {
-      ad: "Bulaşık Makinesi Bakımı",
-      aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
-    },
-    {
-      ad: "Fırın Onarımı",
-      aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
-    },
-    {
-      ad: "Klima Servisi",
-      aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
-    },
-    {
-      ad: "Kombi Servisi",
-      aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
-    },
-    {
-      ad: "Televizyon Tamiri",
-      aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
+    // Menü aç/kapa
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
     }
-  ];
-
-  function encodeForUrl(text) {
-    return encodeURIComponent(text);
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Hizmetleri listele
-    const hizmetListesi = document.getElementById("hizmetListesi");
-    if (hizmetListesi) {
-      hizmetler.forEach(hizmet => {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.href = `hizmet.html?service=${encodeForUrl(hizmet.ad)}`;
-        link.innerHTML = `<strong>${hizmet.ad}</strong>`;
-        const desc = document.createElement("span");
-        desc.textContent = hizmet.aciklama;
-        li.appendChild(link);
-        li.appendChild(desc);
-        hizmetListesi.appendChild(li);
-      });
-    }
-
-    // Şirket verilerini footer’a yerleştir
+  
+    // Hizmet verileri
+    const hizmetler = [
+      {
+        ad: "Beyaz Eşya Servisi",
+        aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
+      },
+      {
+        ad: "Buzdolabı Teknik Servisi",
+        aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
+      },
+      {
+        ad: "Çamaşır Makinesi Tamiri",
+        aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
+      },
+      {
+        ad: "Bulaşık Makinesi Bakımı",
+        aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
+      },
+      {
+        ad: "Fırın Onarımı",
+        aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
+      },
+      {
+        ad: "Klima Servisi",
+        aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
+      },
+      {
+        ad: "Kombi Servisi",
+        aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
+      },
+      {
+        ad: "Televizyon Tamiri",
+        aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
+      }
+    ];
+  
     const siteData = {
       name: "Beyaz Eşya Servisi",
       phone: "+905372040191",
@@ -502,14 +499,42 @@
       url: "https://beyaz-esya-servis-eterna.netlify.app/",
       logo: "favicon.svg"
     };
-
-    const tel = document.getElementById("footerTel");
-    const adres = document.getElementById("footerAdres");
-
-    if (tel) tel.textContent = siteData.formattedPhone;
-    if (adres) adres.textContent = siteData.address;
-  });
+  
+    function encodeForUrl(text) {
+      return encodeURIComponent(text);
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hizmet listesini oluştur
+      const hizmetListesi = document.getElementById("hizmetListesi");
+      if (hizmetListesi) {
+        hizmetler.forEach(hizmet => {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `hizmet.html?service=${encodeForUrl(hizmet.ad)}`;
+          link.innerHTML = `<strong>${hizmet.ad}</strong>`;
+          const desc = document.createElement("span");
+          desc.textContent = hizmet.aciklama;
+          li.appendChild(link);
+          li.appendChild(desc);
+          hizmetListesi.appendChild(li);
+        });
+      }
+  
+      // Footer bilgileri
+      const tel = document.getElementById("footerTel");
+      const adres = document.getElementById("footerAdres");
+      if (tel) tel.textContent = siteData.formattedPhone;
+      if (adres) adres.textContent = siteData.address;
+  
+      // Sticky Call Butonu
+      const stickyBtn = document.getElementById("stickyCall");
+      if (stickyBtn) {
+        stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
+      }
+    });
   </script>
+  
 
   <script type="application/ld+json">
   {
@@ -638,6 +663,7 @@
   }
   </script>
   
-  
+  <a id="stickyCall" class="sticky-call">📞 Hemen Ara</a>
+
 </body>
 </html>
