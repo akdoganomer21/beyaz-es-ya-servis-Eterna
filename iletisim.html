@@ -301,19 +301,28 @@
   <main>
     <h2>İletişim Bilgileri</h2>
     <p>Servis talebi, ürün desteği ya da bilgi almak için aşağıdaki bilgiler üzerinden bizimle iletişime geçebilirsiniz. Ekibimiz size mümkün olan en kısa sürede dönüş yapacaktır. İster arayın, ister e-posta gönderin, size yardımcı olmaktan memnuniyet duyarız.</p>
-
-    <div class="contact-item">
-      <span>📞</span>
-      <a id="iletisimTel" style="color:#004080; text-decoration: underline;">Telefon</a>
-    </div>
-    <div class="contact-item">
-      <span>✉️</span>
-      <span id="iletisimMail">E-posta</span>
-    </div>
-    <div class="contact-item">
-      <span>📍</span>
-      <span id="iletisimAdres">Adres</span>
-    </div>
+    <!-- İletişim Bilgilerimiz -->
+      <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+        <div style="width: 24px; margin-right: 8px; font-size: 18px;">📞</div>
+        <div style="flex: 1;">
+          <a id="iletisimTel" style="color:#004080; text-decoration: underline; word-break: break-word; font-size: 15px; display: inline-block;"></a>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+        <div style="width: 24px; margin-right: 8px; font-size: 18px;">✉️</div>
+        <div style="flex: 1;">
+          <span id="iletisimMail" style="word-break: break-word; font-size: 15px; display: inline-block;"></span>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+        <div style="width: 24px; margin-right: 8px; font-size: 18px;">📍</div>
+        <div style="flex: 1;">
+          <span id="iletisimAdres" style="word-break: break-word; font-size: 15px; display: inline-block;"></span>
+        </div>
+      </div>
+    
     
 
     <a class="call-button" id="callBtn" href="#">📞 Şimdi Arayın</a>
