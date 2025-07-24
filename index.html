@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" size="16x16" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KVKK kapsamında kişisel verilerin işlenmesi ve korunması politikamız hakkında detaylı bilgi." />
@@ -260,7 +261,7 @@
 
 </head>
 <body>
-
+  
   <header>
     <div class="navbar">
       <div class="logo">
@@ -293,9 +294,9 @@
     <section style="text-align: center; padding: 40px 20px;">
       <h1 style="font-size: 26px; color: #003366;">Güvenilir ve Hızlı Teknik Servis Hizmeti</h1>
       <p style="font-size: 16px; margin-top: 16px;">Beyaz eşyalarınızda yaşadığınız tüm teknik sorunlarda yanınızdayız. Garantisi sona ermiş cihazlar için aynı gün yerinde servis imkânı sunuyoruz.</p>
-      <a href="tel:+905372040191" style="display: inline-block; margin-top: 24px; background: #28a745; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px;">
+      <a id="call-button" style="display: inline-block; margin-top: 24px; background: #28a745; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px;">
         📞 Bizi Hemen Arayın
-      </a>
+      </a>        
     </section>
 
     <!-- NEDEN BİZ -->
@@ -393,6 +394,7 @@
 
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+      
       <!-- Hizmetler -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h4>
@@ -423,7 +425,7 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p style="font-size: 20px; font-weight: bold; color: #fff;">+90 (537) 204 01 91</p>
+        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
     </div>
@@ -432,16 +434,49 @@
       <div class="warning">
         ⚠️ UYARI: Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
       </div><br>
-      <small>© 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.
-      </small>
+      <small>© 2025 <span id="footerCompany"></span>. Tüm Hakları Saklıdır.</small>
     </div>
   </footer>
+  
 
   <script>
+    // Menü aç/kapa fonksiyonu
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
+  
+    // Şirket verileri merkezi olarak buradan yönetilir
+    const siteData = {
+      businessName: "Beyaz Eşya Servisi",
+      phone: "+905372040191",
+      formattedPhone: "+90 (537) 204 01 91",
+      address: "Atatürk Mahallesi Servis Sk. No:3, Adana",
+      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+      vergiNo: "1234567890",
+    };
+  
+    // DOM yüklendiğinde tüm alanları güncelle
+    document.addEventListener("DOMContentLoaded", function () {
+      // Arama butonu linki güncelle
+      const callBtn = document.getElementById("call-button");
+      if (callBtn) {
+        callBtn.setAttribute("href", `tel:${siteData.phone}`);
+      }
+  
+      // Footer alanlarını güncelle
+      const footerPhone = document.getElementById("footerPhone");
+      if (footerPhone) {
+        footerPhone.innerText = siteData.phoneFormatted;
+      }
+  
+      const footerCompany = document.getElementById("footerCompany");
+      if (footerCompany) {
+        footerCompany.innerText = siteData.businessName;
+      }
+    });
   </script>
+  
+  
 
   <script type="application/ld+json">
   {
