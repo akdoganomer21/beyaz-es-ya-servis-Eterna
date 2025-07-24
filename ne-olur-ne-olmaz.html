@@ -312,7 +312,56 @@
   <main>
     <h1>Hizmetlerimiz</h1>
     <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
-    <ul class="hizmet-listesi" id="hizmetListesi"></ul>
+    <ul class="hizmet-listesi">
+      <li>
+        <a href="hizmet.html?service=Beyaz+Eşya+Servisi">
+          <strong>Beyaz Eşya Servisi</strong>
+        </a>
+        <span>Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">
+          <strong>Buzdolabı Servisi</strong>
+        </a>
+        <span>Soğutmama, ses yapma, çalışmama gibi arızaların onarımı.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">
+          <strong>Çamaşır Makinesi Tamiri</strong>
+        </a>
+        <span>Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">
+          <strong>Bulaşık Makinesi Bakımı</strong>
+        </a>
+        <span>Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Fırın+Onarımı">
+          <strong>Fırın Onarımı</strong>
+        </a>
+        <span>Isıtmama, düğme sorunları, cam değişimi gibi işlemler.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Klima+Servisi">
+          <strong>Klima Servisi</strong>
+        </a>
+        <span>Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Kombi+Servisi">
+          <strong>Kombi Servisi</strong>
+        </a>
+        <span>Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti.</span>
+      </li>
+      <li>
+        <a href="hizmet.html?service=Televizyon+Tamiri">
+          <strong>Televizyon Tamiri</strong>
+        </a>
+        <span>Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek.</span>
+      </li>
+    </ul>
 
     <p style="text-align: center; margin: 40px 0;">
       <a href="tel:+905372040191" style="display: inline-block; padding: 16px 32px; font-size: 20px; font-weight: bold; color: white; background-color: #28a745; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#218838'" onmouseout="this.style.backgroundColor='#28a745'" onmousedown="this.style.backgroundColor='#1e7e34'" onmouseup="this.style.backgroundColor='#218838'">
@@ -423,68 +472,7 @@
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const hizmetler = [
-        {
-          ad: "Beyaz Eşya Servisi",
-          link: "hizmet.html?service=Beyaz+Eşya+Servisi",
-          aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
-        },
-        {
-          ad: "Buzdolabı Servisi",
-          link: "hizmet.html?service=Buzdolabı+Teknik+Servisi",
-          aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
-        },
-        {
-          ad: "Çamaşır Makinesi Tamiri",
-          link: "hizmet.html?service=Çamaşır+Makinesi+Tamiri",
-          aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
-        },
-        {
-          ad: "Bulaşık Makinesi Bakımı",
-          link: "hizmet.html?service=Bulaşık+Makinesi+Bakımı",
-          aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
-        },
-        {
-          ad: "Fırın Onarımı",
-          link: "hizmet.html?service=Fırın+Onarımı",
-          aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
-        },
-        {
-          ad: "Klima Servisi",
-          link: "hizmet.html?service=Klima+Servisi",
-          aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
-        },
-        {
-          ad: "Kombi Servisi",
-          link: "hizmet.html?service=Kombi+Servisi",
-          aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
-        },
-        {
-          ad: "Televizyon Tamiri",
-          link: "hizmet.html?service=Televizyon+Tamiri",
-          aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
-        }
-      ];
-  
-      const container = document.getElementById("hizmetListesi");
-  
-      if (container) {
-        hizmetler.forEach(hizmet => {
-          const li = document.createElement("li");
-          li.innerHTML = `
-            <a href="${hizmet.link}">
-              <strong>${hizmet.ad}</strong>
-            </a>
-            <span>${hizmet.aciklama}</span>
-          `;
-          container.appendChild(li);
-        });
-      }
-    });
   </script>
-  
 
   <script type="application/ld+json">
   {
