@@ -17,8 +17,6 @@
   <meta name="twitter:description" content="Kişisel verilerin işlenmesine dair aydınlatma metnimizi buradan inceleyebilirsiniz." />
   <meta name="twitter:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
 
-  <title>KVKK | Beyaz Eşya Servisi</title>
-
   <style>
     * {
       margin: 0;
@@ -243,7 +241,7 @@
   <header>
     <div class="navbar">
       <div class="logo">
-        <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
+        <a href="index.html" id="firmaAdi" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
       </div>
       <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
@@ -365,7 +363,8 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p style="font-size: 20px; font-weight: bold; color: #fff;">+90 (537) 204 01 91</p>
+        <p id="footerTel" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
     </div>
@@ -380,10 +379,48 @@
   </footer>
 
   <script>
+    // Şirket bilgileri merkezi yapı
+    const siteData = {
+      name: "Beyaz Eşya Servisi",
+      phone: "+905372040191",
+      formattedPhone: "+90 (537) 204 01 91",
+      address: {
+        street: "Atatürk Mahallesi Servis Sk. No:3",
+        city: "Adana",
+        region: "TR",
+        postalCode: "01000"
+      },
+      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+      logo: "favicon.svg",
+      vergiNo: "1234567890"
+    };
+  
+    // Menü açma işlevi
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
+  
+    // DOM yüklendikten sonra tüm bilgileri yerine yerleştir
+    window.addEventListener("DOMContentLoaded", () => {
+      // Firma adı
+      document.querySelectorAll("#firmaAdi").forEach(el => el.textContent = siteData.name);
+  
+      // Telefon
+      const tel = document.getElementById("footerTel");
+      if (tel) tel.textContent = siteData.formattedPhone;
+  
+      // Adres
+      const adres = document.getElementById("footerAdres");
+      if (adres) {
+        adres.textContent = `${siteData.address.street}, ${siteData.address.city}, ${siteData.address.region} ${siteData.address.postalCode}`;
+      }
+  
+      // Logo dinamikse değiştir (isteğe bağlı)
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) logoEl.href = siteData.logo;
+    });
   </script>
+  
   
   <script type="application/ld+json">
     {
