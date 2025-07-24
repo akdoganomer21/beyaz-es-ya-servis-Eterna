@@ -200,6 +200,22 @@
     footer .social a:hover {
       color: #ffffff;
     }
+    .scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #333;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    display: none;
+    z-index: 1000;
+  }
+  .scrollTopBtn:hover {
+    background-color: #555;}
+    
 
     footer small {
       display: block;
@@ -234,6 +250,7 @@
       .dropdown-content a {
         color: #fff;
       }
+
     }
   </style>
 </head>
@@ -2051,64 +2068,86 @@
     </div>
   </footer>
 
+  <a href="#" class="scrollTopBtn" id="scrollToTopBtn" aria-label="Yukarı Git">
+    ⬆️ </a>  
+
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const service = decodeURIComponent(params.get("service") || "");
+    console.log("Seçilen hizmet:", service);
+
+    if (service) {
+      document.title = service + " | Beyaz Eşya Servisi";
+      document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
+      document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
+      document.getElementById("title").innerText = service;
     }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const params = new URLSearchParams(window.location.search);
-      const service = decodeURIComponent(params.get("service") || "");
-      console.log("Seçilen hizmet:", service);
-  
-      if (service) {
-        document.title = service + " | Beyaz Eşya Servisi";
-        document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
-        document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
-        document.getElementById("title").innerText = service;
-      }
-  
-      // Tüm bölümleri gizle alanı
-      const allIds = [
-        "çamaşır-makinesi",
-        "bulasik-makinesi-bakimi",
-        "buzdolabi-teknik-servisi",
-        "buzdolabi-servisi",
-        "klima-servisi",
-        "kombi-servisi",
-        "firin-onarimi",
-        "televizyon-tamiri",
-        "beyaz-esya-servisi"
-      ];
-  
-      allIds.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = "none";
-      });
 
-      // Seçilen hizmete göre doğru içeriği gösterme koşulları
-      if (service.includes("Çamaşır")) {
-        document.getElementById("çamaşır-makinesi").style.display = "block";
-      } else if (service.includes("Bulaşık")) {
-        document.getElementById("bulasik-makinesi-bakimi").style.display = "block";
-      } else if (service.includes("Buzdolabı")) {
-        document.getElementById("buzdolabi-teknik-servisi").style.display = "block";
-      } else if (service.includes("Buzdolabı Servisi")) {
-        document.getElementById("buzdolabi-servisi").style.display = "block";
-      } else if (service.includes("Klima")) {
-        document.getElementById("klima-servisi").style.display = "block";
-      } else if (service.includes("Kombi")) {
-        document.getElementById("kombi-servisi").style.display = "block";
-      } else if (service.includes("Fırın")) {
-        document.getElementById("firin-onarimi").style.display = "block";
-      } else if (service.includes("Televizyon")) {
-        document.getElementById("televizyon-tamiri").style.display = "block";
-      } else if (service.includes("Beyaz")) {
-        document.getElementById("beyaz-esya-servisi").style.display = "block";
-      }
+    const allIds = [
+      "çamaşır-makinesi",
+      "bulasik-makinesi-bakimi",
+      "buzdolabi-teknik-servisi",
+      "buzdolabi-servisi",
+      "klima-servisi",
+      "kombi-servisi",
+      "firin-onarimi",
+      "televizyon-tamiri",
+      "beyaz-esya-servisi"
+    ];
 
+    allIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = "none";
     });
+
+    if (service.includes("Çamaşır")) {
+      document.getElementById("çamaşır-makinesi").style.display = "block";
+    } else if (service.includes("Bulaşık")) {
+      document.getElementById("bulasik-makinesi-bakimi").style.display = "block";
+    } else if (service.includes("Buzdolabı Servisi")) {
+      document.getElementById("buzdolabi-servisi").style.display = "block";
+    } else if (service.includes("Buzdolabı")) {
+      document.getElementById("buzdolabi-teknik-servisi").style.display = "block";
+    } else if (service.includes("Klima")) {
+      document.getElementById("klima-servisi").style.display = "block";
+    } else if (service.includes("Kombi")) {
+      document.getElementById("kombi-servisi").style.display = "block";
+    } else if (service.includes("Fırın")) {
+      document.getElementById("firin-onarimi").style.display = "block";
+    } else if (service.includes("Televizyon")) {
+      document.getElementById("televizyon-tamiri").style.display = "block";
+    } else if (service.includes("Beyaz")) {
+      document.getElementById("beyaz-esya-servisi").style.display = "block";
+    }
+  });
+
+  // ⬆️ Scroll yukarı butonu
+  window.addEventListener("scroll", function () {
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (!scrollBtn) return;
+    if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (scrollBtn) {
+      scrollBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
   </script>
+
   
   <script type="application/ld+json">
     {
@@ -2228,6 +2267,7 @@
     }
   </script>
     
-    
+  <a id="stickyCall" class="sticky-call">📞 Hemen Ara</a>
+  
 </body>
 </html>

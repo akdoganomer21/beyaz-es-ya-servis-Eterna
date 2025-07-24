@@ -238,6 +238,25 @@
       color: #bbb;
     }
 
+    .sticky-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: background 0.3s ease;
+    }
+
+    .sticky-call:hover {
+      background-color: #218838;
+    }
+
     @media (max-width: 600px) {
       .nav-links {
         display: none;
@@ -454,7 +473,7 @@
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
-
+  
     const siteData = {
       name: "Beyaz Eşya Servisi",
       phone: "+905372040191",
@@ -470,12 +489,13 @@
       
       const callBtn = document.getElementById("callBtn");
       if (callBtn) callBtn.href = `tel:${siteData.phone}`;
-
+  
       const tel1 = document.getElementById("iletisimTel");
       if (tel1) {
         tel1.textContent = siteData.formattedPhone;
         tel1.href = `tel:${siteData.phone}`;
       }
+  
       const tel2 = document.getElementById("footerTel");
       if (tel2) tel2.textContent = siteData.formattedPhone;
   
@@ -487,12 +507,16 @@
   
       const footerYil = document.getElementById("footerYil");
       if (footerYil) footerYil.textContent = siteData.year;
-
+  
       const footerAdres = document.getElementById("footerAdres");
-      if (footerAdres) footerAdres.textContent = siteData.address;  
-      
+      if (footerAdres) footerAdres.textContent = siteData.address;
+  
+      // ⬇️ Sticky Call Butonu işlevi
+      const stickyCall = document.getElementById("stickyCall");
+      if (stickyCall) stickyCall.href = `tel:${siteData.phone}`;
     });
   </script>
+  
 
 
   <script type="application/ld+json">
