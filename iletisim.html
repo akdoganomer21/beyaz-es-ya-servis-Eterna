@@ -264,6 +264,24 @@
       .dropdown-content a {
         color: #fff;
       }
+      .sticky-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: background 0.3s ease;
+      }
+
+      .sticky-call:hover {
+      background-color: #218838;
+    }
     }
   </style>
 
@@ -593,7 +611,7 @@
   }
   </script>
     
-  
-  </body>
+  <a id="stickyCall" class="sticky-call">📞 Hemen Ara</a>
 
+</body>
 </html>
