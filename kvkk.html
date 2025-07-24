@@ -500,8 +500,8 @@ line-height: 1.5;
   <header>
     <div class="navbar">
       <div class="logo">
-        <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
-      </div>
+        <a id="navbarFirma" href="index.html" style="color: white; text-decoration: none;"></a>
+      </div>      
       <button class="burger" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
@@ -639,27 +639,8 @@ line-height: 1.5;
       </small>
     </div>
   </footer>
-  <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" size="16x16" href="favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Hizmet verdiğimiz teknik servis kategorileri. Buzdolabı, çamaşır makinesi, kombi ve daha fazlası." />
-    <meta name="keywords" content="Hizmetler, Teknik Servis, Beyaz Eşya, Kombi, Klima, Tamir, Bakım" />
-    <meta property="og:title" content="Tüm Servis Kategorileri | Beyaz Eşya Teknik Servis" />
-    <meta property="og:description" content="Tüm beyaz eşya servis kategorilerimizi görün ve cihazınıza en uygun tamir hizmetini seçin." />
-    <meta property="og:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
-    <meta property="og:url" content="https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html" />
-    <meta property="og:type" content="website" />
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tüm Servis Kategorileri | Beyaz Eşya Teknik Servis" />
-    <meta name="twitter:description" content="Tüm beyaz eşya servis kategorilerimizi görün ve cihazınıza en uygun tamir hizmetini seçin." />
-    <meta name="twitter:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
-    <title>Hizmetlerimiz | Beyaz Eşya Servisi</title>
-  
-  
-<script>
+
+  <script>
   const siteData = {
     businessName: "Beyaz Eşya Servisi",
     phone: "+905372040191",
@@ -682,6 +663,9 @@ line-height: 1.5;
     const footerTel = document.getElementById("footerTel");
     if (footerTel) footerTel.textContent = siteData.formattedPhone;
 
+    const navbarFirma = document.getElementById("navbarFirma");
+    if (navbarFirma) navbarFirma.textContent = siteData.businessName;
+
     const footerAdres = document.getElementById("footerAdres");
     if (footerAdres) {
       footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city} ${siteData.address.postalCode}`;
@@ -693,8 +677,7 @@ line-height: 1.5;
     const logoEl = document.querySelector("link[rel='icon']");
     if (logoEl) logoEl.setAttribute("href", siteData.logo);
   });
-</script>
-
+  </script>
     
   <script type="application/ld+json">
     {
