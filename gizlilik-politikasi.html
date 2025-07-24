@@ -384,10 +384,9 @@
       phone: "+905372040191",
       formattedPhone: "+90 (537) 204 01 91",
       address: {
-        street: "Atatürk Mahallesi Servis Sk. No:3",
-        city: "Adana",
+        street: "AAtatürk Mahallesi Servis Sk. No:3,",
+        city: "Yenişehir / Mersin",
         region: "TR",
-        postalCode: "01000"
       },
       websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
       logo: "favicon.svg",
@@ -400,7 +399,7 @@
   
       const footerAdres = document.getElementById("footerAdres");
       if (footerAdres) {
-        footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city} ${siteData.address.postalCode}`;
+        footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
       }
   
       const navbarFirma = document.getElementById("navbarFirma");
