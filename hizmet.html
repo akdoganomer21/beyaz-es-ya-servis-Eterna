@@ -2040,9 +2040,10 @@
 
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+      
       <!-- Hizmetler -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h4>
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
           <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
@@ -2057,7 +2058,7 @@
   
       <!-- Kurumsal -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h4>
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
           <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
@@ -2068,9 +2069,9 @@
   
       <!-- Destek -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h4 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h4>
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p id="footerTel" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
         <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
@@ -2080,90 +2081,106 @@
       <div class="warning">
         ⚠️ UYARI: Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
       </div><br>
-      <small>© 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.
-      </small>
+      <small>© 2025 <span id="footerCompany"></span>. Tüm Hakları Saklıdır.</small>
     </div>
   </footer>
 
   <a href="#" class="scrollTopBtn" id="scrollToTopBtn" aria-label="Yukarı Git">
     ⬆️ </a>  
 
-  <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const service = decodeURIComponent(params.get("service") || "");
-    console.log("Seçilen hizmet:", service);
-
-    if (service) {
-      document.title = service + " | Beyaz Eşya Servisi";
-      document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
-      document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
-      document.getElementById("title").innerText = service;
-    }
-
-    const allIds = [
-      "çamaşır-makinesi",
-      "bulasik-makinesi-bakimi",
-      "buzdolabi-teknik-servisi",
-      "buzdolabi-servisi",
-      "klima-servisi",
-      "kombi-servisi",
-      "firin-onarimi",
-      "televizyon-tamiri",
-      "beyaz-esya-servisi"
-    ];
-
-    allIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.style.display = "none";
-    });
-
-    if (service.includes("Çamaşır")) {
-      document.getElementById("çamaşır-makinesi").style.display = "block";
-    } else if (service.includes("Bulaşık")) {
-      document.getElementById("bulasik-makinesi-bakimi").style.display = "block";
-    } else if (service.includes("Buzdolabı Servisi")) {
-      document.getElementById("buzdolabi-servisi").style.display = "block";
-    } else if (service.includes("Buzdolabı")) {
-      document.getElementById("buzdolabi-teknik-servisi").style.display = "block";
-    } else if (service.includes("Klima")) {
-      document.getElementById("klima-servisi").style.display = "block";
-    } else if (service.includes("Kombi")) {
-      document.getElementById("kombi-servisi").style.display = "block";
-    } else if (service.includes("Fırın")) {
-      document.getElementById("firin-onarimi").style.display = "block";
-    } else if (service.includes("Televizyon")) {
-      document.getElementById("televizyon-tamiri").style.display = "block";
-    } else if (service.includes("Beyaz")) {
-      document.getElementById("beyaz-esya-servisi").style.display = "block";
-    }
-  });
-
-  // ⬆️ Scroll yukarı butonu
-  window.addEventListener("scroll", function () {
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (!scrollBtn) return;
-    if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (scrollBtn) {
-      scrollBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+      }
+    
+      const siteData = {
+        name: "Beyaz Eşya Servisi",
+        phone: "+90 (537) 204 01 91",
+        rawPhone: "+905372040191",
+        email: "info@beyazesyaservisi.com",
+        address: "Yenişehir / Mersin"
+      };
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const service = decodeURIComponent(params.get("service") || "");
+        console.log("Seçilen hizmet:", service);
+    
+        // Meta başlık ve içerikler
+        if (service) {
+          document.title = service + " | " + siteData.name;
+          document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
+          document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
+          const titleEl = document.getElementById("title");
+          if (titleEl) titleEl.innerText = service;
+        }
+    
+        // Footer bilgilerini yerleştir
+        const footerPhone = document.getElementById("footerPhone");
+        const footerAdres = document.getElementById("footerAdres");
+        const footerCompany = document.getElementById("footerCompany");
+    
+        if (footerPhone) footerPhone.textContent = siteData.phone;
+        if (footerAdres) footerAdres.textContent = siteData.address;
+        if (footerCompany) footerCompany.textContent = siteData.name;
+    
+        // Sayfa içeriği göster/gizle
+        const allIds = [
+          "çamaşır-makinesi",
+          "bulasik-makinesi-bakimi",
+          "buzdolabi-teknik-servisi",
+          "buzdolabi-servisi",
+          "klima-servisi",
+          "kombi-servisi",
+          "firin-onarimi",
+          "televizyon-tamiri",
+          "beyaz-esya-servisi"
+        ];
+    
+        allIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = "none";
+        });
+    
+        if (service.includes("Çamaşır")) {
+          document.getElementById("çamaşır-makinesi").style.display = "block";
+        } else if (service.includes("Bulaşık")) {
+          document.getElementById("bulasik-makinesi-bakimi").style.display = "block";
+        } else if (service.includes("Buzdolabı Servisi")) {
+          document.getElementById("buzdolabi-servisi").style.display = "block";
+        } else if (service.includes("Buzdolabı")) {
+          document.getElementById("buzdolabi-teknik-servisi").style.display = "block";
+        } else if (service.includes("Klima")) {
+          document.getElementById("klima-servisi").style.display = "block";
+        } else if (service.includes("Kombi")) {
+          document.getElementById("kombi-servisi").style.display = "block";
+        } else if (service.includes("Fırın")) {
+          document.getElementById("firin-onarimi").style.display = "block";
+        } else if (service.includes("Televizyon")) {
+          document.getElementById("televizyon-tamiri").style.display = "block";
+        } else if (service.includes("Beyaz")) {
+          document.getElementById("beyaz-esya-servisi").style.display = "block";
+        }
+    
+        // Scroll yukarı butonu
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+        if (scrollBtn) {
+          window.addEventListener("scroll", function () {
+            if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
+              scrollBtn.style.display = "block";
+            } else {
+              scrollBtn.style.display = "none";
+            }
+          });
+    
+          scrollBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
       });
-    }
-  });
-  </script>
+    </script>
+    
 
   
   <script type="application/ld+json">
