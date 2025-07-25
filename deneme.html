@@ -1,37 +1,32 @@
 
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <div class="dropdown">
+          <a href="hizmetler.html">Hizmetlerimiz</a>
+          <div class="dropdown-content">
+            <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
+            <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
+  </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="uzun-makale" style="max-width: 900px; margin: 24px auto; padding: 20px; background: white; border-radius: 6px;">
+  <section id="uzun-makale" style="max-width: 900px; margin: 24px auto; padding: 20px; background: white; border-radius: 6px;">
     <h2 style="font-size: 22px; color: #003366; margin-bottom: 20px; text-align: center;">
       Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon
     </h2>
@@ -1109,6 +1104,173 @@
           <li>Enerji Verimliliği ve Çevre Teknolojileri Araştırma Merkezi (EVD)</li>
         </ul>
     </div>
-</section>
+  </section>
 
-    
+
+  <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+      
+      <!-- Hizmetler -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
+          <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
+          <li><a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri" style="color: #ddd; text-decoration: none;">Çamaşır Makinesi Tamiri</a></li>
+          <li><a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı" style="color: #ddd; text-decoration: none;">Bulaşık Makinesi Bakımı</a></li>
+          <li><a href="hizmet.html?service=Fırın+Onarımı" style="color: #ddd; text-decoration: none;">Fırın Onarımı</a></li>
+          <li><a href="hizmet.html?service=Klima+Servisi" style="color: #ddd; text-decoration: none;">Klima Servisi</a></li>
+          <li><a href="hizmet.html?service=Kombi+Servisi" style="color: #ddd; text-decoration: none;">Kombi Servisi</a></li>
+          <li><a href="hizmet.html?service=Televizyon+Tamiri" style="color: #ddd; text-decoration: none;">Televizyon Tamiri</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kurumsal -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
+          <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
+          <li><a href="gizlilik-politikasi.html" style="color: #ddd; text-decoration: none;">Gizlilik Politikası</a></li>
+          <li><a href="kvkk.html" style="color: #ddd; text-decoration: none;">KVKK</a></li>
+        </ul>
+      </div>
+  
+      <!-- Destek -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
+        <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
+        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
+        <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
+      </div>
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; font-size: 16px; color: #ccc;">
+      <div class="warning">
+        ⚠️ UYARI: Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
+      </div><br>
+      <small>© 2025 <span id="footerCompany"></span>. Tüm Hakları Saklıdır.</small>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Beyaz Eşya Servisi Hizmetlerimiz",
+          "description": "Beyaz eşya, klima, kombi ve televizyon gibi cihazlar için sunduğumuz profesyonel teknik servis hizmetleri.",
+          "author": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beyaz Eşya Servisi",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg"
+            }
+          },
+          "mainEntityOfPage": "https://beyaz-esya-servis-eterna.netlify.app/hizmet.html",
+          "datePublished": "2025-07-23"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hizmetler",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Hizmet Detayı",
+              "item": "https://beyaz-esya-servis-eterna.netlify.app/hizmet.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Servis ücretiniz ne kadar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Servis ücreti yapılacak işlemlere göre değişir. Ücretsiz ön inceleme sonrası bilgi verilir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ne kadar sürede hizmet veriyorsunuz?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Genellikle aynı gün içinde servis yönlendirilir."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "name": "Beyaz Eşya Servisi",
+          "image": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg",
+          "telephone": "+905372040191",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Atatürk Mahallesi Servis Sk. No:3",
+            "addressLocality": "Adana",
+            "addressRegion": "TR",
+            "postalCode": "01000",
+            "addressCountry": "TR"
+          },
+          "url": "https://beyaz-esya-servis-eterna.netlify.app/",
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "priceRange": "₺₺",
+          "sameAs": [
+            "https://www.facebook.com/servishizmeti",
+            "https://www.instagram.com/servishizmeti"
+          ]
+        },
+        {
+          "@type": "QAPage",
+          "mainEntity": {
+            "@type": "Question",
+            "name": "Hangi cihazlara servis veriyorsunuz?",
+            "text": "Hangi cihazlara teknik servis veriyorsunuz?",
+            "answerCount": 1,
+            "author": {
+              "@type": "Person",
+              "name": "Beyza Çelik"
+            },
+            "datePublished": "2025-07-23",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon gibi cihazlara teknik servis sunuyoruz.",
+              "answerCount": 8,
+              "datePublished": "2025-07-23",
+              "url": "https://beyaz-esya-servis-eterna.netlify.app/hizmet.html#qa1",
+              "upvoteCount": 17,
+              "author": {
+                "@type": "Person",
+                "name": "Servis Destek Ekibi"
+              }
+            }
+          }
+        }
+      ]
+    }
+  </script>
+
+  <a id="stickyCall" class="sticky-call" style="display: inline-block; margin-top: 24px; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">📞 Hemen Ara
+</a>
