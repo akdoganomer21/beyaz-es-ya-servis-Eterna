@@ -249,6 +249,88 @@
     position: static;
     height: auto;
   }
+  /* Tüm hizmet blokları için */
+  .service-content {
+    min-height: 400px;
+    visibility: hidden;
+  }
+
+  /* Ana başlık */
+  .service-title {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 700;
+    min-height: 32px;
+  }
+
+  /* Alt başlık: Müşteri Yorumları */
+  .section-title {
+    font-size: 22px;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    min-height: 28px;
+  }
+
+  /* Paragraflar */
+  .service-content p {
+    min-height: 52px;
+    font-size: 16px;
+    color: #222;
+    margin: 0 0 16px;
+  }
+
+  /* Buton */
+  .call-button {
+    display: inline-block;
+    background-color: #198754;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+  }
+
+  /* Müşteri yorumlarını saran alan */
+  .comment-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Her bir yorum kutusu */
+  .comment-box {
+    flex: 1 1 280px;
+    max-width: 320px;
+    min-height: 180px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Yorum yapan kişinin adı */
+  .comment-box p:first-child {
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 8px;
+  }
+
+  /* Yorum metni */
+  .comment-box p:last-child {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+  }
+
 
     @media (max-width: 600px) {
       .nav-links {
@@ -310,51 +392,53 @@
   </header>
 
   <main>
-    <div id="beyaz-esya-servisi" class="service-content" style="min-height: 400px; visibility: hidden;">
-      <h1 style="font-size: 24px; color: #003366; margin-bottom: 24px; min-height: 32px; visibility: hidden; display: block;">
-        Beyaz Eşya Servisi
-      </h1>
+    <div id="beyaz-esya-servisi" class="service-content">
+      <h1 class="service-title">Beyaz Eşya Servisi</h1>
     
-      <p style="min-height: 52px; visibility: hidden; display: block;">Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir.</p>
+      <p>Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir.</p>
+      <p>Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar.</p>
+      <p>Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.</p>
     
-      <p style="min-height: 52px; visibility: hidden; display: block;">Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar.</p>
-    
-      <p style="min-height: 52px; visibility: hidden; display: block;">Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.</p>
-    
-      <p style="text-align: center; margin: 40px 0; visibility: hidden; display: block;">
-        <a id="call-button"
-          href="tel:+905372040191"
-          style="display: inline-block; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-          📞 Şimdi Arayın
-        </a>
+      <p style="text-align: center; margin: 40px 0;">
+        <a class="call-button" href="tel:+905372040191">📞 Şimdi Arayın</a>
       </p>
     
-      <section style="padding: 40px 20px; background: #eef3f8; visibility: hidden; display: block;">
-        <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px; min-height: 28px; visibility: hidden; display: block;">Müşteri Yorumlarımız</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Ayşe Demir</p>
-            <p style="font-size: 14px;">"Buzdolabımız aniden çalışmayı bıraktı. Aynı gün geldiler, sorunu çözüp gittiler."</p>
+      <section style="padding: 40px 20px; background: #eef3f8;">
+        <h2 class="section-title">Müşteri Yorumlarımız</h2>
+        <div class="comment-wrapper">
+    
+          <div class="comment-box">
+            <p>Ayşe Demir</p>
+            <p>"Buzdolabımız aniden çalışmayı bıraktı. Aynı gün geldiler, sorunu çözüp gittiler."</p>
           </div>
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Murat Özkan</p>
-            <p style="font-size: 14px;">"Tüm beyaz eşyalarımıza bakım yaptırdık. Her biri sessiz ve düzgün çalışıyor artık."</p>
+    
+          <div class="comment-box">
+            <p>Murat Özkan</p>
+            <p>"Tüm beyaz eşyalarımıza bakım yaptırdık. Her biri sessiz ve düzgün çalışıyor artık."</p>
           </div>
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Melike Koç</p>
-            <p style="font-size: 14px;">"Çamaşır makinemiz sıkma yapmıyordu, parçayı değiştirdiler. İlgili ve bilgili ekip."</p>
+    
+          <div class="comment-box">
+            <p>Melike Koç</p>
+            <p>"Çamaşır makinemiz sıkma yapmıyordu, parçayı değiştirdiler. İlgili ve bilgili ekip."</p>
           </div>
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Tuncay Aksoy</p>
-            <p style="font-size: 14px;">"Her sorunumuzu çözdüler. Bundan sonra başka servis aramam."</p>
+    
+          <div class="comment-box">
+            <p>Tuncay Aksoy</p>
+            <p>"Her sorunumuzu çözdüler. Bundan sonra başka servis aramam."</p>
           </div>
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Gülşen Yavuz</p>
-            <p style="font-size: 14px;">"Fırınım ısıtma yapmıyordu. Gerekli yedek parça hemen temin edildi. Tavsiye ederim."</p>
+    
+          <div class="comment-box">
+            <p>Gülşen Yavuz</p>
+            <p>"Fırınım ısıtma yapmıyordu. Gerekli yedek parça hemen temin edildi. Tavsiye ederim."</p>
           </div>
+    
         </div>
       </section>
     </div>
+    
+    
+    
+    
         
     <div id="buzdolabi-teknik-servisi" class="service-content" style="min-height: 400px; visibility: hidden;">
       <h1 style="font-size: 24px; color: #003366; margin-bottom: 24px; min-height: 32px;">
@@ -630,13 +714,9 @@
       </h1>
     
       <p style="min-height: 52px;">Kombiler sıcak su ve ısınma ihtiyaçlarını karşılar. Ancak zamanla basınç düşüklüğü, sıcak su gelmeme, sesli çalışma gibi arızalar meydana gelebilir.</p>
-    
       <p style="min-height: 52px;">Uzman ekibimiz eşanjör, anakart, fan ve sensörler dahil tüm parçaları test cihazlarıyla kontrol eder. Gereksiz parça değişimi yapılmaz.</p>
-    
       <p style="min-height: 52px;">Bakım sırasında toz temizliği, basınç ayarı, iyonizasyon testi ve kış/yaz modu kontrolleri gerçekleştirilir. Isı verimi yükseltilir.</p>
-    
       <p style="min-height: 52px;">Sayfa mobilde 1 saniyenin altında açılacak şekilde optimize edilmiştir. CSS sadeleştirilmiştir. Görsel kullanılmadan hızlı yüklenir.</p>
-    
       <p style="min-height: 52px;"><strong>Not:</strong> Yalnızca garantisi bitmiş kombilere hizmet verilmektedir.</p>
     
       <p style="text-align: center; margin: 40px 0;">
@@ -647,38 +727,48 @@
         </a>
       </p>
     
-      <section style="padding: 40px 20px; background: #eef3f8;">
-        <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Arzu Karagöz</p>
-            <p style="font-size: 14px;">"Kombi su akıtıyordu, hızlıca tamir edildi. Memnun kaldım."</p>
+      <section style="padding: 50px 16px; background: #eef3f8;">
+        <h2 style="text-align: center; color: #003366; font-size: 24px; font-weight: 700; margin-bottom: 40px;">
+          Müşteri Yorumlarımız
+        </h2>
+      
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+      
+          <!-- Yorum 1 -->
+          <div class="yorum-kutusu" style="flex: 1 1 280px; max-width: 320px; background: #ffffff; border: 1px solid #d0d5dd; padding: 20px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease; box-sizing: border-box;">
+            <p style="font-weight: 600; font-size: 16px; color: #003366; margin-bottom: 10px;">Arzu Karagöz</p>
+            <p style="font-size: 14px; color: #333333; line-height: 1.6;">"Kombi su akıtıyordu, hızlıca tamir edildi. Memnun kaldım."</p>
           </div>
-    
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Tolga Sevim</p>
-            <p style="font-size: 14px;">"Bakım sonrası hem daha iyi ısınıyor hem de fatura düştü."</p>
+      
+          <!-- Yorum 2 -->
+          <div class="yorum-kutusu" style="flex: 1 1 280px; max-width: 320px; background: #ffffff; border: 1px solid #d0d5dd; padding: 20px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease; box-sizing: border-box;">
+            <p style="font-weight: 600; font-size: 16px; color: #003366; margin-bottom: 10px;">Tolga Sevim</p>
+            <p style="font-size: 14px; color: #333333; line-height: 1.6;">"Bakım sonrası hem daha iyi ısınıyor hem de fatura düştü."</p>
           </div>
-    
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Melis Can</p>
-            <p style="font-size: 14px;">"Hata kodu görünüyordu, ekip gelip resetleyip sorunu çözdü."</p>
+      
+          <!-- Yorum 3 -->
+          <div class="yorum-kutusu" style="flex: 1 1 280px; max-width: 320px; background: #ffffff; border: 1px solid #d0d5dd; padding: 20px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease; box-sizing: border-box;">
+            <p style="font-weight: 600; font-size: 16px; color: #003366; margin-bottom: 10px;">Melis Can</p>
+            <p style="font-size: 14px; color: #333333; line-height: 1.6;">"Hata kodu görünüyordu, ekip gelip resetleyip sorunu çözdü."</p>
           </div>
-    
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">İsmail Yıldırım</p>
-            <p style="font-size: 14px;">"Petekler ısınmıyordu. Temizlik sonrası sıcacık oldu."</p>
+      
+          <!-- Yorum 4 -->
+          <div class="yorum-kutusu" style="flex: 1 1 280px; max-width: 320px; background: #ffffff; border: 1px solid #d0d5dd; padding: 20px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease; box-sizing: border-box;">
+            <p style="font-weight: 600; font-size: 16px; color: #003366; margin-bottom: 10px;">İsmail Yıldırım</p>
+            <p style="font-size: 14px; color: #333333; line-height: 1.6;">"Petekler ısınmıyordu. Temizlik sonrası sıcacık oldu."</p>
           </div>
-    
-          <div style="flex: 1 1 280px; min-height: 180px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-            <p style="font-weight: bold; color: #003366;">Yasemin Topçu</p>
-            <p style="font-size: 14px;">"Sadece arıza değil, nasıl kullanacağımı da detaylı anlattılar."</p>
+      
+          <!-- Yorum 5 -->
+          <div class="yorum-kutusu" style="flex: 1 1 280px; max-width: 320px; background: #ffffff; border: 1px solid #d0d5dd; padding: 20px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease; box-sizing: border-box;">
+            <p style="font-weight: 600; font-size: 16px; color: #003366; margin-bottom: 10px;">Yasemin Topçu</p>
+            <p style="font-size: 14px; color: #333333; line-height: 1.6;">"Sadece arıza değil, nasıl kullanacağımı da detaylı anlattılar."</p>
           </div>
-    
+      
         </div>
       </section>
+      
     </div>
+
     <div id="televizyon-tamiri" class="service-content" style="min-height: 400px; visibility: hidden;">
       <h1 style="font-size: 24px; color: #003366; margin-bottom: 24px; min-height: 32px; visibility: hidden; display: block;">
         Televizyon Tamiri
