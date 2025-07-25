@@ -2163,6 +2163,26 @@
           stickyBtn.setAttribute("href", `tel:${siteData.rawPhone}`);
         }
     
+        // Meta başlık ve içerikler + CLS düzeltmesi
+        const titleEl = document.getElementById("title");
+        const descEl = document.getElementById("description");
+    
+        if (service) {
+          document.title = service + " | " + siteData.name;
+          const descText = service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.";
+          document.querySelector("meta[name='description']").setAttribute("content", descText);
+          document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
+    
+          if (titleEl) {
+            titleEl.innerText = service;
+            titleEl.style.visibility = "visible"; // CLS için
+          }
+          if (descEl) {
+            descEl.innerText = descText;
+            descEl.style.visibility = "visible"; // CLS için
+          }
+        }
+    
         // Footer bilgileri
         const footerPhone = document.getElementById("footerPhone");
         const footerAdres = document.getElementById("footerAdres");
@@ -2186,27 +2206,32 @@
         ];
     
         allIds.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.style.display = "none";
-        });
+  const el = document.getElementById(id);
+  if (el) el.classList.remove("active");
+});
+
     
-        let matchedId = null;
-        if (service.includes("Çamaşır")) matchedId = "çamaşır-makinesi";
-        else if (service.includes("Bulaşık")) matchedId = "bulasik-makinesi-bakimi";
-        else if (service.includes("Buzdolabı Servisi")) matchedId = "buzdolabi-servisi";
-        else if (service.includes("Buzdolabı")) matchedId = "buzdolabi-teknik-servisi";
-        else if (service.includes("Klima")) matchedId = "klima-servisi";
-        else if (service.includes("Kombi")) matchedId = "kombi-servisi";
-        else if (service.includes("Fırın")) matchedId = "firin-onarimi";
-        else if (service.includes("Televizyon")) matchedId = "televizyon-tamiri";
-        else if (service.includes("Beyaz")) matchedId = "beyaz-esya-servisi";
-    
-        if (matchedId) {
-          const showEl = document.getElementById(matchedId);
-          if (showEl) showEl.style.display = "block";
+        if (service.includes("Çamaşır")) {
+          document.getElementById("çamaşır-makinesi").classList.add("active");
+        } else if (service.includes("Bulaşık")) {
+          document.getElementById("bulasik-makinesi-bakimi").classList.add("active");
+        } else if (service.includes("Buzdolabı Servisi")) {
+          document.getElementById("buzdolabi-servisi").classList.add("active");
+        } else if (service.includes("Buzdolabı")) {
+          document.getElementById("buzdolabi-teknik-servisi").classList.add("active");
+        } else if (service.includes("Klima")) {
+          document.getElementById("klima-servisi").classList.add("active");
+        } else if (service.includes("Kombi")) {
+          document.getElementById("kombi-servisi").classList.add("active");
+        } else if (service.includes("Fırın")) {
+          document.getElementById("firin-onarimi").classList.add("active");
+        } else if (service.includes("Televizyon")) {
+          document.getElementById("televizyon-tamiri").classList.add("active");
+        } else if (service.includes("Beyaz")) {
+          document.getElementById("beyaz-esya-servisi").classList.add("active");
         }
     
-        // Scroll Butonu
+        // Scroll butonu
         const scrollBtn = document.getElementById("scrollToTopBtn");
         if (scrollBtn) {
           window.addEventListener("scroll", function () {
@@ -2223,7 +2248,6 @@
         }
       });
     </script>
-    
     
     
 
