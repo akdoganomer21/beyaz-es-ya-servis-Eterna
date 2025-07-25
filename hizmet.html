@@ -297,39 +297,99 @@
     transition: all 0.3s;
   }
 
-  /* Müşteri yorumlarını saran alan */
-  .comment-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
+/* Görünürlük kontrolü */
+.service-content {
+  min-height: 400px;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.service-content.active {
+  visibility: visible;
+  position: static;
+  height: auto;
+}
 
-  /* Her bir yorum kutusu */
-  .comment-box {
-    flex: 1 1 280px;
-    max-width: 320px;
-    min-height: 180px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  }
+/* Başlık */
+.service-title {
+  font-size: 24px;
+  color: #003366;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 700;
+  min-height: 32px;
+}
 
-  /* Yorum yapan kişinin adı */
-  .comment-box p:first-child {
-    font-weight: bold;
-    color: #003366;
-    margin-bottom: 8px;
-  }
+/* Alt başlık: Müşteri Yorumları */
+.section-title {
+  font-size: 22px;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  min-height: 28px;
+}
 
-  /* Yorum metni */
-  .comment-box p:last-child {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.5;
-  }
+/* Paragraflar */
+.service-content p {
+  font-size: 16px;
+  color: #222;
+  margin: 0 0 16px;
+  line-height: 1.6;
+  min-height: 52px;
+}
+
+/* Buton */
+.call-button {
+  display: inline-block;
+  background-color: #198754;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+/* Müşteri yorumlarını saran alan */
+.comment-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Her bir yorum kutusu */
+.comment-box {
+  flex: 1 1 280px;
+  max-width: 320px;
+  min-height: 180px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Yorum yapan kişinin adı */
+.comment-box p:first-child {
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+/* Yorum metni */
+.comment-box p:last-child {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
 
 
     @media (max-width: 600px) {
@@ -435,20 +495,69 @@
         </div>
       </section>
     </div>
-    <div id="buzdolabi-teknik-servisi" class="service-content" style="min-height: 400px; visibility: hidden;">
-      <h1 class="service-title" style="font-size: 24px; color: #003366; margin-bottom: 24px; min-height: 32px; text-align: center; font-weight: 700;">
-        Buzdolabı Teknik Servisi
+    <div id="buzdolabi-teknik-servisi" class="service-content">
+      <h1 class="service-title">Buzdolabı Teknik Servisi</h1>
+    
+      <p>Buzdolapları sürekli çalışan, hassas sistemli cihazlardır. Zamanla elektrik dalgalanmaları, gaz eksilmesi veya kullanıcı hataları nedeniyle performans düşebilir.</p>
+    
+      <p>Teknik servisimiz dış gövde, fan, kompresör, defrost sistemi ve sensörleri detaylı şekilde kontrol eder. Arızalar kullanıcı onayıyla giderilir.</p>
+    
+      <p>No-Frost, statik, çift kapılı, dijital ekranlı tüm modeller için bakım ve tamir hizmeti veriyoruz. Periyodik temizlikle cihaz ömrü uzatılır.</p>
+    
+      <p>Sadece garantisi bitmiş cihazlara hizmet verilmektedir. Yalnızca orijinal yedek parçalar kullanılmakta ve tüm işlemler kayıt altına alınmaktadır.</p>
+    
+      <p>Soğutma problemlerinizin büyümeden çözülmesi için hemen bizimle iletişime geçin. Yerinde, hızlı ve profesyonel hizmet sunuyoruz.</p>
+    
+      <p style="text-align: center; margin: 40px 0;">
+        <a href="tel:+905372040191" class="call-button">📞 Şimdi Arayın</a>
+      </p>
+    
+      <section style="padding: 40px 20px; background: #eef3f8;">
+        <h2 class="section-title">Müşteri Yorumlarımız</h2>
+        <div class="comment-wrapper">
+    
+          <div class="comment-box">
+            <p>Sevgi Erdem</p>
+            <p>"Buzdolabım aniden soğutmayı kesti. Aynı gün gelip parça değişimiyle çözdüler."</p>
+          </div>
+    
+          <div class="comment-box">
+            <p>Murat Soykan</p>
+            <p>"Yetkili servis 3 gün sonra gelecekti, burası 2 saat içinde geldi."</p>
+          </div>
+    
+          <div class="comment-box">
+            <p>Nilay Alkan</p>
+            <p>"Dondurucu kısmı buzlanıyordu. Teknik ekip hemen çözdü. Çok memnunum."</p>
+          </div>
+    
+          <div class="comment-box">
+            <p>Fatih Günay</p>
+            <p>"Fan motoru bozuktu. Garantili orijinal parça ile değiştirildi."</p>
+          </div>
+    
+          <div class="comment-box">
+            <p>Melis Uçar</p>
+            <p>"Cihazdan ses geliyordu. Sorun titreşimmiş, hemen müdahale edildi."</p>
+          </div>
+    
+        </div>
+      </section>
+    </div>
+    <div id="çamaşır-makinesi" class="service-content">
+      <h1 style="font-size: 24px; color: #003366; margin-bottom: 24px; min-height: 32px; text-align: center; font-weight: 700;">
+        Çamaşır Makinesi Tamiri
       </h1>
     
-      <p style="min-height: 52px; font-size: 16px; color: #222; margin: 0 0 16px;">Buzdolapları sürekli çalışan, hassas sistemli cihazlardır. Zamanla elektrik dalgalanmaları, gaz eksilmesi veya kullanıcı hataları nedeniyle performans düşebilir.</p>
+      <p style="min-height: 52px; font-size: 16px; color: #222; margin-bottom: 16px;">Çamaşır makineleri zamanla tambur dönmeme, su almama, gürültü, sızıntı gibi sorunlarla karşılaşabilir. Profesyonel servis müdahalesi gerektirir.</p>
     
-      <p style="min-height: 52px; font-size: 16px; color: #222; margin: 0 0 16px;">Teknik servisimiz dış gövde, fan, kompresör, defrost sistemi ve sensörleri detaylı şekilde kontrol eder. Arızalar kullanıcı onayıyla giderilir.</p>
+      <p style="min-height: 52px; font-size: 16px; color: #222; margin-bottom: 16px;">Tüm marka ve modeller için teknik ekibimiz yerinde tamir hizmeti sağlar. Elektriksel, mekanik ve yazılımsal testlerle arıza tespiti yapılır.</p>
     
-      <p style="min-height: 52px; font-size: 16px; color: #222; margin: 0 0 16px;">No-Frost, statik, çift kapılı, dijital ekranlı tüm modeller için bakım ve tamir hizmeti veriyoruz. Periyodik temizlikle cihaz ömrü uzatılır.</p>
+      <p style="min-height: 52px; font-size: 16px; color: #222; margin-bottom: 16px;">Aşırı yükleme, yanlış deterjan, parça yıpranması gibi nedenler detaylı kontrol edilir. Gerekirse motor, rezistans, pompa değiştirilir.</p>
     
-      <p style="min-height: 52px; font-size: 16px; color: #222; margin: 0 0 16px;">Sadece garantisi bitmiş cihazlara hizmet verilmektedir. Yalnızca orijinal yedek parçalar kullanılmakta ve tüm işlemler kayıt altına alınmaktadır.</p>
+      <p style="min-height: 52px; font-size: 16px; color: #222; margin-bottom: 16px;">Sadece garantisi sona ermiş cihazlara hizmet verilir. Onarımlar yerinde yapılır, kullanıcıya bakım ve kullanım önerileri sunulur.</p>
     
-      <p style="min-height: 52px; font-size: 16px; color: #222; margin: 0 0 16px;">Soğutma problemlerinizin büyümeden çözülmesi için hemen bizimle iletişime geçin. Yerinde, hızlı ve profesyonel hizmet sunuyoruz.</p>
+      <p style="min-height: 52px; font-size: 16px; color: #222; margin-bottom: 16px;">Tüm işlemler kayıt altına alınır ve sadece orijinal ya da garantili parçalar kullanılır. Hızlı, güvenilir, ekonomik çözüm sunarız.</p>
     
       <p style="text-align: center; margin: 40px 0;">
         <a href="tel:+905372040191"
@@ -458,89 +567,39 @@
       </p>
     
       <section style="padding: 40px 20px; background: #eef3f8;">
-        <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px; font-weight: 700;">
+        <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px; font-weight: 700; min-height: 28px;">
           Müşteri Yorumlarımız
         </h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
     
           <div style="flex: 1 1 280px; max-width: 320px; min-height: 180px; background: white; padding: 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
-            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Sevgi Erdem</p>
-            <p style="font-size: 14px; color: #444;">"Buzdolabım aniden soğutmayı kesti. Aynı gün gelip parça değişimiyle çözdüler."</p>
+            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Seçil Yaman</p>
+            <p style="font-size: 14px; color: #444;">"Makinem sıkma yapmıyordu. Teknik ekip motoru kontrol etti ve hemen çözdü."</p>
           </div>
     
           <div style="flex: 1 1 280px; max-width: 320px; min-height: 180px; background: white; padding: 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
-            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Murat Soykan</p>
-            <p style="font-size: 14px; color: #444;">"Yetkili servis 3 gün sonra gelecekti, burası 2 saat içinde geldi."</p>
+            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Ahmet Dündar</p>
+            <p style="font-size: 14px; color: #444;">"Makine su almıyordu, pompa filtresi tıkanmış. Yerinde müdahale ettiler."</p>
           </div>
     
           <div style="flex: 1 1 280px; max-width: 320px; min-height: 180px; background: white; padding: 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
-            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Nilay Alkan</p>
-            <p style="font-size: 14px; color: #444;">"Dondurucu kısmı buzlanıyordu. Teknik ekip hemen çözdü. Çok memnunum."</p>
+            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Nesrin Tok</p>
+            <p style="font-size: 14px; color: #444;">"Çamaşırlar kokuyordu. Temizlik ve rezistans bakımı sonrası düzeldi."</p>
           </div>
     
           <div style="flex: 1 1 280px; max-width: 320px; min-height: 180px; background: white; padding: 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
-            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Fatih Günay</p>
-            <p style="font-size: 14px; color: #444;">"Fan motoru bozuktu. Garantili orijinal parça ile değiştirildi."</p>
+            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Okan Yıldız</p>
+            <p style="font-size: 14px; color: #444;">"Panelde sürekli hata çıkıyordu. Kart onarıldı, şimdi sorunsuz."</p>
           </div>
     
           <div style="flex: 1 1 280px; max-width: 320px; min-height: 180px; background: white; padding: 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
-            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Melis Uçar</p>
-            <p style="font-size: 14px; color: #444;">"Cihazdan ses geliyordu. Sorun titreşimmiş, hemen müdahale edildi."</p>
+            <p style="font-weight: bold; color: #003366; margin-bottom: 8px;">Dilay Karaca</p>
+            <p style="font-size: 14px; color: #444;">"Su sızdırıyordu. Hortum değişimiyle sorunu çözdüler."</p>
           </div>
     
         </div>
       </section>
     </div>
-    <div id="çamaşır-makinesi" class="service-content">
-      <h1 class="service-title">Çamaşır Makinesi Tamiri</h1>
-    
-      <p>Çamaşır makineleri zamanla tambur dönmeme, su almama, gürültü, sızıntı gibi sorunlarla karşılaşabilir. Profesyonel servis müdahalesi gerektirir.</p>
-    
-      <p>Tüm marka ve modeller için teknik ekibimiz yerinde tamir hizmeti sağlar. Elektriksel, mekanik ve yazılımsal testlerle arıza tespiti yapılır.</p>
-    
-      <p>Aşırı yükleme, yanlış deterjan, parça yıpranması gibi nedenler detaylı kontrol edilir. Gerekirse motor, rezistans, pompa değiştirilir.</p>
-    
-      <p>Sadece garantisi sona ermiş cihazlara hizmet verilir. Onarımlar yerinde yapılır, kullanıcıya bakım ve kullanım önerileri sunulur.</p>
-    
-      <p>Tüm işlemler kayıt altına alınır ve sadece orijinal ya da garantili parçalar kullanılır. Hızlı, güvenilir, ekonomik çözüm sunarız.</p>
-    
-      <p style="text-align: center; margin: 40px 0;">
-        <a class="call-button" href="tel:+905372040191">📞 Şimdi Arayın</a>
-      </p>
-    
-      <section style="padding: 40px 20px; background: #eef3f8; min-height: 480px; overflow-anchor: none;">
-        <h2 class="section-title">Müşteri Yorumlarımız</h2>
-        <div class="comment-wrapper">
-    
-          <div class="comment-box">
-            <p>Seçil Yaman</p>
-            <p>"Makinem sıkma yapmıyordu. Teknik ekip motoru kontrol etti ve hemen çözdü."</p>
-          </div>
-    
-          <div class="comment-box">
-            <p>Ahmet Dündar</p>
-            <p>"Makine su almıyordu, pompa filtresi tıkanmış. Yerinde müdahale ettiler."</p>
-          </div>
-    
-          <div class="comment-box">
-            <p>Nesrin Tok</p>
-            <p>"Çamaşırlar kokuyordu. Temizlik ve rezistans bakımı sonrası düzeldi."</p>
-          </div>
-    
-          <div class="comment-box">
-            <p>Okan Yıldız</p>
-            <p>"Panelde sürekli hata çıkıyordu. Kart onarıldı, şimdi sorunsuz."</p>
-          </div>
-    
-          <div class="comment-box">
-            <p>Dilay Karaca</p>
-            <p>"Su sızdırıyordu. Hortum değişimiyle sorunu çözdüler."</p>
-          </div>
-    
-        </div>
-      </section>
-    </div>
-    
     
     
 
