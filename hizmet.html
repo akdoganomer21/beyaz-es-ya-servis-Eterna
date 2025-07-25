@@ -303,9 +303,9 @@
   </header>
 
   <main>
-    <h1>
+    <h1 style="min-height: 56px; display: flex; align-items: center; gap: 10px;">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v2H3zm3 4h12v2H6zm-3 4h18v2H3zm3 4h12v2H6zm-3 4h18v2H3z"/></svg>
-      <span id="title">Hizmet</span>
+      <span id="title" >Hizmet</span>
     </h1>
     <div id="description" style="display: none;"></div>
       <div id="beyaz-esya-servisi" style="display: none; max-width: 1200px; margin: auto; padding:  20px;">
@@ -2123,23 +2123,34 @@
         const params = new URLSearchParams(window.location.search);
         const service = decodeURIComponent(params.get("service") || "");
         console.log("Seçilen hizmet:", service);
-        
-              // Sticky Call Butonu
-      const stickyBtn = document.getElementById("stickyCall");
-      if (stickyBtn) {
-        stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
-      }
-
-        // Meta başlık ve içerikler
-        if (service) {
-          document.title = service + " | " + siteData.name;
-          document.querySelector("meta[name='description']").setAttribute("content", service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.");
-          document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
-          const titleEl = document.getElementById("title");
-          if (titleEl) titleEl.innerText = service;
+    
+        // Sticky Call Butonu
+        const stickyBtn = document.getElementById("stickyCall");
+        if (stickyBtn) {
+          stickyBtn.setAttribute("href", `tel:${siteData.rawPhone}`);
         }
     
-        // Footer bilgilerini yerleştir
+        // Meta başlık ve içerikler + CLS düzeltmesi
+        const titleEl = document.getElementById("title");
+        const descEl = document.getElementById("description");
+    
+        if (service) {
+          document.title = service + " | " + siteData.name;
+          const descText = service + " hizmetimizle ilgili detaylı bilgilere bu sayfadan ulaşabilirsiniz.";
+          document.querySelector("meta[name='description']").setAttribute("content", descText);
+          document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
+    
+          if (titleEl) {
+            titleEl.innerText = service;
+            titleEl.style.visibility = "visible"; // CLS için
+          }
+          if (descEl) {
+            descEl.innerText = descText;
+            descEl.style.visibility = "visible"; // CLS için
+          }
+        }
+    
+        // Footer bilgileri
         const footerPhone = document.getElementById("footerPhone");
         const footerAdres = document.getElementById("footerAdres");
         const footerCompany = document.getElementById("footerCompany");
@@ -2148,7 +2159,7 @@
         if (footerAdres) footerAdres.textContent = siteData.address;
         if (footerCompany) footerCompany.textContent = siteData.name;
     
-        // Sayfa içeriği göster/gizle
+        // Dinamik içerik göster/gizle
         const allIds = [
           "çamaşır-makinesi",
           "bulasik-makinesi-bakimi",
@@ -2186,15 +2197,14 @@
           document.getElementById("beyaz-esya-servisi").style.display = "block";
         }
     
-        // Scroll yukarı butonu
+        // Scroll butonu
         const scrollBtn = document.getElementById("scrollToTopBtn");
         if (scrollBtn) {
           window.addEventListener("scroll", function () {
-            if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
-              scrollBtn.style.display = "block";
-            } else {
-              scrollBtn.style.display = "none";
-            }
+            scrollBtn.style.display =
+              (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200)
+                ? "block"
+                : "none";
           });
     
           scrollBtn.addEventListener("click", function (e) {
@@ -2204,6 +2214,7 @@
         }
       });
     </script>
+    
     
 
   
