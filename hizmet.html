@@ -319,7 +319,8 @@
   <main>
     <h1 style="min-height: 56px; display: flex; align-items: center; gap: 10px;">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v2H3zm3 4h12v2H6zm-3 4h18v2H3zm3 4h12v2H6zm-3 4h18v2H3z"/></svg>
-      <span id="title" >Hizmet</span>
+      <span id="title" style="visibility: hidden; display: inline-block; min-width: 120px;"></span>
+
     </h1>
     <div id="description" style="display: none;"></div>
       <div id="beyaz-esya-servisi" class="service-content">
@@ -2144,7 +2145,7 @@
           stickyBtn.setAttribute("href", `tel:${siteData.rawPhone}`);
         }
     
-        // Meta başlık ve içerikler + CLS düzeltmesi
+        // Meta ve Sayfa Başlığı
         const titleEl = document.getElementById("title");
         const descEl = document.getElementById("description");
     
@@ -2155,16 +2156,16 @@
           document.querySelector("meta[name='keywords']").setAttribute("content", service + ", Beyaz Eşya Tamiri, Teknik Servis");
     
           if (titleEl) {
-            titleEl.innerText = service;
-            titleEl.style.visibility = "visible"; // CLS için
+            titleEl.textContent = service;
+            titleEl.style.visibility = "visible";
           }
           if (descEl) {
-            descEl.innerText = descText;
-            descEl.style.visibility = "visible"; // CLS için
+            descEl.textContent = descText;
+            descEl.style.visibility = "visible";
           }
         }
     
-        // Footer bilgileri
+        // Footer Bilgileri
         const footerPhone = document.getElementById("footerPhone");
         const footerAdres = document.getElementById("footerAdres");
         const footerCompany = document.getElementById("footerCompany");
@@ -2173,7 +2174,7 @@
         if (footerAdres) footerAdres.textContent = siteData.address;
         if (footerCompany) footerCompany.textContent = siteData.name;
     
-        // Dinamik içerik göster/gizle
+        // Tüm içerikleri gizle
         const allIds = [
           "çamaşır-makinesi",
           "bulasik-makinesi-bakimi",
@@ -2187,32 +2188,32 @@
         ];
     
         allIds.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) el.classList.remove("active");
-});
-
+          const el = document.getElementById(id);
+          if (el) el.classList.remove("active");
+        });
     
+        // Doğru içeriği göster
         if (service.includes("Çamaşır")) {
-          document.getElementById("çamaşır-makinesi").classList.add("active");
+          document.getElementById("çamaşır-makinesi")?.classList.add("active");
         } else if (service.includes("Bulaşık")) {
-          document.getElementById("bulasik-makinesi-bakimi").classList.add("active");
+          document.getElementById("bulasik-makinesi-bakimi")?.classList.add("active");
         } else if (service.includes("Buzdolabı Servisi")) {
-          document.getElementById("buzdolabi-servisi").classList.add("active");
+          document.getElementById("buzdolabi-servisi")?.classList.add("active");
         } else if (service.includes("Buzdolabı")) {
-          document.getElementById("buzdolabi-teknik-servisi").classList.add("active");
+          document.getElementById("buzdolabi-teknik-servisi")?.classList.add("active");
         } else if (service.includes("Klima")) {
-          document.getElementById("klima-servisi").classList.add("active");
+          document.getElementById("klima-servisi")?.classList.add("active");
         } else if (service.includes("Kombi")) {
-          document.getElementById("kombi-servisi").classList.add("active");
+          document.getElementById("kombi-servisi")?.classList.add("active");
         } else if (service.includes("Fırın")) {
-          document.getElementById("firin-onarimi").classList.add("active");
+          document.getElementById("firin-onarimi")?.classList.add("active");
         } else if (service.includes("Televizyon")) {
-          document.getElementById("televizyon-tamiri").classList.add("active");
+          document.getElementById("televizyon-tamiri")?.classList.add("active");
         } else if (service.includes("Beyaz")) {
-          document.getElementById("beyaz-esya-servisi").classList.add("active");
+          document.getElementById("beyaz-esya-servisi")?.classList.add("active");
         }
     
-        // Scroll butonu
+        // Scroll Butonu
         const scrollBtn = document.getElementById("scrollToTopBtn");
         if (scrollBtn) {
           window.addEventListener("scroll", function () {
@@ -2229,6 +2230,7 @@
         }
       });
     </script>
+    
     
     
 
