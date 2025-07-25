@@ -1950,11 +1950,6 @@
     ⬆️ </a>  
 
     <script>
-      // Menü Aç/Kapa
-      function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-      }
-    
       const siteData = {
         name: "Beyaz Eşya Servisi",
         phone: "+90 (537) 204 01 91",
@@ -1964,10 +1959,19 @@
       };
     
       document.addEventListener("DOMContentLoaded", () => {
+        // 🔻 Hamburger menü sadece burada tanımlandı
+        const burger = document.querySelector(".burger");
+        if (burger) {
+          burger.addEventListener("click", () => {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
+          });
+        }
+    
+        // ✅ Dinamik Meta
         const params = new URLSearchParams(window.location.search);
         const service = decodeURIComponent(params.get("service") || "");
     
-        // Dinamik Meta Bilgiler
         if (service) {
           const titleText = `${service} | ${siteData.name}`;
           const descText = `${service} hizmetimiz hakkında detaylı bilgi ve müşteri yorumlarını bu sayfada bulabilirsiniz.`;
@@ -1980,7 +1984,7 @@
           if (keywordsMeta) keywordsMeta.setAttribute("content", keywords);
         }
     
-        // Footer Bilgileri
+        // ✅ Footer Bilgileri
         const footerPhone = document.getElementById("footerPhone");
         const footerAdres = document.getElementById("footerAdres");
         const footerCompany = document.getElementById("footerCompany");
@@ -1988,11 +1992,11 @@
         if (footerAdres) footerAdres.textContent = siteData.address;
         if (footerCompany) footerCompany.textContent = siteData.name;
     
-        // Sticky Call
+        // ✅ Sticky Call
         const stickyBtn = document.getElementById("stickyCall");
         if (stickyBtn) stickyBtn.setAttribute("href", `tel:${siteData.rawPhone}`);
     
-        // Görünürlük Kontrolü
+        // ✅ Görünürlük Kontrolü
         const allServices = [
           "çamaşır-makinesi",
           "bulasik-makinesi-bakimi",
@@ -2042,7 +2046,7 @@
               p.style.visibility = "visible";
             });
     
-            // Başlıkları görünür yap (EKLENDİ)
+            // Başlıkları görünür yap
             const hiddenHeadings = activeSection.querySelectorAll("h1, h2");
             hiddenHeadings.forEach(el => {
               el.style.display = "block";
@@ -2051,7 +2055,7 @@
           }
         }
     
-        // Scroll Button
+        // ✅ Scroll Button
         const scrollBtn = document.getElementById("scrollToTopBtn");
         if (scrollBtn) {
           window.addEventListener("scroll", () => {
@@ -2064,6 +2068,7 @@
         }
       });
     </script>
+    
     
     
     
