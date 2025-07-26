@@ -229,6 +229,40 @@
       background-color: #218838;
     }
 
+    .yorumlar-bolumu {
+  padding: 40px 20px;
+  background: #eef3f8;
+}
+
+.yorum-baslik {
+  text-align: center;
+  color: #003366;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.yorumlar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.yorum-karti {
+  flex: 1 1 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.yorum-isim {
+  font-weight: bold;
+  color: #003366;
+}
+
     @media (max-width: 600px) {
       .nav-links {
         display: none;
@@ -291,80 +325,80 @@
   <main>
     <h1>Hakkımızda</h1>
     <p>Firmamız uzun yıllardır beyaz eşya sektöründe özel teknik servis hizmeti sunmaktadır. Deneyimli ve güler yüzlü ekibimizle, garantisi sona ermiş cihazlara güvenilir ve ekonomik çözümler sunmayı hedefliyoruz.</p>
-
+  
     <h2>Vizyonumuz</h2>
     <p>Türkiye genelinde özel servis anlayışını yeniden tanımlayarak en güvenilir, hızlı ve ulaşılabilir servis firması olmak.</p>
-
+  
     <h2>Misyonumuz</h2>
     <p>Müşteri memnuniyetini her şeyin önünde tutan, etik değerlere bağlı ve kaliteli hizmet sunan bir ekip olarak hizmet vermek.</p>
-
+  
     <h2>Şirket Bilgilerimiz</h2>
     <p><strong>Şirket Adı:</strong> <span id="companyName"></span></p>
     <p><strong>Vergi No:</strong> <span id="vergiNo"></span></p>
     <p><strong>Adres:</strong> <span id="companyAddress"></span></p>
     <p><strong>Telefon:</strong> <a id="companyPhone" href=""></a></p>
     <p><strong>E-posta:</strong> <a id="companyEmail" href=""></a></p>
-    
-
-    <section style="padding: 40px 20px; background: #eef3f8;">
-      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: auto;">
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Beyza Sarı</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Hakkımızda sayfanızı okuyunca neden bu kadar güvenilir olduğunuzu anladım."</p>
+  
+    <section class="yorumlar-bolumu">
+      <h2 class="yorum-baslik">Müşteri Yorumlarımız</h2>
+      <div class="yorumlar-container">
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Beyza Sarı</p>
+          <p>"Hakkımızda sayfanızı okuyunca neden bu kadar güvenilir olduğunuzu anladım."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Halil Eren</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Firmanızın geçmişi ve değerleri çok etkileyici. Samimiyetiniz yansıyor."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Halil Eren</p>
+          <p>"Firmanızın geçmişi ve değerleri çok etkileyici. Samimiyetiniz yansıyor."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Didem Öztürk</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Vizyon ve misyon kısmını okumak bile hizmet kalitenizi açıklıyor."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Didem Öztürk</p>
+          <p>"Vizyon ve misyon kısmını okumak bile hizmet kalitenizi açıklıyor."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Umut Tekin</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kurumsal bir yapıya sahip olmanız müşteri olarak bana güven veriyor."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Umut Tekin</p>
+          <p>"Kurumsal bir yapıya sahip olmanız müşteri olarak bana güven veriyor."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Yelda Koç</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Yelda Koç</p>
+          <p>"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
         </div>
-
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Osman Koç</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Osman Koç</p>
+          <p>"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
         </div>
-
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Helin Koç</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Helin Koç</p>
+          <p>"Kuruluş hikayenizi okumak çok keyifliydi. İşinizi severek yaptığınız belli."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Sami Tan</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Sadece servis değil, güven de veriyorsunuz. Bu da sizi farklı kılıyor."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Sami Tan</p>
+          <p>"Sadece servis değil, güven de veriyorsunuz. Bu da sizi farklı kılıyor."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Melis Arıkan</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Hakkınızda kısmını okuduktan sonra daha büyük bir güvenle servis çağırdım."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Melis Arıkan</p>
+          <p>"Hakkınızda kısmını okuduktan sonra daha büyük bir güvenle servis çağırdım."</p>
         </div>
-    
-        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <p style="font-weight: bold; color: #003366;">Volkan Yiğit</p>
-          <p style="font-size: 14px; line-height: 1.6;">"Firmanızın temel değerlerini paylaşmanız harika. Başarınız tesadüf değil."</p>
+  
+        <div class="yorum-karti">
+          <p class="yorum-isim">Volkan Yiğit</p>
+          <p>"Firmanızın temel değerlerini paylaşmanız harika. Başarınız tesadüf değil."</p>
         </div>
-    
+  
       </div>
     </section>
-    
+  
     <p><strong>UYARI:</strong> Firmamız yetkili servis değildir. Sadece garantisi sona ermiş cihazlara yönelik özel servis hizmeti sunmaktadır.</p>
   </main>
+  
 
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
