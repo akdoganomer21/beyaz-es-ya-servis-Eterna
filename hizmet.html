@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
   
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
   
@@ -242,11 +242,10 @@
       background-color: #218838;
     }
   
+    /* 🚀 LCP Optimizasyonu Başladı */
     .service-content {
-      min-height: 400px;
       visibility: hidden;
       position: absolute;
-      left: -9999px;
       height: 0;
       overflow: hidden;
       width: 100%;
@@ -257,6 +256,13 @@
       position: static;
       height: auto;
     }
+  
+    .service-content.active h1,
+    .service-content.active p:first-of-type {
+      content-visibility: auto;
+      contain-intrinsic-size: 250px;
+    }
+    /* 🚀 LCP Optimizasyonu Bitti */
   
     .service-title {
       font-size: 24px;
@@ -327,7 +333,6 @@
       line-height: 1.5;
     }
   
-    /* Mobil uyum */
     @media (max-width: 920px) {
       .scrollTopBtn,
       .sticky-call {
@@ -363,6 +368,7 @@
       }
     }
   </style>
+  
   
 
 </head>
