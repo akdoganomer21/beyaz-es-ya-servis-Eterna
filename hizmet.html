@@ -326,6 +326,14 @@
       color: #003366;
       margin-bottom: 8px;
     }
+    .yorum-bolumu {
+  padding: 40px 20px;
+  background: #eef3f8;
+  min-height: 320px; /* CLS'i önlemek için tahmini yükseklik */
+  contain-intrinsic-size: 320px;
+  content-visibility: auto;
+}
+
   
     .comment-box p:last-child {
       font-size: 14px;
@@ -700,7 +708,7 @@
     
 
     
-      <section style="padding: 40px 20px; background: #eef3f8;">
+      <section class="yorum-bolumu">
         <h2 class="section-title">Müşteri Yorumlarımız</h2>
         <div class="comment-wrapper">
     
