@@ -21,6 +21,7 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+  
     body {
       font-family: sans-serif;
       background: #f9f9f9;
@@ -29,13 +30,13 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
+  
     header {
       background: #003366;
       color: white;
       padding: 12px 20px;
     }
-
+  
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -45,30 +46,35 @@
       margin: auto;
       position: relative;
     }
-
-    .logo { font-size: 20px; font-weight: bold; }
-
+  
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
     .nav-links {
       display: flex;
       gap: 16px;
       font-size: 14px;
       align-items: center;
     }
-
+  
     .nav-links a {
       color: white;
       text-decoration: none;
       padding: 8px;
       position: relative;
     }
-
+  
     .nav-links a:hover {
       background-color: #005599;
       border-radius: 4px;
     }
-
-    .dropdown { position: relative; }
-
+  
+    .dropdown {
+      position: relative;
+    }
+  
     .dropdown-content {
       display: none;
       position: absolute;
@@ -79,9 +85,11 @@
       z-index: 100;
       min-width: 200px;
     }
-
-    .dropdown:hover .dropdown-content { display: block; }
-
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
     .dropdown-content a {
       display: block;
       padding: 8px 16px;
@@ -89,9 +97,11 @@
       text-decoration: none;
       white-space: nowrap;
     }
-
-    .dropdown-content a:hover { background-color: #eef6ff; }
-
+  
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
+    }
+  
     .burger {
       display: none;
       font-size: 22px;
@@ -100,7 +110,7 @@
       color: white;
       cursor: pointer;
     }
-
+  
     main {
       flex: 1;
       max-width: 900px;
@@ -110,7 +120,7 @@
       border-left: 6px solid #4a90e2;
       border-radius: 6px;
     }
-
+  
     h1 {
       font-size: 22px;
       margin-bottom: 16px;
@@ -119,26 +129,26 @@
       align-items: center;
       gap: 10px;
     }
-
+  
     p {
       margin: 12px 0;
       line-height: 1.6;
       font-size: 15px;
     }
-
+  
     a {
       color: #0053a0;
     }
-
+  
     ol {
       padding-left: 20px;
     }
-
+  
     li {
       margin-bottom: 10px;
       font-size: 15px;
     }
-
+  
     footer {
       background: #003366;
       color: white;
@@ -147,23 +157,19 @@
       font-size: 14px;
       font-family: sans-serif;
     }
-
+  
     footer .brand {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 8px;
     }
-
+  
     footer .tagline {
       font-size: 14px;
       margin-bottom: 20px;
       color: #ddd;
     }
-
-    footer nav {
-      margin-bottom: 12px;
-    }
-
+  
     footer nav a {
       color: white;
       margin: 6px 10px;
@@ -173,15 +179,11 @@
       font-size: 14px;
       line-height: 1.5;
     }
-
+  
     footer nav a:hover {
       text-decoration: underline;
     }
-
-    footer .social {
-      margin: 12px 0;
-    }
-
+  
     footer .social a {
       display: inline-block;
       margin: 0 8px;
@@ -189,38 +191,42 @@
       font-size: 18px;
       text-decoration: none;
     }
-
+  
     footer .social a:hover {
       color: #ffffff;
     }
-    .scrollTopBtn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #333;
-    color: white;
-    padding: 10px 14px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    display: none;
-    z-index: 1000;
-  }
   
-  .scrollTopBtn:hover {
-    background-color: #555;}
-    
-
     footer small {
       display: block;
       margin-top: 6px;
       font-size: 12px;
       color: #bbb;
     }
+  
+    .scrollTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: calc(50% - 450px);
+      background-color: #333;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+  
+    .scrollTopBtn:hover {
+      background-color: #555;
+    }
+  
     .sticky-call {
       position: fixed;
       bottom: 75px;
-      right: 20px;
+      right: calc(50% - 450px);
       background-color: #28a745;
       color: white;
       padding: 12px 18px;
@@ -231,167 +237,104 @@
       z-index: 999;
       transition: background 0.3s ease;
     }
-
+  
     .sticky-call:hover {
       background-color: #218838;
     }
-    
+  
     .service-content {
-
-    position: absolute;
-    left: -9999px;
-    height: 0;
-    overflow: hidden;
-    width: 100%;
-  }
-  .service-content.active {
-    visibility: visible;
-    position: static;
-    height: auto;
-  }
-  /* Tüm hizmet blokları için */
-  .service-content {
-    min-height: 400px;
-    visibility: hidden;
-  }
-
-  /* Ana başlık */
-  .service-title {
-    font-size: 24px;
-    color: #003366;
-    margin-bottom: 24px;
-    text-align: center;
-    font-weight: 700;
-    min-height: 32px;
-  }
-
-  /* Alt başlık: Müşteri Yorumları */
-  .section-title {
-    font-size: 22px;
-    color: #003366;
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 700;
-    min-height: 28px;
-  }
-
-  /* Paragraflar */
-  .service-content p {
-    min-height: 52px;
-    font-size: 16px;
-    color: #222;
-    margin: 0 0 16px;
-  }
-
-  /* Buton */
-  .call-button {
-    display: inline-block;
-    background-color: #198754;
-    color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
-  }
-
-/* Görünürlük kontrolü */
-.service-content {
-  min-height: 400px;
-  visibility: hidden;
-  position: absolute;
-  left: -9999px;
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-}
-.service-content.active {
-  visibility: visible;
-  position: static;
-  height: auto;
-}
-
-/* Başlık */
-.service-title {
-  font-size: 24px;
-  color: #003366;
-  margin-bottom: 24px;
-  text-align: center;
-  font-weight: 700;
-  min-height: 32px;
-}
-
-/* Alt başlık: Müşteri Yorumları */
-.section-title {
-  font-size: 22px;
-  color: #003366;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 700;
-  min-height: 28px;
-}
-
-/* Paragraflar */
-.service-content p {
-  font-size: 16px;
-  color: #222;
-  margin: 0 0 16px;
-  line-height: 1.6;
-  min-height: 52px;
-}
-
-/* Buton */
-.call-button {
-  display: inline-block;
-  background-color: #198754;
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s;
-}
-
-/* Müşteri yorumlarını saran alan */
-.comment-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Her bir yorum kutusu */
-.comment-box {
-  flex: 1 1 280px;
-  max-width: 320px;
-  min-height: 180px;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* Yorum yapan kişinin adı */
-.comment-box p:first-child {
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 8px;
-}
-
-/* Yorum metni */
-.comment-box p:last-child {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.5;
-}
-
-
-
+      min-height: 400px;
+      visibility: hidden;
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+  
+    .service-content.active {
+      visibility: visible;
+      position: static;
+      height: auto;
+    }
+  
+    .service-title {
+      font-size: 24px;
+      color: #003366;
+      margin-bottom: 24px;
+      text-align: center;
+      font-weight: 700;
+      min-height: 32px;
+    }
+  
+    .section-title {
+      font-size: 22px;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+      min-height: 28px;
+    }
+  
+    .service-content p {
+      font-size: 16px;
+      color: #222;
+      margin: 0 0 16px;
+      line-height: 1.6;
+      min-height: 52px;
+    }
+  
+    .call-button {
+      display: inline-block;
+      background-color: #198754;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s;
+    }
+  
+    .comment-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .comment-box {
+      flex: 1 1 280px;
+      max-width: 320px;
+      min-height: 180px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+  
+    .comment-box p:first-child {
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 8px;
+    }
+  
+    .comment-box p:last-child {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+  
+    /* Mobil uyum */
+    @media (max-width: 920px) {
+      .scrollTopBtn,
+      .sticky-call {
+        right: 20px;
+      }
+    }
+  
     @media (max-width: 600px) {
       .nav-links {
         display: none;
@@ -400,27 +343,28 @@
         background-color: #003366;
         margin-top: 10px;
       }
-
+  
       .nav-links.show {
         display: flex;
       }
-
+  
       .burger {
         display: block;
       }
-
+  
       .dropdown-content {
         position: static;
         box-shadow: none;
         background: #004080;
       }
-
+  
       .dropdown-content a {
         color: #fff;
       }
-
     }
   </style>
+  
+
 </head>
 <body>
 
@@ -785,7 +729,19 @@
   </main>
  
    
-  <section >
+  <section style="
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 24px 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  text-align: justify;
+  word-break: break-word;
+">
     <h2 style="font-size: 22px; color: #003366; margin-bottom: 20px; text-align: center;">
       Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi Ve Televizyon
     </h2>
@@ -1864,6 +1820,27 @@
     </div>
   </section>
 
+  <div style="max-width: 900px; margin: 0 auto; position: relative;">
+    <a id="stickyCall" style="
+      position: fixed;
+      bottom: 20px;
+      right: calc(50% - 450px); /* 900px içerik genişliğinin yarısı */
+      background-color: #198754;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+    ">
+      📞 Hemen Ara
+    </a>
+  </div>
+  
+
+  
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
       
@@ -2134,8 +2111,7 @@
       ]
     }
   </script>
-    
-  <a id="stickyCall" class="sticky-call" style="display: inline-block; margin-top: 24px; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">📞 Hemen Ara</a>
+  
 
 </body>
 </html>
