@@ -18,10 +18,10 @@
   <meta name="twitter:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
   
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-  
+
     body {
       font-family: sans-serif;
       background: #f9f9f9;
@@ -30,13 +30,13 @@
       flex-direction: column;
       min-height: 100vh;
     }
-  
+
     header {
       background: #003366;
       color: white;
       padding: 12px 20px;
     }
-  
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -46,35 +46,35 @@
       margin: auto;
       position: relative;
     }
-  
+
     .logo {
       font-size: 20px;
       font-weight: bold;
     }
-  
+
     .nav-links {
       display: flex;
       gap: 16px;
       font-size: 14px;
       align-items: center;
     }
-  
+
     .nav-links a {
       color: white;
       text-decoration: none;
       padding: 8px;
       position: relative;
     }
-  
+
     .nav-links a:hover {
       background-color: #005599;
       border-radius: 4px;
     }
-  
+
     .dropdown {
       position: relative;
     }
-  
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -85,11 +85,11 @@
       z-index: 100;
       min-width: 200px;
     }
-  
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
-  
+
     .dropdown-content a {
       display: block;
       padding: 8px 16px;
@@ -97,11 +97,11 @@
       text-decoration: none;
       white-space: nowrap;
     }
-  
+
     .dropdown-content a:hover {
       background-color: #eef6ff;
     }
-  
+
     .burger {
       display: none;
       font-size: 22px;
@@ -110,7 +110,7 @@
       color: white;
       cursor: pointer;
     }
-  
+
     main {
       flex: 1;
       max-width: 900px;
@@ -120,7 +120,7 @@
       border-left: 6px solid #4a90e2;
       border-radius: 6px;
     }
-  
+
     h1 {
       font-size: 22px;
       margin-bottom: 16px;
@@ -129,26 +129,26 @@
       align-items: center;
       gap: 10px;
     }
-  
+
     p {
       margin: 12px 0;
       line-height: 1.6;
       font-size: 15px;
     }
-  
+
     a {
       color: #0053a0;
     }
-  
+
     ol {
       padding-left: 20px;
     }
-  
+
     li {
       margin-bottom: 10px;
       font-size: 15px;
     }
-  
+
     footer {
       background: #003366;
       color: white;
@@ -157,19 +157,19 @@
       font-size: 14px;
       font-family: sans-serif;
     }
-  
+
     footer .brand {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 8px;
     }
-  
+
     footer .tagline {
       font-size: 14px;
       margin-bottom: 20px;
       color: #ddd;
     }
-  
+
     footer nav a {
       color: white;
       margin: 6px 10px;
@@ -179,11 +179,11 @@
       font-size: 14px;
       line-height: 1.5;
     }
-  
+
     footer nav a:hover {
       text-decoration: underline;
     }
-  
+
     footer .social a {
       display: inline-block;
       margin: 0 8px;
@@ -191,18 +191,18 @@
       font-size: 18px;
       text-decoration: none;
     }
-  
+
     footer .social a:hover {
       color: #ffffff;
     }
-  
+
     footer small {
       display: block;
       margin-top: 6px;
       font-size: 12px;
       color: #bbb;
     }
-  
+
     .scrollTopBtn {
       position: fixed;
       bottom: 25px;
@@ -218,52 +218,47 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
     }
-  
+
     .scrollTopBtn:hover {
       background-color: #555;
     }
-  
+
     .sticky-call {
       position: fixed;
       bottom: 75px;
       right: calc(50% - 450px);
-      background-color: #28a745;
+      background-color: #198754;
       color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
+      padding: 12px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 999;
       transition: background 0.3s ease;
     }
-  
+
     .sticky-call:hover {
-      background-color: #218838;
+      background-color: #157347;
     }
-  
-    /* 🚀 LCP Optimizasyonu Başladı */
+
     .service-content {
+      min-height: 400px;
       visibility: hidden;
       position: absolute;
+      left: -9999px;
       height: 0;
       overflow: hidden;
       width: 100%;
     }
-  
+
     .service-content.active {
       visibility: visible;
       position: static;
       height: auto;
     }
-  
-    .service-content.active h1,
-    .service-content.active p:first-of-type {
-      content-visibility: auto;
-      contain-intrinsic-size: 250px;
-    }
-    /* 🚀 LCP Optimizasyonu Bitti */
-  
+
     .service-title {
       font-size: 24px;
       color: #003366;
@@ -272,7 +267,7 @@
       font-weight: 700;
       min-height: 32px;
     }
-  
+
     .section-title {
       font-size: 22px;
       color: #003366;
@@ -281,7 +276,7 @@
       font-weight: 700;
       min-height: 28px;
     }
-  
+
     .service-content p {
       font-size: 16px;
       color: #222;
@@ -289,7 +284,7 @@
       line-height: 1.6;
       min-height: 52px;
     }
-  
+
     .call-button {
       display: inline-block;
       background-color: #198754;
@@ -302,14 +297,14 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       transition: all 0.3s;
     }
-  
+
     .comment-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
-  
+
     .comment-box {
       flex: 1 1 280px;
       max-width: 320px;
@@ -320,35 +315,26 @@
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
-  
+
     .comment-box p:first-child {
       font-weight: bold;
       color: #003366;
       margin-bottom: 8px;
     }
-    .yorum-bolumu {
-  padding: 40px 20px;
-  background: #eef3f8;
-  min-height: 320px; /* CLS'i önlemek için tahmini yükseklik */
-  contain-intrinsic-size: 320px;
-  content-visibility: auto;
-}
 
-  
     .comment-box p:last-child {
       font-size: 14px;
       color: #444;
       line-height: 1.5;
     }
-    
-  
+
     @media (max-width: 920px) {
       .scrollTopBtn,
       .sticky-call {
         right: 20px;
       }
     }
-  
+
     @media (max-width: 600px) {
       .nav-links {
         display: none;
@@ -357,27 +343,32 @@
         background-color: #003366;
         margin-top: 10px;
       }
-  
+
       .nav-links.show {
         display: flex;
       }
-  
+
       .burger {
         display: block;
       }
-  
+
       .dropdown-content {
         position: static;
         box-shadow: none;
         background: #004080;
       }
-  
+
       .dropdown-content a {
         color: #fff;
       }
+
+      .sticky-call {
+        right: 20px !important;
+        left: auto !important;
+        transform: none !important;
+      }
     }
   </style>
-  
   
 
 </head>
@@ -699,46 +690,48 @@
       </section>
     </div>
     <div id="televizyon-tamiri" class="service-content">
-      <h1 style="font-size: 24px; font-weight: 700; color: #003366; text-align: center; line-height: 1.4; min-height: 32px;">Televizyon Tamiri</h1>
+      <h1 class="service-title">Televizyon Tamiri</h1>
     
-      <p style="min-height: 52px; font-size: 16px; line-height: 1.6; margin: 12px 0; color: #222;">Televizyonlar ekran kararması, ses gelmemesi veya görüntü bozulması gibi birçok teknik sorunla karşılaşabilir. Müdahale çoğu zaman uzman gerektirir.</p>
-      <p style="min-height: 52px; font-size: 16px; line-height: 1.6; margin: 12px 0; color: #222;">Anakart, T-Con kart, LED bar, ses işlemcisi ve sinyal yolları özel cihazlarla test edilir. Gerekirse yazılım sıfırlama ve ekran değişimi yapılır.</p>
-      <p style="min-height: 52px; font-size: 16px; line-height: 1.6; margin: 12px 0; color: #222;">Ekran tipi fark etmeksizin (LCD, LED, OLED, QLED), tüm marka ve modellerde hizmet verilmektedir. Orijinal yedek parça ile çalışılır.</p>
-      <p style="min-height: 52px; font-size: 16px; line-height: 1.6; margin: 12px 0; color: #222;">Sayfa mobil cihazlarda 1 saniyeden kısa sürede açılır. Speed Index değeri optimize edilmiştir. Görsel kullanılmadan düz paragraflarla içerik sunulur.</p>
-      <p style="min-height: 52px; font-size: 16px; line-height: 1.6; margin: 12px 0; color: #222;"><strong>Not:</strong> Garantisi bitmiş cihazlara hizmet verilir. Yetkili servis değiliz.</p>
+      <p>Televizyonlar ekran kararması, ses gelmemesi veya görüntü bozulması gibi birçok teknik sorunla karşılaşabilir. Müdahale çoğu zaman uzman gerektirir.</p>
+      <p>Anakart, T-Con kart, LED bar, ses işlemcisi ve sinyal yolları özel cihazlarla test edilir. Gerekirse yazılım sıfırlama ve ekran değişimi yapılır.</p>
+      <p>Ekran tipi fark etmeksizin (LCD, LED, OLED, QLED), tüm marka ve modellerde hizmet verilmektedir. Orijinal yedek parça ile çalışılır.</p>
+      <p>Sayfa mobil cihazlarda 1 saniyeden kısa sürede açılır. Speed Index değeri optimize edilmiştir. Görsel kullanılmadan düz paragraflarla içerik sunulur.</p>
+      <p><strong>Not:</strong> Garantisi bitmiş cihazlara hizmet verilir. Yetkili servis değiliz.</p>
     
-      <section style="padding: 32px 0; ">
-        <h2 style="font-size: 20px; font-weight: 700; color: #003366; text-align: center; margin-bottom: 24px;">Müşteri Yorumlarımız</h2>
+
     
-        <div style="padding: 0 20px; box-sizing: border-box; max-width: 900px; margin: 0 auto;">
-          
-          <div style="border-bottom: 1px solid #ccc; padding: 12px 0;">
-            <p style="font-weight: 600; color: #003366; margin-bottom: 6px;">Erdem Balcı</p>
-            <p style="font-size: 14px; color: #444; line-height: 1.5;">Ekranda çizgiler vardı, evde gelip tamir ettiler.</p>
+      <section style="padding: 40px 20px; background: #eef3f8;">
+        <h2 class="section-title">Müşteri Yorumlarımız</h2>
+        <div class="comment-wrapper">
+    
+          <div class="comment-box">
+            <p>Serap Güler</p>
+            <p>"Televizyonum açılmıyordu. Kısa sürede arızayı bulup onardılar."</p>
           </div>
     
-          <div style="border-bottom: 1px solid #ccc; padding: 12px 0;">
-            <p style="font-weight: 600; color: #003366; margin-bottom: 6px;">Ceylan Tan</p>
-            <p style="font-size: 14px; color: #444; line-height: 1.5;">Görüntü yoktu, yerinde müdahale ettiler. Teşekkürler.</p>
+          <div class="comment-box">
+            <p>Erdem Balcı</p>
+            <p>"Ekranda çizgiler vardı, evde gelip tamir ettiler."</p>
           </div>
     
-          <div style="border-bottom: 1px solid #ccc; padding: 12px 0;">
-            <p style="font-weight: 600; color: #003366; margin-bottom: 6px;">Yunus Taşkın</p>
-            <p style="font-size: 14px; color: #444; line-height: 1.5;">Eski televizyonumu çalışır hale getirdiler. Teşekkürler.</p>
+          <div class="comment-box">
+            <p>Ceylan Tan</p>
+            <p>"Görüntü yoktu, yerinde müdahale ettiler. Teşekkürler."</p>
           </div>
     
-          <div style="border-bottom: 1px solid #ccc; padding: 12px 0;">
-            <p style="font-weight: 600; color: #003366; margin-bottom: 6px;">Seda Bilgin</p>
-            <p style="font-size: 14px; color: #444; line-height: 1.5;">Kumanda dahil tüm sorunlar çözüldü. Tavsiye ederim.</p>
+          <div class="comment-box">
+            <p>Yunus Taşkın</p>
+            <p>"Eski televizyonumu çalışır hale getirdiler. Teşekkürler."</p>
+          </div>
+    
+          <div class="comment-box">
+            <p>Seda Bilgin</p>
+            <p>"Kumanda dahil tüm sorunlar çözüldü. Tavsiye ederim."</p>
           </div>
     
         </div>
       </section>
     </div>
-    
-    
-    
-    
   </main>
  
   <section style="
@@ -1832,24 +1825,23 @@
     </div>
   </section>
 
-  <div style="max-width: 900px; margin: 0 auto; position: relative;">
-    <a id="stickyCall" style="
-      position: fixed;
-      bottom: 75px;
-      right: calc(50% - 450px); /* 900px içerik genişliğinin yarısı */
-      background-color: #198754;
-      color: #ffffff;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      z-index: 999;
-    ">
-      📞 Hemen Ara
-    </a>
-  </div>
+  <a id="stickyCall" style="
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  background-color: #198754;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+">
+  📞 Hemen Ara
+  </a>
+
   
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
@@ -1902,98 +1894,98 @@
     ⬆️ 
   </a>  
 
-  <script>
-    // Merkezi şirket verileri
-    const siteData = {
-      businessName: "Beyaz Eşya Servisi",
-      phone: "+905372040191",
-      formattedPhone: "+90 (537) 204 01 91",
-      address: {
-        street: "Atatürk Mahallesi Servis Sk. No:3",
-        city: "Yenişehir / MERSİN",
-        region: "TR",
-      },
-      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
-      logo: "favicon.svg",
-      vergiNo: "1234567890"
+<script>
+  // Merkezi şirket verileri
+  const siteData = {
+    businessName: "Beyaz Eşya Servisi",
+    phone: "+905372040191",
+    formattedPhone: "+90 (537) 204 01 91",
+    address: {
+      street: "Atatürk Mahallesi Servis Sk. No:3",
+      city: "Yenişehir / MERSİN",
+      region: "TR",
+    },
+    websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+    logo: "favicon.svg",
+    vergiNo: "1234567890"
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Dinamik arama butonları
+    const callBtn = document.getElementById("call-button");
+    if (callBtn) callBtn.setAttribute("href", `tel:${siteData.phone}`);
+
+    const stickyBtn = document.getElementById("stickyCall");
+    if (stickyBtn) stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
+
+    // Footer bilgileri
+    const footerPhone = document.getElementById("footerPhone");
+    if (footerPhone) footerPhone.textContent = siteData.formattedPhone;
+
+    const footerAdres = document.getElementById("footerAdres");
+    if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
+
+    const footerCompany = document.getElementById("footerCompany");
+    if (footerCompany) footerCompany.textContent = siteData.businessName;
+
+    // Favicon güncelle
+    const logoEl = document.querySelector("link[rel='icon']");
+    if (logoEl) logoEl.setAttribute("href", siteData.logo);
+
+    // Burger Menü Etkileşimi
+    const burger = document.querySelector(".burger");
+    const nav = document.getElementById("navLinks");
+    if (burger && nav) {
+      burger.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+
+    // Sayfa servisine göre içeriği göster
+    const params = new URLSearchParams(window.location.search);
+    const service = decodeURIComponent(params.get("service") || "");
+    const lower = service.toLowerCase();
+
+    const idMap = {
+      "çamaşır": "çamaşır-makinesi",
+      "bulaşık": "bulasik-makinesi-bakimi",
+      "buzdolabı": "buzdolabi-teknik-servisi",
+      "klima": "klima-servisi",
+      "kombi": "kombi-servisi",
+      "fırın": "firin-onarimi",
+      "televizyon": "televizyon-tamiri",
+      "beyaz": "beyaz-esya-servisi"
     };
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      // Dinamik arama butonları
-      const callBtn = document.getElementById("call-button");
-      if (callBtn) callBtn.setAttribute("href", `tel:${siteData.phone}`);
-  
-      const stickyBtn = document.getElementById("stickyCall");
-      if (stickyBtn) stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
-  
-      // Footer bilgileri
-      const footerPhone = document.getElementById("footerPhone");
-      if (footerPhone) footerPhone.textContent = siteData.formattedPhone;
-  
-      const footerAdres = document.getElementById("footerAdres");
-      if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
-  
-      const footerCompany = document.getElementById("footerCompany");
-      if (footerCompany) footerCompany.textContent = siteData.businessName;
-  
-      // Favicon güncelle
-      const logoEl = document.querySelector("link[rel='icon']");
-      if (logoEl) logoEl.setAttribute("href", siteData.logo);
-  
-      // Burger Menü Etkileşimi
-      const burger = document.querySelector(".burger");
-      const nav = document.getElementById("navLinks");
-      if (burger && nav) {
-        burger.addEventListener("click", function () {
-          nav.classList.toggle("show");
-        });
-      }
-  
-      // Sayfa servisine göre içeriği göster
-      const params = new URLSearchParams(window.location.search);
-      const service = decodeURIComponent(params.get("service") || "");
-      const lower = service.toLowerCase();
-  
-      const idMap = {
-        "çamaşır": "çamaşır-makinesi",
-        "bulaşık": "bulasik-makinesi-bakimi",
-        "buzdolabı": "buzdolabi-teknik-servisi",
-        "klima": "klima-servisi",
-        "kombi": "kombi-servisi",
-        "fırın": "firin-onarimi",
-        "televizyon": "televizyon-tamiri",
-        "beyaz": "beyaz-esya-servisi"
-      };
-  
-      for (const [key, id] of Object.entries(idMap)) {
+
+    for (const [key, id] of Object.entries(idMap)) {
+      const section = document.getElementById(id);
+      if (section) section.classList.remove("active");
+    }
+
+    for (const [key, id] of Object.entries(idMap)) {
+      if (lower.includes(key)) {
         const section = document.getElementById(id);
-        if (section) section.classList.remove("active");
-      }
-  
-      for (const [key, id] of Object.entries(idMap)) {
-        if (lower.includes(key)) {
-          const section = document.getElementById(id);
-          if (section) {
-            section.classList.add("active");
-          }
-          break;
+        if (section) {
+          section.classList.add("active");
         }
+        break;
       }
-  
-      // Scroll to top button
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-      if (scrollBtn) {
-        window.addEventListener("scroll", () => {
-          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-        });
-        scrollBtn.addEventListener("click", e => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-    });
-  </script>
-  
+    }
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+      scrollBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
+</script>
+
 
   <script type="application/ld+json">
     {
