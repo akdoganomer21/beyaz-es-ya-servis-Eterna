@@ -487,7 +487,7 @@
   // Merkezi şirket verileri
   const siteData = {
     businessName: "Beyaz Eşya Servisi",
-    phone: "+905372040191",
+    phone: "+90 (537) 204 01 91",
     formattedPhone: "+90 (537) 204 01 91",
     address: {
       street: "Atatürk Mahallesi Servis Sk. No:3",
@@ -509,7 +509,7 @@
 
     // Footer bilgileri
     const footerPhone = document.getElementById("footerPhone");
-    if (footerPhone) footerPhone.textContent = siteData.formattedPhone;
+    if (footerPhone) footerPhone.textContent = siteData.phone;
 
     const footerAdres = document.getElementById("footerAdres");
     if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;

@@ -492,12 +492,12 @@
   
       const tel1 = document.getElementById("iletisimTel");
       if (tel1) {
-        tel1.textContent = siteData.formattedPhone;
+        tel1.textContent = siteData.phone;
         tel1.href = `tel:${siteData.phone}`;
       }
   
       const tel2 = document.getElementById("footerTel");
-      if (tel2) tel2.textContent = siteData.formattedPhone;
+      if (tel2) tel2.textContent = siteData.phone;
   
       const mail = document.getElementById("iletisimMail");
       if (mail) mail.textContent = siteData.email;
