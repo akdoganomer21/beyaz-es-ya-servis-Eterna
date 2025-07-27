@@ -368,6 +368,14 @@
         transform: none !important;
       }
     }
+    @media (max-width: 920px) {
+  #stickyCall {
+    right: 20px !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
+
   </style>
   
 
@@ -1820,9 +1828,10 @@
   </section>
 
   <a id="stickyCall" style="
-  position: absolute;
-  bottom: 20px;
-  right: 0;
+  position: fixed;
+  bottom: 75px;
+  right: calc(50% - 450px); /* 900px genişliğe hizalı */
+  max-width: calc(100vw - 40px); /* Mobilde taşmayı engeller */
   background-color: #198754;
   color: #ffffff;
   padding: 12px 20px;
@@ -1832,9 +1841,11 @@
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 10;
+  transition: background-color 0.3s ease;
 ">
   📞 Hemen Ara
-  </a>
+</a>
+
 
   
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
