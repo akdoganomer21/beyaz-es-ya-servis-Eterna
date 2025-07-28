@@ -413,8 +413,10 @@
   <main>
     <div>
       <div id="beyaz-esya-servisi" class="service-content">
+        <div>
         <h1 class="service-title">Beyaz Eşya Servisi</h1>
-        <div>Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.</div>
+        Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.
+        </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
             <h2 class="section-title">Müşteri Yorumlarımız</h2>
@@ -1884,94 +1886,97 @@
     ⬆️ 
   </a>  
 
-  <script>
-    const siteData = {
-      businessName: "Beyaz Eşya Servisi",
-      phone: "+905372040191",
-      formattedPhone: "+90 (537) 204 01 91",
-      address: {
-        street: "Atatürk Mahallesi Servis Sk. No:3",
-        city: "Yenişehir / MERSİN",
-        region: "TR",
-      },
-      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
-      logo: "favicon.svg",
-      vergiNo: "1234567890"
+<script>
+  // Merkezi şirket verileri
+  const siteData = {
+    businessName: "Beyaz Eşya Servisi",
+    phone: "+905372040191",
+    formattedPhone: "+90 (537) 204 01 91",
+    address: {
+      street: "Atatürk Mahallesi Servis Sk. No:3",
+      city: "Yenişehir / MERSİN",
+      region: "TR",
+    },
+    websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+    logo: "favicon.svg",
+    vergiNo: "1234567890"
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Dinamik arama butonları
+    const callBtn = document.getElementById("call-button");
+    if (callBtn) callBtn.setAttribute("href", `tel:${siteData.phone}`);
+
+    const stickyBtn = document.getElementById("stickyCall");
+    if (stickyBtn) stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
+
+    // Footer bilgileri
+    const footerPhone = document.getElementById("footerPhone");
+    if (footerPhone) footerPhone.textContent = siteData.phone;
+
+    const footerAdres = document.getElementById("footerAdres");
+    if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
+
+    const footerCompany = document.getElementById("footerCompany");
+    if (footerCompany) footerCompany.textContent = siteData.businessName;
+
+    // Favicon güncelle
+    const logoEl = document.querySelector("link[rel='icon']");
+    if (logoEl) logoEl.setAttribute("href", siteData.logo);
+
+    // Burger Menü Etkileşimi
+    const burger = document.querySelector(".burger");
+    const nav = document.getElementById("navLinks");
+    if (burger && nav) {
+      burger.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+
+    // Sayfa servisine göre içeriği göster
+    const params = new URLSearchParams(window.location.search);
+    const service = decodeURIComponent(params.get("service") || "");
+    const lower = service.toLowerCase();
+
+    const idMap = {
+      "çamaşır": "çamaşır-makinesi",
+      "bulaşık": "bulasik-makinesi-bakimi",
+      "buzdolabı": "buzdolabi-teknik-servisi",
+      "klima": "klima-servisi",
+      "kombi": "kombi-servisi",
+      "fırın": "firin-onarimi",
+      "televizyon": "televizyon-tamiri",
+      "beyaz": "beyaz-esya-servisi"
     };
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      // Call buttons
-      const callBtn = document.getElementById("call-button");
-      if (callBtn) callBtn.href = `tel:${siteData.phone}`;
-  
-      const stickyBtn = document.getElementById("stickyCall");
-      if (stickyBtn) stickyBtn.href = `tel:${siteData.phone}`;
-  
-      // Footer info
-      const footerPhone = document.getElementById("footerPhone");
-      if (footerPhone) footerPhone.textContent = siteData.phone;
-  
-      const footerAdres = document.getElementById("footerAdres");
-      if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
-  
-      const footerCompany = document.getElementById("footerCompany");
-      if (footerCompany) footerCompany.textContent = siteData.businessName;
-  
-      // Favicon
-      const logoEl = document.querySelector("link[rel='icon']");
-      if (logoEl) logoEl.href = siteData.logo;
-  
-      // Burger menu
-      const burger = document.querySelector(".burger");
-      const nav = document.getElementById("navLinks");
-      if (burger && nav) {
-        burger.addEventListener("click", () => nav.classList.toggle("show"));
-      }
-  
-      // Hizmet alanını belirle
-      setTimeout(() => {
-        const params = new URLSearchParams(window.location.search);
-        const service = decodeURIComponent(params.get("service") || "").toLowerCase();
-  
-        const idMap = {
-          "çamaşır": "çamaşır-makinesi",
-          "bulaşık": "bulasik-makinesi-bakimi",
-          "buzdolabı": "buzdolabi-teknik-servisi",
-          "klima": "klima-servisi",
-          "kombi": "kombi-servisi",
-          "fırın": "firin-onarimi",
-          "televizyon": "televizyon-tamiri",
-          "beyaz": "beyaz-esya-servisi"
-        };
-  
-        let matchedId = null;
-  
-        for (const [key, id] of Object.entries(idMap)) {
-          const section = document.getElementById(id);
-          if (section) section.classList.remove("active");
-          if (service.includes(key)) matchedId = id;
+
+    for (const [key, id] of Object.entries(idMap)) {
+      const section = document.getElementById(id);
+      if (section) section.classList.remove("active");
+    }
+
+    for (const [key, id] of Object.entries(idMap)) {
+      if (lower.includes(key)) {
+        const section = document.getElementById(id);
+        if (section) {
+          section.classList.add("active");
         }
-  
-        if (matchedId) {
-          const matchedSection = document.getElementById(matchedId);
-          if (matchedSection) matchedSection.classList.add("active");
-        }
-      }, 0); // Hemen değil, bir sonraki boşlukta çalıştır → main thread yükü azalır
-  
-      // Scroll to top
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-      if (scrollBtn) {
-        window.addEventListener("scroll", () => {
-          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-        });
-        scrollBtn.addEventListener("click", e => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+        break;
       }
-    });
-  </script>
-  
+    }
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+      scrollBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
+</script>
 
 
   <script type="application/ld+json">
