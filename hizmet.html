@@ -412,6 +412,10 @@
 
   <main>
     <div>
+      <div id="unknown-service" class="service-content">
+        <h1 id="unknownTitle" class="service-title"></h1>
+        <p id="unknownText" style="font-size: 16px; margin-top: 12px; text-align:center;"></p>
+      </div>      
       <div id="beyaz-esya-servisi" class="service-content">
         <div>
         <h1 class="service-title">Beyaz Eşya Servisi</h1>
@@ -1889,7 +1893,6 @@
 
 
   <script>
-    // Merkezi şirket verileri
     const siteData = {
       businessName: "Beyaz Eşya Servisi",
       phone: "+905372040191",
@@ -1905,7 +1908,6 @@
     };
   
     document.addEventListener("DOMContentLoaded", () => {
-      // Arama butonları ve footer alanlarını ata
       const quickSet = [
         ["call-button", "href", `tel:${siteData.phone}`],
         ["stickyCall", "href", `tel:${siteData.phone}`],
@@ -1919,18 +1921,15 @@
         if (el) el[prop] = value;
       });
   
-      // Favicon güncelle
       const logoEl = document.querySelector("link[rel='icon']");
       if (logoEl) logoEl.setAttribute("href", siteData.logo);
   
-      // Menü butonu
       const burger = document.querySelector(".burger");
       const nav = document.getElementById("navLinks");
       if (burger && nav) {
         burger.addEventListener("click", () => nav.classList.toggle("show"));
       }
   
-      // Scroll to top
       const scrollBtn = document.getElementById("scrollToTopBtn");
       if (scrollBtn) {
         window.addEventListener("scroll", () => {
@@ -1942,7 +1941,6 @@
         });
       }
   
-      // Dinamik hizmet bloğunu göster (TBT dostu!)
       requestIdleCallback(() => {
         const service = decodeURIComponent(new URLSearchParams(location.search).get("service") || "").toLowerCase();
   
@@ -1957,41 +1955,44 @@
           "beyaz": "beyaz-esya-servisi"
         };
   
-        const titleMap = {
-          "çamaşır": "Çamaşır Makinesi Tamiri",
-          "bulaşık": "Bulaşık Makinesi Bakımı",
-          "buzdolabı": "Buzdolabı Teknik Servisi",
-          "klima": "Klima Servisi",
-          "kombi": "Kombi Servisi",
-          "fırın": "Fırın Onarımı",
-          "televizyon": "Televizyon Tamiri",
-          "beyaz": "Beyaz Eşya Servisi"
-        };
-  
         let matchedId = null;
-        let matchedTitle = null;
   
+        // Bütün sectionları gizle
+        Object.values(idMap).forEach(id => {
+          const sec = document.getElementById(id);
+          if (sec) sec.classList.remove("active");
+        });
+  
+        // Unknown bloğu da gizle
+        const unknownBlock = document.getElementById("unknown-service");
+        if (unknownBlock) unknownBlock.classList.remove("active");
+  
+        // Eşleşme var mı kontrol et
         for (const [key, id] of Object.entries(idMap)) {
-          const section = document.getElementById(id);
-          if (section) section.classList.remove("active");
-          if (!matchedId && service.includes(key)) {
+          if (service.includes(key)) {
             matchedId = id;
-            matchedTitle = titleMap[key]; // 🔥 burada başlık alınır
+            break;
           }
         }
   
         if (matchedId) {
           const section = document.getElementById(matchedId);
           if (section) section.classList.add("active");
-  
-          // 💡 Sayfa başlığı güncellemesi
-          if (matchedTitle) {
-            document.title = `Hizmet | ${matchedTitle}`;
+          document.title = "Hizmet | " + section.querySelector("h1").textContent;
+        } else {
+          // Tanımsız servis varsa: unknown blok görünür olsun
+          if (unknownBlock) {
+            const uc = service.charAt(0).toUpperCase() + service.slice(1);
+            document.getElementById("unknownTitle").textContent = `${uc} Servisi`;
+            document.getElementById("unknownText").textContent = `${uc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${uc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar.  Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir.  Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
+            unknownBlock.classList.add("active");
+            document.title = `Hizmet | ${uc}`;
           }
         }
       });
     });
   </script>
+  
   
 
 
