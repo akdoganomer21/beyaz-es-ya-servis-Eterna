@@ -1976,68 +1976,55 @@
       }
   
       requestIdleCallback(() => {
-  const rawService = new URLSearchParams(location.search).get("service") || "";
-  const decodedService = decodeURIComponent(rawService).toLowerCase();
-
-  const idMap = {
-    "çamaşır": "çamaşır-makinesi",
-    "bulaşık": "bulasik-makinesi-bakimi",
-    "buzdolabı": "buzdolabi-teknik-servisi",
-    "klima": "klima-servisi",
-    "kombi": "kombi-servisi",
-    "fırın": "firin-onarimi",
-    "televizyon": "televizyon-tamiri",
-    "beyaz": "beyaz-esya-servisi"
-  };
-
-  let matchedKey = null;
-  let matchedId = null;
-
-  for (const [key, id] of Object.entries(idMap)) {
-    if (decodedService.includes(key)) {
-      matchedKey = key;
-      matchedId = id;
-      break;
-    }
-  }
-
-  // Tüm içerikleri gizle
-  Object.values(idMap).forEach(id => {
-    const sec = document.getElementById(id);
-    if (sec) sec.classList.remove("active");
-  });
-
-  const unknownBlock = document.getElementById("unknown-service");
-  if (unknownBlock) unknownBlock.classList.remove("active");
-
-  // Başlıkta full yazı gözüksün
-  const fullUc = rawService.replace(/\+/g, " ")
-    .replace(/(^|\s)\S/g, l => l.toUpperCase());
-
-    if (matchedId && decodedService.trim() === matchedKey) {
-    const section = document.getElementById(matchedId);
-    if (section) section.classList.add("active");
-
-    const h1 = section.querySelector("h1.service-title");
-    if (h1) h1.textContent = fullUc;
-
-    document.title = "Hizmet | " + fullUc;
-
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
-  } else {
-    if (unknownBlock) {
-      document.getElementById("unknownTitle").textContent = fullUc;
-      document.getElementById("unknownText").textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
-
-      unknownBlock.classList.add("active");
-      document.title = "Hizmet | " + fullUc;
-    }
-  }
-});
-
+        const rawService = new URLSearchParams(location.search).get("service") || "";
+        const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
+        const idMap = {
+          "Beyaz Eşya Servisi": "beyaz-esya-servisi",
+          "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
+          "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
+          "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
+          "Fırın Onarımı": "firin-onarimi",
+          "Klima Servisi": "klima-servisi",
+          "Kombi Servisi": "kombi-servisi",
+          "Televizyon Tamiri": "televizyon-tamiri"
+        };
+  
+        Object.values(idMap).forEach(id => {
+          const sec = document.getElementById(id);
+          if (sec) sec.classList.remove("active");
+        });
+  
+        const unknownBlock = document.getElementById("unknown-service");
+        if (unknownBlock) unknownBlock.classList.remove("active");
+  
+        const matchedId = idMap[fullUc];
+  
+        if (matchedId) {
+          const section = document.getElementById(matchedId);
+          if (section) section.classList.add("active");
+  
+          const h1 = section.querySelector("h1.service-title");
+          if (h1) h1.textContent = fullUc;
+  
+          document.title = "Hizmet | " + fullUc;
+          const desc = document.querySelector('meta[name="description"]');
+          if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
+  
+        } else {
+          if (unknownBlock) {
+            document.getElementById("unknownTitle").textContent = fullUc;
+            document.getElementById("unknownText").textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
+  
+            unknownBlock.classList.add("active");
+            document.title = "Hizmet | " + fullUc;
+          }
+        }
+      });
     });
   </script>
+  
+  
+  
   
   
 
