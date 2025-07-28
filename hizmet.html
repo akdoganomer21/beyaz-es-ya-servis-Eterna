@@ -2016,7 +2016,7 @@
           // Tanımsız servis varsa: unknown blok görünür olsun
           if (unknownBlock) {
             const uc = service.charAt(0).toUpperCase() + service.slice(1);
-            document.getElementById("unknownTitle").textContent = `${uc} Servisi`;
+            document.getElementById("unknownTitle").textContent = `${uc}`;
             document.getElementById("unknownText").textContent = `${uc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${uc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar.  Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir.  Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
             unknownBlock.classList.add("active");
             document.title = `Hizmet | ${uc}`;
