@@ -327,6 +327,7 @@
       color: #444;
       line-height: 1.5;
     }
+    
 
     @media (max-width: 920px) {
       .scrollTopBtn,
@@ -2013,7 +2014,7 @@
   const fullUc = rawService.replace(/\+/g, " ")
     .replace(/(^|\s)\S/g, l => l.toUpperCase());
 
-  if (matchedId) {
+    if (matchedId && decodedService.trim() === matchedKey) {
     const section = document.getElementById(matchedId);
     if (section) section.classList.add("active");
 
