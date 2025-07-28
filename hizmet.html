@@ -117,7 +117,7 @@
       margin: 24px auto;
       padding: 20px;
       background: #f0f8ff;
-      border-left: 6px solid #4a90e2;
+
       border-radius: 6px;
     }
 
@@ -414,7 +414,7 @@
     <div>
       <div id="beyaz-esya-servisi" class="service-content">
         <div>
-        <h1 style="margin-left: 80px;" class="service-title">Beyaz Eşya Servisi</h1>
+        <h1 class="service-title">Beyaz Eşya Servisi</h1>
         Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.
         </div>
         <div>
@@ -1892,93 +1892,93 @@
     ⬆️ 
   </a>  
 
-  <script>
-    // Merkezi şirket verileri
-    const siteData = {
-      businessName: "Beyaz Eşya Servisi",
-      phone: "+905372040191",
-      formattedPhone: "+90 (537) 204 01 91",
-      address: {
-        street: "Atatürk Mahallesi Servis Sk. No:3",
-        city: "Yenişehir / MERSİN",
-        region: "TR",
-      },
-      websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
-      logo: "favicon.svg",
-      vergiNo: "1234567890"
-    };
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      // Arama butonları ve footer alanlarını ata
-      const quickSet = [
-        ["call-button", "href", `tel:${siteData.phone}`],
-        ["stickyCall", "href", `tel:${siteData.phone}`],
-        ["footerPhone", "textContent", siteData.phone],
-        ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
-        ["footerCompany", "textContent", siteData.businessName],
-      ];
-  
-      quickSet.forEach(([id, prop, value]) => {
-        const el = document.getElementById(id);
-        if (el) el[prop] = value;
-      });
-  
-      // Favicon güncelle
-      const logoEl = document.querySelector("link[rel='icon']");
-      if (logoEl) logoEl.setAttribute("href", siteData.logo);
-  
-      // Menü butonu
-      const burger = document.querySelector(".burger");
-      const nav = document.getElementById("navLinks");
-      if (burger && nav) {
-        burger.addEventListener("click", () => nav.classList.toggle("show"));
-      }
-  
-      // Scroll to top
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-      if (scrollBtn) {
-        window.addEventListener("scroll", () => {
-          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-        });
-        scrollBtn.addEventListener("click", e => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-  
-      // Dinamik hizmet bloğunu göster (TBT dostu!)
-      requestIdleCallback(() => {
-        const service = decodeURIComponent(new URLSearchParams(location.search).get("service") || "").toLowerCase();
-  
-        const idMap = {
-          "çamaşır": "çamaşır-makinesi",
-          "bulaşık": "bulasik-makinesi-bakimi",
-          "buzdolabı": "buzdolabi-teknik-servisi",
-          "klima": "klima-servisi",
-          "kombi": "kombi-servisi",
-          "fırın": "firin-onarimi",
-          "televizyon": "televizyon-tamiri",
-          "beyaz": "beyaz-esya-servisi"
-        };
-  
-        let matchedId = null;
-  
-        for (const [key, id] of Object.entries(idMap)) {
-          const section = document.getElementById(id);
-          if (section) section.classList.remove("active");
-          if (!matchedId && service.includes(key)) {
-            matchedId = id;
-          }
-        }
-  
-        if (matchedId) {
-          const section = document.getElementById(matchedId);
-          if (section) section.classList.add("active");
-        }
-      });
+<script>
+  // Merkezi şirket verileri
+  const siteData = {
+    businessName: "Beyaz Eşya Servisi",
+    phone: "+905372040191",
+    formattedPhone: "+90 (537) 204 01 91",
+    address: {
+      street: "Atatürk Mahallesi Servis Sk. No:3",
+      city: "Yenişehir / MERSİN",
+      region: "TR",
+    },
+    websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+    logo: "favicon.svg",
+    vergiNo: "1234567890"
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Arama butonları ve footer alanlarını ata
+    const quickSet = [
+      ["call-button", "href", `tel:${siteData.phone}`],
+      ["stickyCall", "href", `tel:${siteData.phone}`],
+      ["footerPhone", "textContent", siteData.phone],
+      ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
+      ["footerCompany", "textContent", siteData.businessName],
+    ];
+
+    quickSet.forEach(([id, prop, value]) => {
+      const el = document.getElementById(id);
+      if (el) el[prop] = value;
     });
-  </script>
-  
+
+    // Favicon güncelle
+    const logoEl = document.querySelector("link[rel='icon']");
+    if (logoEl) logoEl.setAttribute("href", siteData.logo);
+
+    // Menü butonu
+    const burger = document.querySelector(".burger");
+    const nav = document.getElementById("navLinks");
+    if (burger && nav) {
+      burger.addEventListener("click", () => nav.classList.toggle("show"));
+    }
+
+    // Scroll to top
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+      scrollBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    // Dinamik hizmet bloğunu göster (TBT dostu!)
+    requestIdleCallback(() => {
+      const service = decodeURIComponent(new URLSearchParams(location.search).get("service") || "").toLowerCase();
+
+      const idMap = {
+        "çamaşır": "çamaşır-makinesi",
+        "bulaşık": "bulasik-makinesi-bakimi",
+        "buzdolabı": "buzdolabi-teknik-servisi",
+        "klima": "klima-servisi",
+        "kombi": "kombi-servisi",
+        "fırın": "firin-onarimi",
+        "televizyon": "televizyon-tamiri",
+        "beyaz": "beyaz-esya-servisi"
+      };
+
+      let matchedId = null;
+
+      for (const [key, id] of Object.entries(idMap)) {
+        const section = document.getElementById(id);
+        if (section) section.classList.remove("active");
+        if (!matchedId && service.includes(key)) {
+          matchedId = id;
+        }
+      }
+
+      if (matchedId) {
+        const section = document.getElementById(matchedId);
+        if (section) section.classList.add("active");
+      }
+    });
+  });
+</script>
+
 
   <script type="application/ld+json">
     {
