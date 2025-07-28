@@ -195,7 +195,6 @@
     footer .social a:hover {
       color: #ffffff;
     }
-    
 
     footer small {
       display: block;
@@ -245,21 +244,20 @@
     }
 
     .service-content {
-  min-height: 400px;
-  visibility: hidden;
-  position: absolute;
-  left: -9999px;
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-}
+      min-height: 400px;
+      visibility: hidden;
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
 
-.service-content.active {
-  visibility: visible;
-  position: static;
-  height: auto;
-}
-
+    .service-content.active {
+      visibility: visible;
+      position: static;
+      height: auto;
+    }
 
     .service-title {
       font-size: 24px;
@@ -471,10 +469,8 @@
       </div>      
       <div id="beyaz-esya-servisi" class="service-content">
         <div>
-        <h1 class="service-title" style="min-height: 32px;">Beyaz Eşya Servisi</h1>
-        <p id="descText" style="min-height: 120px; visibility: hidden;">
-          Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.
-        </p>
+        <h1 class="service-title">Beyaz Eşya Servisi</h1>
+        Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -2164,8 +2160,6 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
-      
-
   
       requestIdleCallback(() => {
         const rawService = new URLSearchParams(location.search).get("service") || "";
@@ -2191,24 +2185,18 @@
   
         const matchedId = idMap[fullUc];
   
-        if (matchedId) { 
-  const section = document.getElementById(matchedId);
-  if (section) section.classList.add("active");
-
-  const h1 = section.querySelector("h1.service-title");
-  if (h1) h1.textContent = fullUc;
-
-  const descEl = section.querySelector("#descText");
-  if (descEl) {
-    descEl.textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
-    descEl.style.visibility = "visible";
-  }
-
-  document.title = "Hizmet | " + fullUc;
-  const desc = document.querySelector('meta[name="description"]');
-  if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
-}
-else {
+        if (matchedId) {
+          const section = document.getElementById(matchedId);
+          if (section) section.classList.add("active");
+  
+          const h1 = section.querySelector("h1.service-title");
+          if (h1) h1.textContent = fullUc;
+  
+          document.title = "Hizmet | " + fullUc;
+          const desc = document.querySelector('meta[name="description"]');
+          if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
+  
+        } else {
           if (unknownBlock) {
             document.getElementById("unknownTitle").textContent = fullUc;
             document.getElementById("unknownText").textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
@@ -2220,7 +2208,6 @@ else {
       });
     });
   </script>
-  
   
   
   
