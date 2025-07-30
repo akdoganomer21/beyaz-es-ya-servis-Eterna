@@ -245,18 +245,17 @@
 
     .service-content {
       min-height: 400px;
-      visibility: hidden;
-      position: absolute;
-      left: -9999px;
-      height: 0;
-      overflow: hidden;
+      display: none;
       width: 100%;
     }
 
     .service-content.active {
-      visibility: visible;
-      position: static;
-      height: auto;
+      display: block;
+    }
+
+    /* Ensure consistent spacing to prevent layout shift */
+    main {
+      min-height: 600px;
     }
 
     .service-title {
@@ -413,10 +412,10 @@
 
   <main>
     <div>
-      <div id="unknown-service" class="service-content">
+      <div id="unknown-service" class="service-content active">
         <div>
-          <h1 id="unknownTitle" class="service-title"></h1>
-          <p id="unknownText" style="font-size: 16px; margin-top: 12px"></p>
+          <h1 id="unknownTitle" class="service-title">Beyaz Eşya Servisi</h1>
+          <p id="unknownText" style="font-size: 16px; margin-top: 12px">Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.</p>
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -1033,11 +1032,11 @@
       </ul>
     
       <p>
-        A. Sarıyar ve O. Pakdil’in çalışmaları, kullanıcı odaklı cihaz tasarımının temizlik performansı üzerinde etkili olduğunu göstermektedir.
+        A. Sarıyar ve O. Pakdil'in çalışmaları, kullanıcı odaklı cihaz tasarımının temizlik performansı üzerinde etkili olduğunu göstermektedir.
       </p>
     
       <p>
-        Dikkatle yapılan temizlik, çamaşır makinelerinde %30’a kadar verim artışı sağlar.
+        Dikkatle yapılan temizlik, çamaşır makinelerinde %30'a kadar verim artışı sağlar.
       </p>
     
       <h3 style="margin-top: 24px;">Bulaşık Makinesi Neden İyi Yıkamaz?</h3>
@@ -1200,7 +1199,7 @@
       </ul>
     
       <p>
-        Bu özellikler, beyaz eşyalarınıza düzenli bakım yaptırmanız gerektiğini gösterir. Ayrıca, 2023 yılında kullanıcıların %65’i teknik servis hizmetlerini tercih ediyor. Bu durum, teknik servis hizmetlerinin önemini gözler önüne seriyor. Unutulmamalıdır ki, herhangi bir arıza durumunda yapılacak olan hızlı müdahaleler, cihazların ömrünü uzatır. Düşük maliyetlerle karşılaşmak ise kullanıcıların hoşuna gider. Sonuç olarak, beyaz eşya servisi hizmetleri, eve konfor katarken aynı zamanda maddi tasarruf sağlar. Doğru servisle çalışmak, ev aletlerinizi uzun ömürlü hale getirir.
+        Bu özellikler, beyaz eşyalarınıza düzenli bakım yaptırmanız gerektiğini gösterir. Ayrıca, 2023 yılında kullanıcıların %65'i teknik servis hizmetlerini tercih ediyor. Bu durum, teknik servis hizmetlerinin önemini gözler önüne seriyor. Unutulmamalıdır ki, herhangi bir arıza durumunda yapılacak olan hızlı müdahaleler, cihazların ömrünü uzatır. Düşük maliyetlerle karşılaşmak ise kullanıcıların hoşuna gider. Sonuç olarak, beyaz eşya servisi hizmetleri, eve konfor katarken aynı zamanda maddi tasarruf sağlar. Doğru servisle çalışmak, ev aletlerinizi uzun ömürlü hale getirir.
       </p>
     
       <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
@@ -1262,7 +1261,7 @@
       </h2>
     
       <p>
-        Televizyonun internete bağlanması, günümüzde oldukça önemli bir işlemdir. Size, bu sürecin ne kadar hızlı ve basit olduğunu göstereceğim. Öncelikle, televizyonun internete bağlanabilmesi için Wi-Fi veya Ethernet kablosu gerekmektedir. Eğer Wi-Fi kullanıyorsanız, güvenilir bir internet bağlantınızın olması önemlidir. Televizyonunuzun ayarlarından kablosuz ayarları bulmalısınız. Bu, genellikle <em>\"Ağ\"</em> veya <em>\"Bağlantı\"</em> sekmesi altında yer alır. Buradan, mevcut ağ bağlantılarını kontrol edebilir ve kendi ağınıza bağlanabilirsiniz.
+        Televizyonun internete bağlanması, günümüzde oldukça önemli bir işlemdir. Size, bu sürecin ne kadar hızlı ve basit olduğunu göstereceğim. Öncelikle, televizyonun internete bağlanabilmesi için Wi-Fi veya Ethernet kablosu gerekmektedir. Eğer Wi-Fi kullanıyorsanız, güvenilir bir internet bağlantınızın olması önemlidir. Televizyonunuzun ayarlarından kablosuz ayarları bulmalısınız. Bu, genellikle <em>"Ağ\"</em> veya <em>"Bağlantı\"</em> sekmesi altında yer alır. Buradan, mevcut ağ bağlantılarını kontrol edebilir ve kendi ağınıza bağlanabilirsiniz.
       </p>
     
       <p>
@@ -1283,7 +1282,7 @@
       </p>
     
       <p>
-        Günümüzde, kullanıcıların %65’i televizyonlarını internete bağlamış durumda. Bu durum, video akış platformlarının popülaritesini artırmıştır. İnsanlar, streaming servislerinin sunduğu içeriklere ulaşmak için televizyonlarını kullanıyor. Özellikle oyun gibi çoklu ortam içerikleri için güçlü internet bağlantısı gerekmektedir. Yine de, her televizyonun bağlanabilme kapasitesi farklılık gösterebilir. Yavaş internet bağlantısı ya da ağ sorunları kullanıcı deneyimini olumsuz etkileyebilir. Bu nedenle, yeterli altyapıya sahip olmak önemlidir. Televizyonunuzu internetle hızlıca buluşturmak için bu basit adımları izlemek yeterlidir.
+        Günümüzde, kullanıcıların %65'i televizyonlarını internete bağlamış durumda. Bu durum, video akış platformlarının popülaritesini artırmıştır. İnsanlar, streaming servislerinin sunduğu içeriklere ulaşmak için televizyonlarını kullanıyor. Özellikle oyun gibi çoklu ortam içerikleri için güçlü internet bağlantısı gerekmektedir. Yine de, her televizyonun bağlanabilme kapasitesi farklılık gösterebilir. Yavaş internet bağlantısı ya da ağ sorunları kullanıcı deneyimini olumsuz etkileyebilir. Bu nedenle, yeterli altyapıya sahip olmak önemlidir. Televizyonunuzu internetle hızlıca buluşturmak için bu basit adımları izlemek yeterlidir.
       </p>
     
       <h2 style="font-size: 20px; color: #005f99; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 6px;">
@@ -1302,7 +1301,7 @@
     <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222; background-color: #fefefe; padding: 20px; border-radius: 10px;">
 
       <p>
-        Hızlı ve etkili çözümler aradığınızda, soğutma sistemleri servisi devreye girer. Sorunları tespit eden uzmanlar, gerekli onarımları yapar. Bu süreçte size gereken destek, teknik servis hizmetlerinden gelir. Klima ve kombi gibi ısıtma cihazlarının bakımı da büyük önem taşır. Her yıl düzenli bakım yapılmadığında, enerji verimliliği azalır. Bunun sonucunda ise faturanıza yansır. Yıllık bakımlarda, %30’a kadar enerji tasarrufu sağlar. Cihazlarınızı kullanırken, bu tür detayları göz önünde bulundurmalısınız. Unutmayın ki, elektronik eşya onarımı için en iyi yöntem, uzman bir servisle çalışmaktır.
+        Hızlı ve etkili çözümler aradığınızda, soğutma sistemleri servisi devreye girer. Sorunları tespit eden uzmanlar, gerekli onarımları yapar. Bu süreçte size gereken destek, teknik servis hizmetlerinden gelir. Klima ve kombi gibi ısıtma cihazlarının bakımı da büyük önem taşır. Her yıl düzenli bakım yapılmadığında, enerji verimliliği azalır. Bunun sonucunda ise faturanıza yansır. Yıllık bakımlarda, %30'a kadar enerji tasarrufu sağlar. Cihazlarınızı kullanırken, bu tür detayları göz önünde bulundurmalısınız. Unutmayın ki, elektronik eşya onarımı için en iyi yöntem, uzman bir servisle çalışmaktır.
       </p>
     
       <p><strong>Beyaz eşya servisi ile ilgili detaylar şunlardır:</strong></p>
@@ -1361,7 +1360,7 @@
       </ul>
     
       <p>
-        Ayrıca, bu tür hizmetler, tüm elektronik eşya onarım süreçlerini kapsar. Yani buzdolabı veya çamaşır makinesi tamiri sırasında, diğer cihazlara yönelik de hizmet sunabilirler. Bu nedenle ev aletleri tamiri ihtiyaç duyduğunuzda, tek bir noktadan destek almanız oldukça faydalı olacaktır. Yapılan araştırmalara göre, insanların %80’i elektrikli aletlerinin tamirine öncelik vermektedir. Dolayısıyla, evdeki yardımcıların verimli çalışmasını sağlamak için düzenli bakım önemlidir.
+        Ayrıca, bu tür hizmetler, tüm elektronik eşya onarım süreçlerini kapsar. Yani buzdolabı veya çamaşır makinesi tamiri sırasında, diğer cihazlara yönelik de hizmet sunabilirler. Bu nedenle ev aletleri tamiri ihtiyaç duyduğunuzda, tek bir noktadan destek almanız oldukça faydalı olacaktır. Yapılan araştırmalara göre, insanların %80'i elektrikli aletlerinin tamirine öncelik vermektedir. Dolayısıyla, evdeki yardımcıların verimli çalışmasını sağlamak için düzenli bakım önemlidir.
       </p>
     
     </div>
@@ -1527,7 +1526,7 @@
       </ul>
     
       <p>
-        Bu yöntemlerle çoğu zaman fırın iç aydınlatmasını tekrar çalışır duruma getirebilirsiniz. Eğer sorun çözülmezse, beyaz eşya servisi personeli durumu daha kapsamlı bir şekilde inceleyecektir. Unutmayın ki, belirli bir sürede ortaya çıkan arızalar, cihaza bakım yapılmadığında sıkça görülebilir. Bu nedenle, periyodik bakım yaptırmak önemlidir. Örneğin, kullanıcıların %60’ı fırın aydınlatmasının düzgün çalışmadığını belirterek, teknik servis hizmetlerinden fayda sağlamaktadır.
+        Bu yöntemlerle çoğu zaman fırın iç aydınlatmasını tekrar çalışır duruma getirebilirsiniz. Eğer sorun çözülmezse, beyaz eşya servisi personeli durumu daha kapsamlı bir şekilde inceleyecektir. Unutmayın ki, belirli bir sürede ortaya çıkan arızalar, cihaza bakım yapılmadığında sıkça görülebilir. Bu nedenle, periyodik bakım yaptırmak önemlidir. Örneğin, kullanıcıların %60'ı fırın aydınlatmasının düzgün çalışmadığını belirterek, teknik servis hizmetlerinden fayda sağlamaktadır.
       </p>
     
       <h2 style="font-size: 20px; color: #005f99; margin-top: 30px;">Beyaz Eşya Servisinin Önemi</h2>
@@ -1586,7 +1585,7 @@
       </ul>
     
       <p>
-        Sonuç olarak, beyaz eşya servislerine düzenli olarak başvurmak, uzun vadede cihazların performansını artırır. Araştırmalara göre, beyaz eşyaların %30’u düzenli bakım yapılmadığında arıza gösterir. Bu nedenle, sorunları engellemek veya erken aşamada çözmek senin elindedir.
+        Sonuç olarak, beyaz eşya servislerine düzenli olarak başvurmak, uzun vadede cihazların performansını artırır. Araştırmalara göre, beyaz eşyaların %30'u düzenli bakım yapılmadığında arıza gösterir. Bu nedenle, sorunları engellemek veya erken aşamada çözmek senin elindedir.
       </p>
     
       <h2 style="color: #005f99; font-size: 20px;">Kombi Petek Temizliği Ne Zaman Yapılmalı?</h2>
@@ -1603,7 +1602,7 @@
       </ul>
     
       <p>
-        Uygun bakım, kombinin uzun ömürlü olmasını sağlar ve ısıtma maliyetlerini %20’ye kadar azaltabilir.
+        Uygun bakım, kombinin uzun ömürlü olmasını sağlar ve ısıtma maliyetlerini %20'ye kadar azaltabilir.
       </p>
     
       <h2 style="color: #005f99; font-size: 20px;">Beyaz Eşya Servisi Hizmetlerinin Faydaları</h2>
@@ -1620,7 +1619,7 @@
       </ul>
     
       <p>
-        2023 verilerine göre beyaz eşyaların %65’i düzenli teknik servisle bakımdan geçmektedir. Bu, cihazların arıza riskini azaltır ve kullanım süresini uzatır.
+        2023 verilerine göre beyaz eşyaların %65'i düzenli teknik servisle bakımdan geçmektedir. Bu, cihazların arıza riskini azaltır ve kullanım süresini uzatır.
       </p>
     
       <h2 style="color: #005f99; font-size: 20px;">Televizyon Smart Özellikleri Nasıl Kullanılır?</h2>
@@ -1648,7 +1647,7 @@
         <li><strong>Güncellemeler:</strong> Yazılım güncellemelerini yaparak güvenlik ve performans avantajı sağlarsınız.</li>
       </ul>
     
-      <p>Bu özellikleri kullanarak televizyonunuzdan en yüksek verimi alabilir, daha etkileşimli ve keyifli bir seyir deneyimi yaşayabilirsiniz. Smart TV’ler, modern eğlencenin merkezinde yer alır.</p>
+      <p>Bu özellikleri kullanarak televizyonunuzdan en yüksek verimi alabilir, daha etkileşimli ve keyifli bir seyir deneyimi yaşayabilirsiniz. Smart TV'ler, modern eğlencenin merkezinde yer alır.</p>
     
       <h2 style="color: #005f99;">Beyaz Eşya Servisinin Hayattaki Yeri</h2>
     
@@ -1663,7 +1662,7 @@
         <li><strong>Televizyon:</strong> Güncel içeriklere ulaşım imkânı sunar.</li>
       </ul>
     
-      <p>2023’te yapılan bir araştırmaya göre kullanıcıların %60’ı beyaz eşya arızalarında teknik servise başvuruyor. Bu da uzman desteğinin önemini göstermektedir.</p>
+      <p>2023'te yapılan bir araştırmaya göre kullanıcıların %60'ı beyaz eşya arızalarında teknik servise başvuruyor. Bu da uzman desteğinin önemini göstermektedir.</p>
     
       <h2 style="color: #005f99;">Ev Aletleri Tamiri İçin Güvenilir Servis Seçimi</h2>
     
@@ -1723,7 +1722,7 @@
           <li><strong>Kapı sızdırması:</strong> Kapak tam kapanmıyorsa, soğutma verimli olmaz ve sorun oluşur.</li>
         </ul>
         
-        <p>Bu durumlar, buzdolabı soğutma sistemleri ile ilgili sorunların belirtisidir. Genelde, kullanıcıların %30’u bu tür sorunlarla karşılaşıyor. Bu yüzden, bir teknik servise ulaşma ihtiyacı duyabilirsiniz. Uygun zamanlarda müdahale edebilirseniz, buzdolabının ömrünü uzatmış olursunuz. Ev aletleri tamiri konusunda profesyonel ekipleri tercih edebilir, cihazlarınızın yeni gibi çalışmasını sağlayabilirsiniz.</p>
+        <p>Bu durumlar, buzdolabı soğutma sistemleri ile ilgili sorunların belirtisidir. Genelde, kullanıcıların %30'u bu tür sorunlarla karşılaşıyor. Bu yüzden, bir teknik servise ulaşma ihtiyacı duyabilirsiniz. Uygun zamanlarda müdahale edebilirseniz, buzdolabının ömrünü uzatmış olursunuz. Ev aletleri tamiri konusunda profesyonel ekipleri tercih edebilir, cihazlarınızın yeni gibi çalışmasını sağlayabilirsiniz.</p>
         
         <h2>Beyaz Eşya Servisi: Günlük Yaşamın Vazgeçilmezi</h2>
         
@@ -1774,7 +1773,7 @@
           <li><strong>Acil destek:</strong> Acil durumlar için kısa süre içinde müdahale edilir.</li>
         </ul>
         
-        <p>Bu hizmetlerin tamamı, beyaz eşya servisi alanında önemli bir yer tutar. Ayrıca, bu hizmetler kapsamındaki bakımlar, genel olarak ev aletleri tamiri ve elektronik eşya onarımı konularında da size yardımcı olur. Özellikle, kullanıcıların %75’i bulaşık makinelerinde karşılaştıkları sorunların zamanla çözülebileceğini belirtir. Doğru bir bakım ve teknik destek ile işletim ömrünü uzatmak mümkündür. Bu nedenle, bulaşık makinesi teknik servis hizmetleri almak, cihazın performansını artırmak adına gerekli bir adımdır.</p>
+        <p>Bu hizmetlerin tamamı, beyaz eşya servisi alanında önemli bir yer tutar. Ayrıca, bu hizmetler kapsamındaki bakımlar, genel olarak ev aletleri tamiri ve elektronik eşya onarımı konularında da size yardımcı olur. Özellikle, kullanıcıların %75'i bulaşık makinelerinde karşılaştıkları sorunların zamanla çözülebileceğini belirtir. Doğru bir bakım ve teknik destek ile işletim ömrünü uzatmak mümkündür. Bu nedenle, bulaşık makinesi teknik servis hizmetleri almak, cihazın performansını artırmak adına gerekli bir adımdır.</p>
     
         <h2>Beyaz Eşya Servisinin Önemi ve Avantajları</h2>
         <p>Beyaz eşya servisi, hayatımızdaki önemli bir yer tutar. Ev aletlerinin düzgün çalışması, günlük yaşamı kolaylaştırır. Eğer buzdolabınız, çamaşır makineniz, bulaşık makineniz veya fırınınız gibi cihazlarda sorun yaşıyorsanız, iyi bir servis hizmetine ihtiyaç duyarsınız. Özel teknik bilgisi olan uzmanlar, sorunları tespit eder ve hızlı bir şekilde çözümler sunar. Bu aşamada, kaliteli servis almak önem kazanır. Hızlı bir müdahale, işlerinizi aksatmaz. Ayrıca, bu süreçte zaman tasarrufu sağlarsınız. Beyaz eşyalarınızın doğru şekilde bakımı, cihazların ömrünü de uzatır.</p>
@@ -1916,6 +1915,7 @@
         <h2>Beyaz Eşya Servisi, Buzdolabı, Çamaşır Makinesi, Bulaşık Makinesi, Fırın, Klima, Kombi ve Televizyon</h2>
         <p>Beyaz eşya servisi, kullanıcıların ihtiyaçlarını karşılamak için büyük bir öneme sahiptir. Bu hizmetler, bozulmuş veya verimsiz çalışan ev aletlerinin onarımını kapsar. İnsanlardan gelen servis talepleri artmaktadır. Bu durum, hizmet sağlayıcıların daha fazla müşteri kazanma isteğini artırır. Elektronik eşyaların doğru çalışması, ev işlerini kolaylaştırır. Her ne kadar bu aletler dayanıklı olsalar da zaman zaman arızalar meydana gelir. Özellikle buzdolabı, çamaşır makinesi ve bulaşık makinesi servisleri sıkça talep edilmektedir. Bu durum hizmet kalitesinin sürekli artırılması gerektiğini gösterir. Ayrıca, fırın, klima ve kombi gibi cihazlar da evlerde yoğun olarak kullanılır. Cihazların düzenli bakımları yapılmazsa, uzun vadede farklı sorunlar çıkabilir. Bu nedenle, beyaz eşya servisi kullanıcıların ilgisini çekmektedir.</p>
         
+    
         <h2>Beyaz Eşya Servisinin Önemi ve Avantajları</h2>
         <p>Beyaz eşya servisi, hayatımızdaki önemli bir yer tutar... (önceki içerik aynı şekilde devam eder)</p>
         
@@ -1924,7 +1924,7 @@
         <h2>Buzdolabı Arızaları İçin Ortalama Tamir Süresi</h2>
         <p>Buzdolabı, evlerin önemli bir parçasıdır. Mutfakta sıkça yer alır ve yiyeceklerin saklanmasını sağlar. Ancak, buzdolabında zaman zaman arızalar meydana gelir. Bu durumda, buzdolabı arızaları için gereken tamir süresi oldukça merak edilir. Önemli olan, sorunun türüne göre bu süreyi belirlemektedir. Genel olarak basit arızalar, uzun sürmeden çözümlenir. Örneğin, kapı contası değişimi ya da termostat ayarı 1-2 saat içinde sonuçlanır. Ancak daha karmaşık sorunlar, örneğin kompresör arızası, daha fazla zaman alır. Bu tür problemlerin tamiri günler sürebilir. Buzdolaplarını tamir eden uzmanlar, deneyimlerine ve sorunların doğasına bağlı olarak her case için farklı süreler belirler.</p>
         
-        <p>Buzdolabı tamiri süresi hakkında daha spesifik bilgiler sunmak da mümkündür. Sıklıkla yapılan bir araştırma, vatandaşların %65’inin tamir süreçlerinden genellikle memnun kaldığını göstermektedir. Tamir süreleri ise şu şekilde sıralanabilir:</p>
+        <p>Buzdolabı tamiri süresi hakkında daha spesifik bilgiler sunmak da mümkündür. Sıklıkla yapılan bir araştırma, vatandaşların %65'inin tamir süreçlerinden genellikle memnun kaldığını göstermektedir. Tamir süreleri ise şu şekilde sıralanabilir:</p>
         <ul>
           <li><strong>Temel düzeyde arıza:</strong> 1-3 saat.</li>
           <li><strong>Acil sistem onarımları:</strong> 2-4 saat arasında.</li>
@@ -1944,7 +1944,7 @@
         <h2>Buzdolabı Arızaları İçin Ortalama Tamir Süresi</h2>
         <p>Buzdolabı, evlerin önemli bir parçasıdır. Mutfakta sıkça yer alır ve yiyeceklerin saklanmasını sağlar. Ancak, buzdolabında zaman zaman arızalar meydana gelir. Bu durumda, buzdolabı arızaları için gereken tamir süresi oldukça merak edilir. Önemli olan, sorunun türüne göre bu süreyi belirlemektedir. Genel olarak basit arızalar, uzun sürmeden çözümlenir. Örneğin, kapı contası değişimi ya da termostat ayarı 1-2 saat içinde sonuçlanır. Ancak daha karmaşık sorunlar, örneğin kompresör arızası, daha fazla zaman alır. Bu tür problemlerin tamiri günler sürebilir. Buzdolaplarını tamir eden uzmanlar, deneyimlerine ve sorunların doğasına bağlı olarak her case için farklı süreler belirler.</p>
         
-        <p>Buzdolabı tamiri süresi hakkında daha spesifik bilgiler sunmak da mümkündür. Sıklıkla yapılan bir araştırma, vatandaşların %65’inin tamir süreçlerinden genellikle memnun kaldığını göstermektedir. Tamir süreleri ise şu şekilde sıralanabilir:</p>
+        <p>Buzdolabı tamiri süresi hakkında daha spesifik bilgiler sunmak da mümkündür. Sıklıkla yapılan bir araştırma, vatandaşların %65'inin tamir süreçlerinden genellikle memnun kaldığını göstermektedir. Tamir süreleri ise şu şekilde sıralanabilir:</p>
         <ul>
           <li><strong>Temel düzeyde arıza:</strong> 1-3 saat.</li>
           <li><strong>Acil sistem onarımları:</strong> 2-4 saat arasında.</li>
@@ -2161,7 +2161,8 @@
         });
       }
   
-      requestIdleCallback(() => {
+            // Run immediately to prevent layout shift
+      (() => {
         const rawService = new URLSearchParams(location.search).get("service") || "";
         const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
         const idMap = {
@@ -2174,38 +2175,43 @@
           "Kombi Servisi": "kombi-servisi",
           "Televizyon Tamiri": "televizyon-tamiri"
         };
-  
+
+        // Hide all service content initially to prevent layout shift
         Object.values(idMap).forEach(id => {
           const sec = document.getElementById(id);
-          if (sec) sec.classList.remove("active");
+          if (sec) {
+            sec.classList.remove("active");
+          }
         });
-  
+
         const unknownBlock = document.getElementById("unknown-service");
-        if (unknownBlock) unknownBlock.classList.remove("active");
-  
+        if (unknownBlock) {
+          unknownBlock.classList.remove("active");
+        }
+
         const matchedId = idMap[fullUc];
-  
+
         if (matchedId) {
           const section = document.getElementById(matchedId);
           if (section) section.classList.add("active");
-  
+
           const h1 = section.querySelector("h1.service-title");
           if (h1) h1.textContent = fullUc;
-  
+
           document.title = "Hizmet | " + fullUc;
           const desc = document.querySelector('meta[name="description"]');
           if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
-  
+
         } else {
           if (unknownBlock) {
             document.getElementById("unknownTitle").textContent = fullUc;
             document.getElementById("unknownText").textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
-  
+
             unknownBlock.classList.add("active");
             document.title = "Hizmet | " + fullUc;
           }
         }
-      });
+      })();
     });
   </script>
   
