@@ -471,9 +471,14 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+
+  // Dropdown açık kalmasın, kapat
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
+}
+
   
     const siteData = {
       name: "Beyaz Eşya Servisi",
