@@ -471,8 +471,13 @@
   <script>
     // Menü aç/kapa
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
+  document.getElementById("navLinks").classList.toggle("show");
+
+  // Açık dropdown varsa kapat
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
+}
+
   
     // Hizmet verileri
     const hizmetler = [
