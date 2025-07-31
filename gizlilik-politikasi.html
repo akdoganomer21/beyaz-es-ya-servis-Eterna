@@ -458,7 +458,12 @@
   function toggleMenu() {
   const nav = document.getElementById("navLinks");
   nav.classList.toggle("show");
+
+  // Menü açıldığında dropdown içerik görünmesin
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
 }
+
   </script>
   
 
