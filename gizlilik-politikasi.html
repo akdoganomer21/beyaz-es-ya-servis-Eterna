@@ -266,8 +266,9 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
         <div class="dropdown">
-          <a href="hizmetler.html">Hizmetlerimiz</a>
-          <div class="dropdown-content">
+          <p onclick="toggleDropdown()" style="cursor:pointer;">Hizmetlerimiz</p>
+          <div class="dropdown-content" id="dropdownContent" style="display: none;">
+            <a href="hizmetler.html">Tüm Hizmetler</a>
             <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
             <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
@@ -446,6 +447,18 @@
         stickyCall.setAttribute("href", `tel:${siteData.phone}`);
       }
     });
+    function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
+  }
+  function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
   </script>
   
 
