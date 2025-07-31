@@ -669,7 +669,12 @@ line-height: 1.5;
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   nav.classList.toggle("show");
+
+  // Menü açıldığında dropdown içeriğini kapat
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
 }
+
 
   </script>
   
