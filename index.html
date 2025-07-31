@@ -528,8 +528,13 @@
     const nav = document.getElementById("navLinks");
     if (burger && nav) {
       burger.addEventListener("click", function () {
-        nav.classList.toggle("show");
-      });
+  nav.classList.toggle("show");
+
+  // Ek olarak, dropdown menüyü kapat
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
+});
+
     }
 
     // Sayfa servisine göre içeriği göster
