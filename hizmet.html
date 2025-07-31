@@ -2148,7 +2148,14 @@
       const burger = document.querySelector(".burger");
       const nav = document.getElementById("navLinks");
       if (burger && nav) {
-        burger.addEventListener("click", () => nav.classList.toggle("show"));
+        burger.addEventListener("click", () => {
+  nav.classList.toggle("show");
+
+  // Açık dropdown varsa kapat
+  const dropdown = document.getElementById("dropdownContent");
+  if (dropdown) dropdown.style.display = "none";
+});
+
       }
   
       const scrollBtn = document.getElementById("scrollToTopBtn");
