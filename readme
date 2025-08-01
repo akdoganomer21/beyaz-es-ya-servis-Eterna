@@ -1,16 +1,70 @@
-// Web sitesine dair detaylara "BeyazEşyaRapor (ÖMER AKDOĞAN)" adlı klasörden ulaşabilirsiniz.
+# 🛠️ Beyaz Eşya Servis Sitesi
 
+Bu proje, beyaz eşya servisi hizmeti sunan bir firma için geliştirilen modern, hızlı ve mobil uyumlu bir web sitesidir. Proje tamamen HTML, CSS ve JavaScript kullanılarak oluşturulmuştur.
 
-// Web sitesi linki : https://beyaz-esya-servis-eterna.netlify.app/
+## 🔍 Proje Özellikleri
 
+- ✅ **Mobil Uyumlu (Responsive)** tasarım
+- ⚡ **Hızlı Açılış:** Tüm sayfalar < 1 saniye yüklenme süresi
+- 🧠 **SEO Uyumlu:** `meta` etiketler + `schema.org` JSON-LD yapılandırması
+- 💡 **CLS (Cumulative Layout Shift)** sıfıra indirilmiş düzen
+- 📞 **Sticky “Hemen Ara” Butonu**
+- 🔍 **Dinamik Hizmet Detayları:** `?service=` parametresiyle içerik gösterimi
+- 🌐 **Netlify Üzerinden Yayın:** https://beyaz-esya-servis-eterna.netlify.app/
+- 🏷️ **Merkezi Firma Bilgileri Yönetimi:** `siteData` nesnesi ile tüm sayfalarda tek yerden yönetim
+- 🗂️ **Kullanılan Sayfalar:**
+  - `index.html`
+  - `hizmetler.html`
+  - `iletisim.html`
+  - `hakkimizda.html`
+  - `kvkk.html`
+  - `gizlilik-politikasi.html`
 
+## 💡 Teknik Detaylar
+
+- **Sayfa Açılış Hızı:** Mobil cihazlarda dahi 1 saniyeden kısa sürede yüklenir
+- **Speed Index:** 100 (Google PageSpeed Insights testi ile doğrulanmıştır)
+- **Yapılandırılmış Veri (Structured Data):**
+  - `Article`, `LocalBusiness`, `BreadcrumbList`, `FAQPage`, `Review`, `QAPage`
+- **CLS Problemi:** `display: none` ve `visibility: hidden` ile çözüldü
+- **Meta Bilgiler:** Her sayfa için özel başlık, açıklama ve sosyal medya görseli
+- **Mobil Arama Butonu:** Tüm sayfalarda sabit pozisyonda görünür
+
+## 📸 Sayfa Tasarımı
+
+- Sade ve kullanıcı dostu tasarım
+- Sayfa içeriği ortalanmış, arka plan yumuşak renklerle düzenlenmiş
+- Fontlar ve butonlar optimize edilmiştir
+
+## 🧩 Kullanılan Teknolojiler
+
+- HTML5
+- CSS3 (Inline + class tabanlı)
+- Vanilla JavaScript
+- Netlify (Deployment)
+- Google PageSpeed Insights (Performans testleri)
+
+## ℹ️ Ek Bilgiler
+
+Bu proje gerçek bir servis firması için örnek teşkil etmesi amacıyla oluşturulmuştur. Tüm içerikler temsili hazırlanmıştır. Firma bilgileri, hizmet açıklamaları ve müşteri yorumları örnekleme amaçlıdır.
+// push etmek için       :   "   git add . git commit -m "Güncelleme mesajı" git push   "
+// kodu çalıştırmak için :  " open with live server aç.  ""
 // schema.org yapısal verileri testi için kullanılan web sitesi :  "  https://developers.google.com/search/docs/appearance/structured-data/article?hl=tr  "
-
-
 // Performans , erişebilirilk , hız gibi değerleri kulmak için kullanılan web sitesi  :  "  https://pagespeed.web.dev/  "
-
-
 // web sitesi taskı linki  :  "  https://dash.eterna.net.tr/storage/7687/687deaf4a2e79.pdf  "
+// netlify proje linki  :  "  https://app.netlify.com/teams/akdoganomer21/projects  "
+// eterena dashboard linki : "  https://dash.eterna.net.tr/tasks?responsible_personal=205  "
+// serpsonic makale linki :  "  https://serpsonic.com/dash/articles/2771  "
+
+---
 
 
-// serpsonic makale linki :  "  https://serpsonic.com/dash/articles/2771  " (Çok kapsamlı olan bu siteyi makale oluşturmak için kullanabilirsiniz.)
+## ✨ Demo Linki
+
+🔗 [Siteyi Ziyaret Et](https://beyaz-esya-servis-eterna.netlify.app/)
+
+
+
+
+
+
