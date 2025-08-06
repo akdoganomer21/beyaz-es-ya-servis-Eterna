@@ -206,32 +206,32 @@
     .scrollTopBtn {
   position: fixed;
   bottom: 20px;
-  left: max(20px, calc(50% - 450px));
+  right: max(20px, calc(50% - 450px));
   background: none;
   border: none;
   color: #198754; /* Sadece yazı rengi */
-  font-size: 18px;
+  font-size: 30px;
   text-decoration: underline;
   display: none;
   z-index: 1000;
   padding: 0;
 }
 
-    .sticky-call {
-      position: fixed;
-      bottom: 75px;
-      right: calc(50% - 450px);
-      background-color: #198754;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      z-index: 999;
-      transition: background 0.3s ease;
-    }
+.sticky-call {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #198754;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
 
     .sticky-call:hover {
       background-color: #157347;
@@ -322,12 +322,6 @@
     }
     
 
-    @media (max-width: 920px) {
-      .scrollTopBtn,
-      .sticky-call {
-        right: 20px;
-      }
-    }
 
     @media (max-width: 600px) {
       .nav-links {
@@ -356,19 +350,25 @@
         color: #fff;
       }
 
-      .sticky-call {
-        right: 20px !important;
-        left: auto !important;
-        transform: none !important;
-      }
-    }
-    @media (max-width: 920px) {
-  #stickyCall {
-    right: 20px !important;
-    left: auto !important;
-    transform: none !important;
-  }
 }
+.section-title-line {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 6px;
+}
+
+
 
   </style>
   
@@ -464,7 +464,7 @@
       <div id="beyaz-esya-servisi" class="service-content">
         <div>
         <h1 class="service-title">Beyaz Eşya Servisi</h1>
-        Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.
+        Firmamız, buzdolabı ve çamaşır makinesi gibi beyaz eşyalarınızda oluşan arızalara aynı gün yerinde, hızlı ve uzman teknik servis sunar.
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -517,7 +517,7 @@
       <div id="buzdolabi-teknik-servisi" class="service-content">
         <div>
         <h1 class="service-title">Buzdolabı Teknik Servisi</h1>
-        Buzdolapları sürekli çalışan, hassas sistemli cihazlardır. Zamanla elektrik dalgalanmaları, gaz eksilmesi veya kullanıcı hataları nedeniyle performans düşebilir. Teknik servisimiz dış gövde, fan, kompresör, defrost sistemi ve sensörleri detaylı şekilde kontrol eder. Arızalar kullanıcı onayıyla giderilir. No-Frost, statik, çift kapılı, dijital ekranlı tüm modeller için bakım ve tamir hizmeti veriyoruz. Periyodik temizlikle cihaz ömrü uzatılır. Sadece garantisi bitmiş cihazlara hizmet verilmektedir. Yalnızca orijinal yedek parçalar kullanılmakta ve tüm işlemler kayıt altına alınmaktadır. Soğutma problemlerinizin büyümeden çözülmesi için hemen bizimle iletişime geçin. Yerinde, hızlı ve profesyonel hizmet sunuyoruz.
+        Garantisi bitmiş buzdolapları için yerinde, hızlı ve profesyonel tamir hizmeti sunuyor; yalnızca orijinal yedek parçalarla tüm modellerde uzman servis sağlıyoruz.
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -576,7 +576,7 @@
       <div id="çamaşır-makinesi" class="service-content">
         <div>
         <h1 class="service-title">Çamaşır Makinesi Tamiri</h1>
-          <p>Çamaşır makineleri zamanla tambur dönmeme, su almama, gürültü, sızıntı gibi sorunlarla karşılaşabilir. Profesyonel servis müdahalesi gerektirir. Tüm marka ve modeller için teknik ekibimiz yerinde tamir hizmeti sağlar. Elektriksel, mekanik ve yazılımsal testlerle arıza tespiti yapılır. yükleme, yanlış deterjan, parça yıpranması gibi nedenler detaylı kontrol edilir. Gerekirse motor, rezistans, pompa değiştirilir. Sadece garantisi sona ermiş cihazlara hizmet verilir. Onarımlar yerinde yapılır, kullanıcıya bakım ve kullanım önerileri sunulur. Tüm işlemler kayıt altına alınır ve sadece orijinal ya da garantili parçalar kullanılır. Hızlı, güvenilir, ekonomik çözüm sunarız.</p>
+          <p>Garantisi bitmiş çamaşır makinelerine yerinde, hızlı ve güvenilir tamir hizmeti sunuyor; tüm marka ve modellerde arıza tespiti ve çözüm profesyonelce sağlanıyor.</p>
         </div>
         <div>
           <section style="padding: 30px 15px; background: #eef3f8;">
@@ -634,7 +634,7 @@
       <div id="bulasik-makinesi-bakimi" class="service-content">
         <div>
           <h1 class="service-title">Bulaşık Makinesi Bakımı</h1>
-          Bulaşık makineleri düzenli bakım yapılmadığında kireç, tıkanıklık, kötü koku gibi sorunlarla performans kaybına uğrar. Bu da temizlik kalitesini düşürür. Teknik ekibimiz su giriş vanaları, hortumlar, filtreler, fan motorları ve rezistans dahil olmak üzere tüm parçaları detaylı inceler ve temizlik sağlar. Isıtma sistemleri, kurutma kanalları, sensörler ve elektronik kartlar test edilir. Gerekli durumlarda yedek parça değişimi yapılır. Sadece garantisi bitmiş cihazlara hizmet verilmektedir. Ankastre, solo ve dijital göstergeli tüm modeller desteklenmektedir. Enerji ve su tasarrufu için düzenli bakım yaptırmak önemlidir. Tüm işlemler hijyenik şekilde ve çevre dostu ürünlerle gerçekleştirilir.
+          Garantisi bitmiş bulaşık makineleri için tüm modellere yerinde ve hijyenik bakım hizmeti sunuyor, arıza tespiti ve gerekirse parça değişimi yapıyoruz.
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -698,7 +698,7 @@
         <div>
           <h1 class="service-title" style="min-height: 32px; font-size: 24px; line-height: 1.4; font-weight: 700; color: #003366; text-align: center;">Fırın Onarımı</h1>
           <div style="min-height: 280px; min-height: 56px; font-size: 16px; line-height: 1.6; color: #222">
-            Fırınlar zamanla ısıtma, fan, termostat veya kapak arızaları oluşturabilir. Yemeklerin eşit pişmemesi genellikle teknik müdahale gerektirir. Uzman ekip; sensör, zamanlayıcı, kontrol paneli ve rezistans gibi bölümleri yerinde test ederek onarımı tamamlar. Fırın yerinden çıkarılmaz, işlem sonrası ısı testi yapılır. Kullanıcıya doğru kullanım bilgisi verilir. Sadece garantisi bitmiş cihazlara müdahale edilir. Gereksiz parça değişiminden kaçınılır. Sayfa yapısı hızlı açılacak şekilde sadeleştirilmiştir. HTML ve CSS optimize edilmiştir.
+            Garantisi bitmiş fırınlara yerinde müdahale ederek, sensör ve rezistans dahil tüm arızaları test edip onarıyoruz; fırın yerinden çıkarılmaz ve işlem sonrası ısı testi yapılır.
           </div>
         </div>
         <div>
@@ -752,14 +752,7 @@
       <div id="klima-servisi" class="service-content">
         <div>
           <h1 class="service-title" style="min-height: 32px;">Klima Servisi</h1>
-      
-          <div style="min-height: 260px;">
-            <p style="min-height: 52px;">Klimalar sadece soğutma değil, nem kontrolü ve hava kalitesi açısından da önemlidir. Ancak zamanla toz, gaz kaçağı, fan ve drenaj sorunları yaşanabilir.</p>
-            <p style="min-height: 52px;">Ekibimiz split, inverter ve salon tipi tüm modeller için filtre, serpantin, fan ve elektronik kart kontrolleri dahil kapsamlı bakım hizmeti sunar.</p>
-            <p style="min-height: 52px;">Gaz seviyesi ölçülür, gerekirse dolum yapılır. Tüm işlemler yerinde ve şeffaf şekilde gerçekleştirilir. Müşteri onayı olmadan hiçbir müdahale yapılmaz.</p>
-            <p style="min-height: 52px;">Sadece garantisi bitmiş cihazlara hizmet sunulmaktadır. Bakım sonrası cihazlar daha sessiz çalışır, enerji tasarrufu sağlar.</p>
-            <p style="min-height: 52px;">Sayfa yapısı sadeleştirilmiştir. Google PageSpeed kriterlerine uygun olarak hızlı açılır ve SEO dostudur.</p>
-          </div>
+          Klimalar zamanla toz, gaz kaçağı ve fan problemleri yaşayabilir. Uzman ekibimiz tüm modellerde yerinde bakım, filtre ve kart kontrolü yapar. Gaz seviyesi ölçülür, gerekirse dolum yapılır. Tüm işlemler şeffaf, onaylı ve garantisi bitmiş cihazlar için gerçekleştirilir.
         </div>
         <div>
           <section style="padding: 24px 12px; background: #eef3f8;">
@@ -812,9 +805,7 @@
       <div id="kombi-servisi" class="service-content">
         <div>
           <h1 class="service-title">Kombi Servisi</h1>
-      
-          Kombiler sıcak su ve ısınma ihtiyaçlarını karşılar. Ancak zamanla basınç düşüklüğü, sıcak su gelmeme, sesli çalışma gibi arızalar meydana gelebilir.nUzman ekibimiz eşanjör, anakart, fan ve sensörler dahil tüm parçaları test cihazlarıyla kontrol eder. Gereksiz parça değişimi yapılmaz. Bakım sırasında toz temizliği, basınç ayarı, iyonizasyon testi ve kış/yaz modu kontrolleri gerçekleştirilir. Isı verimi yükseltilir. Sayfa mobilde 1 saniyenin altında açılacak şekilde optimize edilmiştir. CSS sadeleştirilmiştir. Görsel kullanılmadan hızlı yüklenir.
-          <p><strong>Not:</strong> Yalnızca garantisi bitmiş kombilere hizmet verilmektedir.</p>
+          Kombilerde zamanla sıcak su ve basınç sorunları oluşabilir. Ekibimiz tüm parçaları test cihazlarıyla kontrol eder, bakımda basınç ayarı ve temizlik yapılır. Gereksiz parça değişiminden kaçınılır; hızlı ve verimli hizmet sağlanır.
         </div>
         <div>
           <section style="padding: 24px 12px; background: #eef3f8;">
@@ -873,8 +864,7 @@
       <div id="televizyon-tamiri" class="service-content">
         <div>
           <h1 class="service-title">Televizyon Tamiri</h1>
-          Televizyonlar ekran kararması, ses gelmemesi veya görüntü bozulması gibi birçok teknik sorunla karşılaşabilir. Müdahale çoğu zaman uzman gerektirir. Anakart, T-Con kart, LED bar, ses işlemcisi ve sinyal yolları özel cihazlarla test edilir. Gerekirse yazılım sıfırlama ve ekran değişimi yapılır. Ekran tipi fark etmeksizin (LCD, LED, OLED, QLED), tüm marka ve modellerde hizmet verilmektedir. Orijinal yedek parça ile çalışılır. Sayfa mobil cihazlarda 1 saniyeden kısa sürede açılır. Speed Index değeri optimize edilmiştir. Görsel kullanılmadan düz paragraflarla içerik sunulur.
-          <p><strong>Not:</strong> Garantisi bitmiş cihazlara hizmet verilir. Yetkili servis değiliz.</p>
+          Televizyonlarda ekran kararması veya ses sorunları uzman müdahalesi gerektirir. Ekibimiz tüm marka ve modellerde özel test cihazlarıyla arıza tespiti yapar, gerekirse yazılım sıfırlama veya parça değişimi gerçekleştirir.
         </div>
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
@@ -2038,9 +2028,9 @@
 
   <a id="stickyCall" style="
   position: fixed;
-  bottom: 20px;
-  right: calc(50% - 450px); /* 900px genişliğe hizalı */
-  max-width: calc(100vw - 40px); /* Mobilde taşmayı engeller */
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #198754;
   color: #ffffff;
   padding: 12px 20px;
@@ -2049,18 +2039,21 @@
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 10;
+  z-index: 999;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 ">
-  📞 Hemen Ara
-  </a>
+📞 Hemen Ara
+</a>
+
+
 
   <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
       
       <!-- Hizmetler -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
+        <h2  class="section-title-line" class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
           <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
@@ -2075,7 +2068,7 @@
   
       <!-- Kurumsal -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
+        <h2 class="section-title-line" class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
           <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
@@ -2086,7 +2079,7 @@
   
       <!-- Destek -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
         <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
