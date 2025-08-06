@@ -90,7 +90,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -338,12 +338,12 @@
           <div class="dropdown-content" id="dropdownContent" style="display: none;">
             <a href="hizmetler.html">Tüm Hizmetler</a>
             <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
-            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
             <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
             <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
             <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
-            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Kombi+Servisi">Kombi Servisi</a>
             <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
         </div>
@@ -489,15 +489,26 @@
   </footer>
 
   <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
-
-  // Dropdown açık kalmasın, kapat
-  const dropdown = document.getElementById("dropdownContent");
-  if (dropdown) dropdown.style.display = "none";
-}
-
-  
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    
+      // Dropdown açık kalmasın, kapat
+      const dropdown = document.getElementById("dropdownContent");
+      if (dropdown) dropdown.style.display = "none";
+    
+      // Menü açıldığında flag'i güncelle
+      isMenuOpen = document.getElementById("navLinks").classList.contains("show");
+    }
+    
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownContent");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+    
     const siteData = {
       name: "Beyaz Eşya Servisi",
       phone: "+905372040191",
@@ -507,48 +518,63 @@ function toggleMenu() {
       logo: "favicon.svg",
       year: new Date().getFullYear()
     };
-  
+    
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("#firmaAdi").forEach(el => el.textContent = siteData.name);
-      
+    
       const callBtn = document.getElementById("callBtn");
       if (callBtn) callBtn.href = `tel:${siteData.phone}`;
-  
+    
       const tel1 = document.getElementById("iletisimTel");
       if (tel1) {
         tel1.textContent = siteData.phone;
         tel1.href = `tel:${siteData.phone}`;
       }
-  
+    
       const tel2 = document.getElementById("footerTel");
       if (tel2) tel2.textContent = siteData.phone;
-  
+    
       const mail = document.getElementById("iletisimMail");
       if (mail) mail.textContent = siteData.email;
-  
+    
       const adres = document.getElementById("iletisimAdres");
       if (adres) adres.textContent = siteData.address;
-  
+    
       const footerYil = document.getElementById("footerYil");
       if (footerYil) footerYil.textContent = siteData.year;
-  
+    
       const footerAdres = document.getElementById("footerAdres");
       if (footerAdres) footerAdres.textContent = siteData.address;
-  
+    
       // ⬇️ Sticky Call Butonu işlevi
       const stickyCall = document.getElementById("stickyCall");
       if (stickyCall) stickyCall.href = `tel:${siteData.phone}`;
     });
-    function toggleDropdown() {
-    const dropdown = document.getElementById("dropdownContent");
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
+    
+    // ⬇️ Aşağı scroll yapıldığında menü kapanacak
+    let lastScrollY = window.scrollY;
+    let isMenuOpen = false;
+    
+    window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  if (isMenuOpen && currentScrollY > lastScrollY) {
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks.classList.contains("show")) {
+      navLinks.classList.remove("show");
     }
+
+    const dropdown = document.getElementById("dropdownContent");
+    if (dropdown) dropdown.style.display = "none";
+
+    isMenuOpen = false;
   }
 
-  </script>
+  lastScrollY = currentScrollY;
+});
+
+    </script>
+    
   
 
 
