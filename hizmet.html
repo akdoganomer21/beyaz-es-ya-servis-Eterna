@@ -87,7 +87,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -382,7 +382,6 @@
         <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
       </div>
       <button class="burger">☰</button>
-
       <div class="nav-links" id="navLinks">
         <a href="index.html">Ana Sayfa</a>
         <div class="dropdown">
@@ -407,11 +406,14 @@
 
   <main>
     <div>
-      <div id="unknown-service" class="service-content active">
+      <div id="unknown-service" class="service-content" style="display: none;">
         <div>
-          <h1 id="unknownTitle" class="service-title">Beyaz Eşya Servisi</h1>
-          <p id="unknownText" style="font-size: 16px; margin-top: 12px">Beyaz eşyalar evdeki en temel yardımcılarımızdır. Ancak zamanla aşınma, elektrik dalgalanmaları veya kullanıcı hataları nedeniyle arıza verebilir. Firmamız buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve ankastre ürünlerde teknik servis sağlar. Uzman ekibimiz, aynı gün çözüm odaklı hizmet sunar. Yerinde tamir ve detaylı arıza raporuyla cihazlarınız kısa sürede tekrar çalışır hale gelir.</p>
+          <h1 id="unknownTitle" class="service-title">Servis</h1>
+          <p id="unknownText" style="font-size: 16px; margin-top: 12px">
+             <!-- dinamik olarak geliyor buraya bilgiler. script 'ten.   -->
+          </p>
         </div>
+        
         <div>
           <section style="padding: 40px 20px; background: #eef3f8;">
             <h2 class="section-title">Müşteri Yorumlarımız</h2>
@@ -933,7 +935,8 @@
       </div>
     </div>
   </main>
- 
+
+
   <section style="
   max-width: 900px;
   margin: 32px auto;
@@ -1647,7 +1650,7 @@
         <li><strong>Televizyon:</strong> Güncel içeriklere ulaşım imkânı sunar.</li>
       </ul>
     
-      <p>2023'te yapılan bir araştırmaya göre kullanıcıların %60'ı beyaz eşya arızalarında teknik servise başvuruyor. Bu da uzman desteğinin önemini göstermektedir.</p>
+      <p>2023'te yapılan bir araştırma, kullanıcıların %60'ı beyaz eşya arızalarında teknik servise başvuruyor. Bu da uzman desteğinin önemini göstermektedir.</p>
     
       <h2 style="color: #005f99;">Ev Aletleri Tamiri İçin Güvenilir Servis Seçimi</h2>
     
@@ -2101,6 +2104,8 @@
   </a>  
 
 
+
+  
   <script>
     const siteData = {
       businessName: "Beyaz Eşya Servisi",
@@ -2117,6 +2122,7 @@
     };
   
     document.addEventListener("DOMContentLoaded", () => {
+      // === HIZLI VERİ SET ===
       const quickSet = [
         ["call-button", "href", `tel:${siteData.phone}`],
         ["stickyCall", "href", `tel:${siteData.phone}`],
@@ -2124,7 +2130,6 @@
         ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
         ["footerCompany", "textContent", siteData.businessName],
       ];
-  
       quickSet.forEach(([id, prop, value]) => {
         const el = document.getElementById(id);
         if (el) el[prop] = value;
@@ -2133,19 +2138,18 @@
       const logoEl = document.querySelector("link[rel='icon']");
       if (logoEl) logoEl.setAttribute("href", siteData.logo);
   
+      // === BURGER MENU ===
       const burger = document.querySelector(".burger");
       const nav = document.getElementById("navLinks");
       if (burger && nav) {
         burger.addEventListener("click", () => {
-  nav.classList.toggle("show");
-
-  // Açık dropdown varsa kapat
-  const dropdown = document.getElementById("dropdownContent");
-  if (dropdown) dropdown.style.display = "none";
-});
-
+          nav.classList.toggle("show");
+          const dropdown = document.getElementById("dropdownContent");
+          if (dropdown) dropdown.style.display = "none";
+        });
       }
   
+      // === SCROLL TO TOP BUTTON ===
       const scrollBtn = document.getElementById("scrollToTopBtn");
       if (scrollBtn) {
         window.addEventListener("scroll", () => {
@@ -2157,67 +2161,80 @@
         });
       }
   
-            // Run immediately to prevent layout shift
-      (() => {
-        const rawService = new URLSearchParams(location.search).get("service") || "";
-        const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
-        const idMap = {
-          "Beyaz Eşya Servisi": "beyaz-esya-servisi",
-          "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
-          "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
-          "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
-          "Fırın Onarımı": "firin-onarimi",
-          "Klima Servisi": "klima-servisi",
-          "Kombi Servisi": "kombi-servisi",
-          "Televizyon Tamiri": "televizyon-tamiri"
-        };
-
-        // Hide all service content initially to prevent layout shift
-        Object.values(idMap).forEach(id => {
-          const sec = document.getElementById(id);
-          if (sec) {
-            sec.classList.remove("active");
-          }
-        });
-
-        const unknownBlock = document.getElementById("unknown-service");
-        if (unknownBlock) {
-          unknownBlock.classList.remove("active");
+      // === SCROLL İLE NAVBAR KAPAT ===
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navLinks");
+        const dropdown = document.getElementById("dropdownContent");
+        if (window.scrollY > 10 && nav && nav.classList.contains("show")) {
+          nav.classList.remove("show");
+          if (dropdown) dropdown.style.display = "none";
         }
-
-        const matchedId = idMap[fullUc];
-
-        if (matchedId) {
-          const section = document.getElementById(matchedId);
-          if (section) section.classList.add("active");
-
-          const h1 = section.querySelector("h1.service-title");
-          if (h1) h1.textContent = fullUc;
-
-          document.title = "Hizmet | " + fullUc;
-          const desc = document.querySelector('meta[name="description"]');
-          if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
-
-        } else {
-          if (unknownBlock) {
-            document.getElementById("unknownTitle").textContent = fullUc;
-            document.getElementById("unknownText").textContent = `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
-
-            unknownBlock.classList.add("active");
-            document.title = "Hizmet | " + fullUc;
-          }
+      });
+  
+      // === HİZMET BLOKLARI YÖNETİMİ ===
+      const idMap = {
+        "Beyaz Eşya Servisi": "beyaz-esya-servisi",
+        "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
+        "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
+        "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
+        "Fırın Onarımı": "firin-onarimi",
+        "Klima Servisi": "klima-servisi",
+        "Kombi Servisi": "kombi-servisi",
+        "Televizyon Tamiri": "televizyon-tamiri"
+      };
+  
+      const rawService = new URLSearchParams(location.search).get("service") || "";
+      const decodedService = decodeURIComponent(rawService.replace(/\+/g, " "));
+      const formattedService = decodedService.replace(/(^|\s)\S/g, l => l.toUpperCase());
+      const matchedId = idMap[formattedService];
+  
+      document.querySelectorAll(".service-content").forEach(el => {
+        el.classList.remove("active");
+        el.style.display = "none";
+      });
+  
+      const unknownBlock = document.getElementById("unknown-service");
+  
+      if (matchedId && document.getElementById(matchedId)) {
+        const section = document.getElementById(matchedId);
+        section.classList.add("active");
+        section.style.display = "block";
+  
+        const h1 = section.querySelector("h1.service-title");
+        if (h1) h1.textContent = formattedService;
+  
+        document.title = "Hizmet | " + formattedService;
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute("content", `${formattedService} için profesyonel teknik servis hizmeti.`);
+      } else if (unknownBlock) {
+        unknownBlock.classList.add("active");
+        unknownBlock.style.display = "block";
+  
+        const h1 = unknownBlock.querySelector("h1.service-title");
+        const p = unknownBlock.querySelector("p#unknownText");
+        if (h1) h1.textContent = formattedService + " Servisi";
+        if (p) {
+          p.textContent = `${formattedService} servisi cihazlarınızda yaşanan arızalar için hızlı ve güvenilir çözümler sunar. Uzman teknisyenlerimiz, ${formattedService} servisi kapsamında yerinde onarım hizmeti sağlar. Tüm onarımlar garantili şekilde gerçekleştirilir ve cihazınız kısa sürede çalışır hale gelir.`;
         }
-      })();
+  
+        document.title = "Hizmet | " + formattedService;
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute("content", `${formattedService} için servis bilgisi bulunamadı.`);
+      }
     });
+  
     function toggleDropdown() {
-    const dropdown = document.getElementById("dropdownContent");
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
+      const dropdown = document.getElementById("dropdownContent");
+      if (dropdown) {
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      }
     }
-  }
   </script>
+  
+  
+
+
+  
   
   
   
