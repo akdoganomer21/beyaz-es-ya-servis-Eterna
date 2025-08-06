@@ -90,7 +90,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -315,13 +315,13 @@ svg {
           <div class="dropdown-content" id="dropdownContent" style="display: none;">
             <a href="hizmetler.html">Tüm Hizmetler</a>
             <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
-            <a href="hizmet.html?service=Buzdolabı">Buzdolabı Teknik servisi</a>
-            <a href="hizmet.html?service=Çamaşır+Makinesi">Çamaşır Makinesi Tamiri</a>
-            <a href="hizmet.html?service=Bulaşık+Makinesi">Bulaşık Makinesi Bakımı</a>
-            <a href="hizmet.html?service=Fırın">Fırın Onarımı</a>
-            <a href="hizmet.html?service=Klima">Klima Servisi</a>
-            <a href="hizmet.html?service=Kombi+Teknik">Kombi Servisi</a>
-            <a href="hizmet.html?service=Televizyon">Televizyon Tamiri</a>
+            <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
         </div>
         <a href="hakkimizda.html">Hakkımızda</a>
@@ -494,119 +494,131 @@ svg {
   </footer>
   
 
-<script>
-  // Merkezi şirket verileri
-  const siteData = {
-    businessName: "Beyaz Eşya Servisi",
-    phone: "+90 (537) 204 01 91",
-    formattedPhone: "+90 (537) 204 01 91",
-    address: {
-      street: "Atatürk Mahallesi Servis Sk. No:3",
-      city: "Yenişehir / MERSİN",
-      region: "TR",
-    },
-    websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
-    logo: "favicon.svg",
-    vergiNo: "1234567890"
-  };
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Dinamik arama butonları
-    const callBtn = document.getElementById("call-button");
-    if (callBtn) callBtn.setAttribute("href", `tel:${siteData.phone}`);
-
-    const stickyBtn = document.getElementById("stickyCall");
-    if (stickyBtn) stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
-
-    // Footer bilgileri
-    const footerPhone = document.getElementById("footerPhone");
-    if (footerPhone) footerPhone.textContent = siteData.phone;
-
-    const footerAdres = document.getElementById("footerAdres");
-    if (footerAdres) footerAdres.textContent = `${siteData.address.street}, ${siteData.address.city}`;
-
-    const footerCompany = document.getElementById("footerCompany");
-    if (footerCompany) footerCompany.textContent = siteData.businessName;
-
-    // Favicon güncelle
-    const logoEl = document.querySelector("link[rel='icon']");
-    if (logoEl) logoEl.setAttribute("href", siteData.logo);
-
-    // Burger Menü Etkileşimi
-    const burger = document.querySelector(".burger");
-    const nav = document.getElementById("navLinks");
-    if (burger && nav) {
-      burger.addEventListener("click", function () {
-  nav.classList.toggle("show");
-
-  // Ek olarak, dropdown menüyü kapat
-  const dropdown = document.getElementById("dropdownContent");
-  if (dropdown) dropdown.style.display = "none";
-});
-
-    }
-
-    // Sayfa servisine göre içeriği göster
-    const params = new URLSearchParams(window.location.search);
-    const service = decodeURIComponent(params.get("service") || "");
-    const lower = service.toLowerCase();
-
-    const idMap = {
-      "çamaşır": "çamaşır-makinesi",
-      "bulaşık": "bulasik-makinesi-bakimi",
-      "buzdolabı": "buzdolabi-teknik-servisi",
-      "klima": "klima-servisi",
-      "kombi": "kombi-servisi",
-      "fırın": "firin-onarimi",
-      "televizyon": "televizyon-tamiri",
-      "beyaz": "beyaz-esya-servisi"
-    };
-
-    for (const [key, id] of Object.entries(idMap)) {
-      const section = document.getElementById(id);
-      if (section) section.classList.remove("active");
-    }
-
-    for (const [key, id] of Object.entries(idMap)) {
-      if (lower.includes(key)) {
-        const section = document.getElementById(id);
-        if (section) {
-          section.classList.add("active");
-
-          // Paragrafları ve başlıkları göster
-          section.querySelectorAll("p, h1, h2").forEach(el => {
-            el.style.display = "block";
-            el.style.visibility = "visible";
-          });
-        }
-        break;
+  <script>
+    window.onload = function () {
+      const siteData = {
+        businessName: "Beyaz Eşya Servisi",
+        phone: "+905372040191",
+        formattedPhone: "+90 (537) 204 01 91",
+        address: {
+          street: "Atatürk Mahallesi Servis Sk. No:3",
+          city: "Yenişehir / MERSİN",
+          region: "TR",
+        },
+        websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+        logo: "favicon.svg",
+        vergiNo: "1234567890"
+      };
+  
+      const quickSet = [
+        ["call-button", "href", `tel:${siteData.phone}`],
+        ["stickyCall", "href", `tel:${siteData.phone}`],
+        ["footerPhone", "textContent", siteData.phone],
+        ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
+        ["footerCompany", "textContent", siteData.businessName],
+      ];
+  
+      quickSet.forEach(([id, prop, value]) => {
+        const el = document.getElementById(id);
+        if (el) el[prop] = value;
+      });
+  
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) logoEl.setAttribute("href", siteData.logo);
+  
+      const burger = document.querySelector(".burger");
+      const nav = document.getElementById("navLinks");
+      const dropdown = document.getElementById("dropdownContent");
+  
+      if (burger && nav) {
+        burger.addEventListener("click", () => {
+          nav.classList.toggle("show");
+          if (dropdown) dropdown.style.display = "none";
+        });
       }
-    }
-
-    // Scroll to top button
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (scrollBtn) {
+  
+      // Dropdown açma/kapatma işlevi
+      window.toggleDropdown = function () {
+        if (!dropdown) return;
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      };
+  
+      // Scroll sırasında menüyü ve dropdown'ı hemen kapat
+      let lastScrollY = window.scrollY;
       window.addEventListener("scroll", () => {
-        scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        const currentScrollY = window.scrollY;
+        if (nav.classList.contains("show") && currentScrollY > lastScrollY) {
+          nav.classList.remove("show");
+          if (dropdown) dropdown.style.display = "none";
+        }
+        lastScrollY = currentScrollY;
       });
-      scrollBtn.addEventListener("click", e => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+  
+      // ScrollToTop butonu
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      if (scrollBtn) {
+        window.addEventListener("scroll", () => {
+          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+        scrollBtn.addEventListener("click", e => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+  
+      // Sayfa parametresine göre ilgili servisi aktif yap
+      const rawService = new URLSearchParams(location.search).get("service") || "";
+      const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
+  
+      const idMap = {
+        "Beyaz Eşya Servisi": "beyaz-esya-servisi",
+        "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
+        "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
+        "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
+        "Fırın Onarımı": "firin-onarimi",
+        "Klima Servisi": "klima-servisi",
+        "Kombi Servisi": "kombi-servisi",
+        "Televizyon Tamiri": "televizyon-tamiri"
+      };
+  
+      Object.values(idMap).forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.remove("active");
       });
-    }
-  });
-  function toggleDropdown() {
+  
+      const unknownBlock = document.getElementById("unknown-service");
+      if (unknownBlock) unknownBlock.classList.remove("active");
+  
+      const matchedId = idMap[fullUc];
+  
+      if (matchedId) {
+        const section = document.getElementById(matchedId);
+        if (section) section.classList.add("active");
+  
+        const h1 = section.querySelector("h1.service-title");
+        if (h1) h1.textContent = fullUc;
+  
+        document.title = "Hizmet | " + fullUc;
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
+      } else if (unknownBlock) {
+        document.getElementById("unknownTitle").textContent = fullUc;
+        document.getElementById("unknownText").textContent =
+          `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar. Cihazınızla ilgili tüm arıza, bakım ve onarım talepleriniz için hafta içi ve hafta sonu kesintisiz hizmet veriyoruz. Yerinde servis imkânı, orijinal yedek parça garantisi ve müşteri memnuniyeti önceliğimizdir. Hemen bizi arayın, cihazınızı profesyonel ellere emanet edin.`;
+  
+        unknownBlock.classList.add("active");
+        document.title = "Hizmet | " + fullUc;
+      }
+    };
+    function toggleMenu() {
     const dropdown = document.getElementById("dropdownContent");
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
+    if (dropdown) {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     }
   }
-
-
-</script>
+  </script>
+  
+    
 
   
   <script type="application/ld+json">
