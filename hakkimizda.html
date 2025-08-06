@@ -94,7 +94,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -325,12 +325,12 @@
           <div class="dropdown-content" id="dropdownContent" style="display: none;">
             <a href="hizmetler.html">Tüm Hizmetler</a>
             <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
-            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
             <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
             <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
             <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
-            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Kombi+Servisi">Kombi Servisi</a>
             <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
         </div>
@@ -527,6 +527,33 @@ function toggleMenu() {
       dropdown.style.display = "block";
     }
   }
+
+  (function () {
+  let lastScrollY = window.scrollY;
+  let isMenuOpen = false;
+
+  const burger = document.querySelector('.burger');
+  const navLinks = document.getElementById('navLinks');
+  const dropdown = document.getElementById('dropdownContent');
+
+  // Menü açıldığında flag güncelle
+  burger?.addEventListener('click', () => {
+    isMenuOpen = navLinks?.classList.contains('show');
+  });
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (isMenuOpen && currentScrollY > lastScrollY) {
+      navLinks?.classList.remove('show');
+      if (dropdown) dropdown.style.display = 'none';
+      isMenuOpen = false;
+    }
+
+    lastScrollY = currentScrollY;
+  });
+})();
+
   </script>
   
   
