@@ -90,7 +90,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -287,12 +287,12 @@
           <div class="dropdown-content" id="dropdownContent" style="display: none;">
             <a href="hizmetler.html">Tüm Hizmetler</a>
             <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
-            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Buzdolabı+Teknik+Servisi">Buzdolabı Teknik Servisi</a>
             <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
             <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
             <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
             <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
-            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Kombi+Servisi">Kombi Servisi</a>
             <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
           </div>
         </div>
@@ -482,6 +482,33 @@
   if (dropdown) dropdown.style.display = "none";
 }
 
+let lastScrollY = window.scrollY;
+let isMenuOpen = false;
+
+// Burger menüye basıldığında menü açık mı diye kontrol
+document.querySelector('.burger')?.addEventListener('click', () => {
+  const navLinks = document.getElementById("navLinks");
+  isMenuOpen = navLinks?.classList.contains("show");
+});
+
+// Scroll sırasında menüyü kapat
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  if (isMenuOpen && currentScrollY > lastScrollY) {
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks?.classList.contains("show")) {
+      navLinks.classList.remove("show");
+    }
+
+    const dropdown = document.getElementById("dropdownContent");
+    if (dropdown) dropdown.style.display = "none";
+
+    isMenuOpen = false;
+  }
+
+  lastScrollY = currentScrollY;
+});
   </script>
   
 
