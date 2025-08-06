@@ -204,24 +204,18 @@
     }
 
     .scrollTopBtn {
-      position: fixed;
-      bottom: 25px;
-      right: calc(50% - 450px);
-      background-color: #333;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 20px;
-      display: none;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    .scrollTopBtn:hover {
-      background-color: #555;
-    }
+  position: fixed;
+  bottom: 20px;
+  left: max(20px, calc(50% - 450px));
+  background: none;
+  border: none;
+  color: #198754; /* Sadece yazı rengi */
+  font-size: 18px;
+  text-decoration: underline;
+  display: none;
+  z-index: 1000;
+  padding: 0;
+}
 
     .sticky-call {
       position: fixed;
@@ -2044,7 +2038,7 @@
 
   <a id="stickyCall" style="
   position: fixed;
-  bottom: 75px;
+  bottom: 20px;
   right: calc(50% - 450px); /* 900px genişliğe hizalı */
   max-width: calc(100vw - 40px); /* Mobilde taşmayı engeller */
   background-color: #198754;
@@ -2094,7 +2088,6 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
         <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
@@ -2102,7 +2095,9 @@
   
     <div style="text-align: center; margin-top: 30px; font-size: 16px; color: #ccc;">
       <div class="warning">
-        ⚠️ UYARI: Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
+      </p>
+      <strong style="color: #fff;">⚠️ Yetkili servis değildir.</strong> Sunduğumuz hizmetler, sadece  <strong style="color: #fff;">garanti süresi dolmuş cihazlar</strong> içindir. 
+      </p>
       </div><br>
       <small>© 2025 <span id="footerCompany"></span>. Tüm Hakları Saklıdır.</small>
     </div>
