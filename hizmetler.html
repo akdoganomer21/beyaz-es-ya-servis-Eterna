@@ -91,7 +91,7 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: block;
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
     }
 
     .dropdown-content a {
@@ -487,121 +487,129 @@
   </footer>
 
   <script>
-    // Menü aç/kapa
-    function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
-
-  // Açık dropdown varsa kapat
-  const dropdown = document.getElementById("dropdownContent");
-  if (dropdown) dropdown.style.display = "none";
-}
-
+    window.onload = function () {
+      const siteData = {
+        businessName: "Beyaz Eşya Servisi",
+        phone: "+905372040191",
+        formattedPhone: "+90 (537) 204 01 91",
+        address: {
+          street: "Atatürk Mahallesi Servis Sk. No:3",
+          city: "Yenişehir / MERSİN",
+          region: "TR",
+        },
+        websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+        logo: "favicon.svg",
+        vergiNo: "1234567890"
+      };
   
-    // Hizmet verileri
-    const hizmetler = [
-      {
-        ad: "Beyaz Eşya Servisi",
-        aciklama: "Genel arıza tespiti, bakım ve onarım işlemleri. Tüm beyaz eşyalar için hızlı servis çözümleri."
-      },
-      {
-        ad: "Buzdolabı Teknik Servisi",
-        aciklama: "Soğutmama, ses yapma, çalışmama gibi arızaların onarımı."
-      },
-      {
-        ad: "Çamaşır Makinesi Tamiri",
-        aciklama: "Su almama, sıkmama, titreşimli çalışma sorunlarına müdahale."
-      },
-      {
-        ad: "Bulaşık Makinesi Bakımı",
-        aciklama: "Temizlik performansı düşüklüğü, su sızıntısı ve benzeri problemler için bakım ve tamir."
-      },
-      {
-        ad: "Fırın Onarımı",
-        aciklama: "Isıtmama, düğme sorunları, cam değişimi gibi işlemler."
-      },
-      {
-        ad: "Klima Servisi",
-        aciklama: "Gaz dolumu, genel bakım, soğutmama ve su akıtma sorunları çözümü."
-      },
-      {
-        ad: "Kombi Servisi",
-        aciklama: "Petek ısıtmama, su basıncı problemleri, yıllık periyodik bakım hizmeti."
-      },
-      {
-        ad: "Televizyon Tamiri",
-        aciklama: "Görüntü gitmesi, ses problemi, ekran kırılması gibi konularda teknik destek."
-      }
-    ];
+      const quickSet = [
+        ["call-button", "href", `tel:${siteData.phone}`],
+        ["stickyCall", "href", `tel:${siteData.phone}`],
+        ["footerPhone", "textContent", siteData.phone],
+        ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
+        ["footerCompany", "textContent", siteData.businessName],
+      ];
   
-    const siteData = {
-      name: "Beyaz Eşya Servisi",
-      phone: "+905372040191",
-      formattedPhone: "+90 (537) 204 01 91",
-      email: "beyazesyaservis@example.com",
-      address: "Atatürk Mahallesi Servis Sk. No:3, Yenişehir / MERSİN",
-      url: "https://beyaz-esya-servis-eterna.netlify.app/",
-      logo: "favicon.svg"
-    };
+      quickSet.forEach(([id, prop, value]) => {
+        const el = document.getElementById(id);
+        if (el) el[prop] = value;
+      });
   
-    function encodeForUrl(text) {
-      return encodeURIComponent(text);
-    }
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) logoEl.setAttribute("href", siteData.logo);
   
-    document.addEventListener("DOMContentLoaded", function () {
-      // Hizmet listesini oluştur
-      const hizmetListesi = document.getElementById("hizmetListesi");
-      if (hizmetListesi) {
-        hizmetler.forEach(hizmet => {
-          const li = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = `hizmet.html?service=${encodeForUrl(hizmet.ad)}`;
-          link.innerHTML = `<strong>${hizmet.ad}</strong>`;
-          const desc = document.createElement("span");
-          desc.textContent = hizmet.aciklama;
-          li.appendChild(link);
-          li.appendChild(desc);
-          hizmetListesi.appendChild(li);
+      const burger = document.querySelector(".burger");
+      const nav = document.getElementById("navLinks");
+      const dropdown = document.getElementById("dropdownContent");
+  
+      if (burger && nav) {
+        burger.addEventListener("click", () => {
+          nav.classList.toggle("show");
+          if (dropdown) dropdown.style.display = "none";
         });
       }
   
-      // Footer bilgileri
-      const tel = document.getElementById("footerTel");
-      const adres = document.getElementById("footerAdres");
-      if (tel) tel.textContent = siteData.phone;
-      if (adres) adres.textContent = siteData.address;
+      // ⬇️ Dropdown açma/kapatma (Artık çalışır!)
+      window.toggleDropdown = function () {
+        if (!dropdown) return;
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      };
   
-      // Sticky Call Butonu
-      const stickyBtn = document.getElementById("stickyCall");
-      if (stickyBtn) {
-        stickyBtn.setAttribute("href", `tel:${siteData.phone}`);
-      }
+      // ⬇️ Scroll olunca navbar ve dropdown kapanır
+      let lastScrollY = window.scrollY;
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (nav.classList.contains("show") && currentScrollY > lastScrollY) {
+          nav.classList.remove("show");
+          if (dropdown) dropdown.style.display = "none";
+        }
+        lastScrollY = currentScrollY;
+      });
   
-      // Yukarı çık butonu işlevi
+      // ⬇️ ScrollToTop butonu
       const scrollBtn = document.getElementById("scrollToTopBtn");
       if (scrollBtn) {
         window.addEventListener("scroll", () => {
-          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollBtn.style.display = "block";
-          } else {
-            scrollBtn.style.display = "none";
-          }
+          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
         });
-  
-        scrollBtn.addEventListener("click", function (e) {
+        scrollBtn.addEventListener("click", e => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
-    });
-    function toggleDropdown() {
+  
+      // ⬇️ URL parametresine göre içerik bloğu aktive et
+      const rawService = new URLSearchParams(location.search).get("service") || "";
+      const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
+  
+      const idMap = {
+        "Beyaz Eşya Servisi": "beyaz-esya-servisi",
+        "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
+        "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
+        "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
+        "Fırın Onarımı": "firin-onarimi",
+        "Klima Servisi": "klima-servisi",
+        "Kombi Servisi": "kombi-servisi",
+        "Televizyon Tamiri": "televizyon-tamiri"
+      };
+  
+      Object.values(idMap).forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.remove("active");
+      });
+  
+      const unknownBlock = document.getElementById("unknown-service");
+      if (unknownBlock) unknownBlock.classList.remove("active");
+  
+      const matchedId = idMap[fullUc];
+  
+      if (matchedId) {
+        const section = document.getElementById(matchedId);
+        if (section) section.classList.add("active");
+  
+        const h1 = section.querySelector("h1.service-title");
+        if (h1) h1.textContent = fullUc;
+  
+        document.title = "Hizmet | " + fullUc;
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
+      } else if (unknownBlock) {
+        document.getElementById("unknownTitle").textContent = fullUc;
+        document.getElementById("unknownText").textContent =
+          `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar.`;
+  
+        unknownBlock.classList.add("active");
+        document.title = "Hizmet | " + fullUc;
+      }
+    };
+    function toggleMenu() {
     const dropdown = document.getElementById("dropdownContent");
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
+    if (dropdown) {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     }
   }
   </script>
+  
   
   
 
