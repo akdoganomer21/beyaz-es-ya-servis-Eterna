@@ -302,6 +302,23 @@
       background-color: #218838;
     }
     }
+    .section-title-line {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 6px;
+}
+
   </style>
 
 </head>
@@ -427,7 +444,7 @@
     <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
       <!-- Hizmetler -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
           <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
@@ -442,7 +459,7 @@
   
       <!-- Kurumsal -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
           <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
@@ -453,7 +470,7 @@
   
       <!-- Destek -->
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
-        <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
         <p id="footerAdres" style="font-size: 14px; color: #ccc; margin-top: 8px;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
