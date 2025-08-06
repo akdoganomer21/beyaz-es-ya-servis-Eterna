@@ -226,68 +226,60 @@
     }
 
     @media (max-width: 600px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #003366;
-        margin-top: 10px;
-      }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #003366;
+    margin-top: 10px;
+  }
 
-      .nav-links.show {
-        display: flex;
-      }
+  .nav-links.show {
+    display: flex;
+  }
 
-      .burger {
-        display: block;
-      }
+  .burger {
+    display: block;
+  }
 
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: #004080;
-      }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: #004080;
+  }
 
-      .dropdown-content a {
-        color: #fff;
-      }
-    }
+  .dropdown-content a {
+    color: #fff;
+  }
+}
 
-    svg {
-      height: 28px;
-      width: 28px;
-      fill: #28a745;
-    }
+svg {
+  height: 28px;
+  width: 28px;
+  fill: #28a745;
+}
 
-    @media (max-width: 600px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #003366;
-        margin-top: 10px;
-      }
+.kutular {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-      .nav-links.show {
-        display: flex;
-      }
+.tercih-kutu {
+  flex: 1 1 calc(50% - 20px);
+  text-align: center;
+}
 
-      .burger {
-        display: block;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: #004080;
-      }
-
-      .dropdown-content a {
-        color: #fff;
-      }
+@media (max-width: 281px) {
+  .tercih-kutu {
+    flex: 1 1 100% !important;
+  }
+}
 
 
-    }
   </style>
 
 </head>
@@ -337,31 +329,31 @@
     <!-- NEDEN BİZ -->
     <section style="padding: 40px 20px; background: #eef3f8;">
       <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Neden Bizi Tercih Etmelisiniz?</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
-        <div style="flex: 1 1 200px; text-align: center;">
+      <div class="kutular" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24"><path fill="#28a745" d="M6.62 10.79a15.093 15.093 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.66.6 1 1 0 011 1v3.59a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.59a1 1 0 011 1 11.72 11.72 0 00.6 3.66 1 1 0 01-.21 1.11l-2.36 2.36z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">7/24 Hizmet</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24"><path fill="#28a745" d="M12 1L8.5 6.5 2 7.5 6.5 12 5 18l7-3 7 3-1.5-6L22 7.5l-6.5-1z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">1 Yıl Garanti</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24" fill="#28a745" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
           </svg>
           <p style="margin-top: 10px; font-weight: bold;">20 Dakikada Geliş</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#28a745"/><circle cx="8" cy="10" r="1.5" fill="#fff"/><circle cx="16" cy="10" r="1.5" fill="#fff"/><path fill="#fff" d="M8 16c1.33 1.33 4.67 1.33 6 0"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">%100 Mutluluk</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24" fill="#28a745" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.41 11.58l-9-9A2 2 0 0011 2H4a2 2 0 00-2 2v7a2 2 0 00.59 1.41l9 9a2 2 0 002.82 0l7-7a2 2 0 000-2.83zM7 7a1.5 1.5 0 112.999.001A1.5 1.5 0 017 7zm5.5 9.5L9 13l1.41-1.41 2.09 2.09 4.09-4.09L18 11l-5.5 5.5z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">En Uygun Fiyat</p>
         </div>
-        <div style="flex: 1 1 200px; text-align: center;">
+        <div class="tercih-kutu">
           <svg viewBox="0 0 24 24"><path fill="#28a745" d="M12 1L3 5v6c0 5.25 3.45 9.74 9 11 5.55-1.26 9-5.75 9-11V5l-9-4zm-1 15l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z"/></svg>
           <p style="margin-top: 10px; font-weight: bold;">%100 Güvenilir</p>
         </div>
@@ -469,7 +461,6 @@
       <div style="flex: 1 1 200px; margin-bottom: 20px;">
         <h2 style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
         <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
-        <p id="footerPhone" style="font-size: 20px; font-weight: bold; color: #fff;"></p>
         <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
         <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
       </div>
@@ -477,7 +468,9 @@
   
     <div style="text-align: center; margin-top: 30px; font-size: 16px; color: #ccc;">
       <div class="warning">
-        ⚠️ UYARI: Bu site sadece bilgilendirme amaçlıdır. Yetkili servis değildir.
+        </p>
+        <strong style="color: #fff;">⚠️ Yetkili servis değildir.</strong> Sunduğumuz hizmetler, sadece  <strong style="color: #fff;">garanti süresi dolmuş cihazlar</strong> içindir. 
+        </p>
       </div><br>
       <small>© 2025 <span id="footerCompany"></span>. Tüm Hakları Saklıdır.</small>
     </div>
