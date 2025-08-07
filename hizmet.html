@@ -141,7 +141,7 @@ html.js-loaded .loading-indicator {
       margin: 24px auto;
       padding: 20px;
       background: #f0f8ff;
-      border-left: none;
+      border-left: 6px solid transparent; /* Always reserve space for border to prevent layout shift */
       border-radius: 6px;
       min-height: 1200px; /* Loading sırasında layout shift'i önlemek için artırıldı */
     }
@@ -277,11 +277,15 @@ html.js-loaded .loading-indicator {
       min-height: 800px; /* mobilde aşağı yukarı içerik kadar */
       overflow: hidden;
       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      /* Prevent layout shifts by ensuring consistent dimensions */
+      box-sizing: border-box;
     }
 
     /* Ensure consistent spacing to prevent layout shift */
     main {
       min-height: 600px;
+      /* Prevent layout shifts by ensuring consistent box model */
+      box-sizing: border-box;
     }
 
     .service-title {
