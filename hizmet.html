@@ -20,6 +20,14 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <style>
+      html:not(.js-loaded) .service-content {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .service-content.active {
+    display: block;
+    visibility: visible;
+  }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -119,6 +127,7 @@
       background: #f0f8ff;
       border-left: 6px solid #4a90e2;
       border-radius: 6px;
+      min-height: 1000px;
     }
 
     h1 {
@@ -244,10 +253,9 @@
       min-height: 400px;
       display: none;
       width: 100%;
-    }
-
-    .service-content.active {
-      display: block;
+      min-height: 800px; /* mobilde aşağı yukarı içerik kadar */
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
     }
 
     /* Ensure consistent spacing to prevent layout shift */
@@ -2220,6 +2228,8 @@
         dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
       }
     }
+    document.documentElement.classList.add('js-loaded');
+
   </script>
   
 
