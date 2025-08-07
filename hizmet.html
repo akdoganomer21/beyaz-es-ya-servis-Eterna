@@ -219,17 +219,20 @@
 
 .sticky-call {
   position: fixed;
-  bottom: 20px;
   left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
   transform: translateX(-50%);
-  background-color: #198754;
+  background-color: #28a745;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 20px;
+  border-radius: 40px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 999;
   transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
 
@@ -2036,25 +2039,7 @@
     </div>
   </section>
 
-  <a id="stickyCall" style="
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #198754;
-  color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-">
-📞 Hemen Ara
-</a>
+  <a id="stickyCall" class="sticky-call" style="display: inline-block; margin-top: 24px; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">📞 Hemen Ara</a>
 
 
 
@@ -2356,7 +2341,7 @@
       ]
     }
   </script>
-  
+
 
 </body>
 </html>
