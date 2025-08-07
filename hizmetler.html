@@ -208,19 +208,22 @@
     }
 
     .sticky-call {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #28a745;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      transition: background 0.3s ease;
-    }
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
 
     .sticky-call:hover {
       background-color: #218838;
@@ -299,19 +302,22 @@
       line-height: 1.5;
     }
     .sticky-call {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #28a745;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      transition: background 0.3s ease;
-    }
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
 
     .sticky-call:hover {
       background-color: #218838;
@@ -333,6 +339,792 @@
   margin-top: 6px;
 }
 
+.sticky-call {
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html" style="color: white; text-decoration: none;">Beyaz Eşya Servisi</a>
+      </div>
+      <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sayfa</a>
+        <div class="dropdown">
+          <p onclick="toggleDropdown()" style="cursor:pointer;">Hizmetlerimiz</p>
+          <div class="dropdown-content" id="dropdownContent" style="display: none;">
+            <a href="hizmetler.html">Tüm Hizmetler</a>
+            <a href="hizmet.html?service=Beyaz+Eşya+Servisi">Beyaz Eşya Servisi</a>
+            <a href="hizmet.html?service=Buzdolabı+Servisi">Buzdolabı Teknik Servisi</a>
+            <a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri">Çamaşır Makinesi Tamiri</a>
+            <a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı">Bulaşık Makinesi Bakımı</a>
+            <a href="hizmet.html?service=Fırın+Onarımı">Fırın Onarımı</a>
+            <a href="hizmet.html?service=Klima+Servisi">Klima Servisi</a>
+            <a href="hizmet.html?service=Kombi+Teknik+Servisi">Kombi Servisi</a>
+            <a href="hizmet.html?service=Televizyon+Tamiri">Televizyon Tamiri</a>
+          </div>
+        </div>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+
+    <h1>Hizmetlerimiz</h1>
+    <p>Firmamız aşağıdaki kategorilerde özel teknik servis hizmeti sunmaktadır. Tüm hizmetlerimiz sadece garantisi sona ermiş cihazlara yöneliktir.</p>
+    <ul class="hizmet-listesi" id="hizmetListesi"></ul>
+
+    <section style="padding: 40px 20px; background: #eef3f8;">
+      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Müşteri Yorumlarımız</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: auto;">
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Aslı Güven</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet seçenekleri çok çeşitli. Tüm ihtiyaçlarımızı tek bir yerden çözebildik."</p>
+        </div>
+        
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Tamer Solmaz</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm beyaz eşya hizmetlerine aynı profesyonellikte yaklaşmanız büyük rahatlık."</p>
+        </div>
+
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Büşra Solmaz</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm beyaz eşya hizmetlerine aynı profesyonellikte yaklaşmanız büyük rahatlık.Tek kelime ile mükemmel"</p>
+        </div>
+
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Metin Yıldız</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm beyaz eşya hizmetlerine aynı profesyonellikte yaklaşmanız büyük rahatlık."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Derya Keskin</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Servis kategorilerini tek tek anlatmanız çok açıklayıcı. Aradığımız her şeyi bulduk."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Emre Koçyiğit</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet çeşitliliğiniz sayesinde tüm evi tek seferde kontrol ettirebildik."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Nuray İpek</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Fırın, kombi, klima... Ne ararsak var. Hepsi için ayrı ayrı ustayla uğraşmadık."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Sefa Demirtaş</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Tüm hizmetlerinizde aynı kaliteyi görmek çok etkileyici. Her biri ayrı özenli."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">İrem Yazıcı</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Web siteniz sayesinde hizmet türlerine hızlıca ulaşabiliyorum. Kullanışlı tasarım."</p>
+        </div>
+    
+        <div style="flex: 1 1 280px; background: white; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+          <p style="font-weight: bold; color: #003366;">Yunus Kaptan</p>
+          <p style="font-size: 14px; line-height: 1.6;">"Hizmet başlıklarının açıklamaları çok net. Seçim yaparken hiç zorlanmadım."</p>
+        </div>
+    
+      </div>
+    </section>
+    
+    <p><strong>NOT: </strong>Detaylı bilgi için her hizmetin ilgili sayfasını ziyaret edebilir veya <a href="iletisim.html">iletişim</a> kurabilirsiniz.</p>
+
+  </main>
+  
+
+  <footer style="background-color: #003366; color: white; padding: 40px 20px; font-family: sans-serif;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <!-- Hizmetler -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Hizmetler</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hizmet.html?service=Beyaz+Eşya+Servisi" style="color: #ddd; text-decoration: none;">Beyaz Eşya Servisi</a></li>
+          <li><a href="hizmet.html?service=Buzdolabı+Teknik+Servisi" style="color: #ddd; text-decoration: none;">Buzdolabı Teknik Servisi</a></li>
+          <li><a href="hizmet.html?service=Çamaşır+Makinesi+Tamiri" style="color: #ddd; text-decoration: none;">Çamaşır Makinesi Tamiri</a></li>
+          <li><a href="hizmet.html?service=Bulaşık+Makinesi+Bakımı" style="color: #ddd; text-decoration: none;">Bulaşık Makinesi Bakımı</a></li>
+          <li><a href="hizmet.html?service=Fırın+Onarımı" style="color: #ddd; text-decoration: none;">Fırın Onarımı</a></li>
+          <li><a href="hizmet.html?service=Klima+Servisi" style="color: #ddd; text-decoration: none;">Klima Servisi</a></li>
+          <li><a href="hizmet.html?service=Kombi+Servisi" style="color: #ddd; text-decoration: none;">Kombi Servisi</a></li>
+          <li><a href="hizmet.html?service=Televizyon+Tamiri" style="color: #ddd; text-decoration: none;">Televizyon Tamiri</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kurumsal -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Kurumsal</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="hakkimizda.html" style="color: #ddd; text-decoration: none;">Hakkımızda</a></li>
+          <li><a href="iletisim.html" style="color: #ddd; text-decoration: none;">İletişim</a></li>
+          <li><a href="gizlilik-politikasi.html" style="color: #ddd; text-decoration: none;">Gizlilik Politikası</a></li>
+          <li><a href="kvkk.html" style="color: #ddd; text-decoration: none;">KVKK</a></li>
+        </ul>
+      </div>
+  
+      <!-- Destek -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h2 class="section-title-line" style="color: #ffffff; font-size: 16px; margin-bottom: 12px;">Destek</h2>
+        <p style="margin: 6px 0; font-size: 14px; color: #ccc;">7/24 Çağrı Destek Hattı</p>
+        <p id="footerAdres" style="font-size: 14px; color: #ccc;"></p>
+        <p style="font-size: 14px; color: #ccc;">Teknik Destek ve Servis Randevusu</p>
+      </div>
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; font-size: 16px; color: #ccc;">
+      <div class="warning">
+      </p>
+      <strong style="color: #fff;">⚠️ Yetkili servis değildir.</strong> Sunduğumuz hizmetler, sadece  <strong style="color: #fff;">garanti süresi dolmuş cihazlar</strong> içindir. 
+      </p>
+      </div><br>
+      <small>© 2025 Beyaz Eşya Servisi. Tüm Hakları Saklıdır.
+      </small>
+    </div>
+  </footer>
+
+  <script>
+    window.onload = function () {
+      const siteData = {
+        businessName: "Beyaz Eşya Servisi",
+        phone: "+905372040191",
+        formattedPhone: "+90 (537) 204 01 91",
+        address: {
+          street: "Atatürk Mahallesi Servis Sk. No:3",
+          city: "Yenişehir / MERSİN",
+          region: "TR",
+        },
+        websiteURL: "https://beyaz-esya-servis-eterna.netlify.app/",
+        logo: "favicon.svg",
+        vergiNo: "1234567890"
+      };
+  
+      const quickSet = [
+        ["call-button", "href", `tel:${siteData.phone}`],
+        ["stickyCall", "href", `tel:${siteData.phone}`],
+        ["footerPhone", "textContent", siteData.phone],
+        ["footerAdres", "textContent", `${siteData.address.street}, ${siteData.address.city}`],
+        ["footerCompany", "textContent", siteData.businessName],
+      ];
+  
+      quickSet.forEach(([id, prop, value]) => {
+        const el = document.getElementById(id);
+        if (el) el[prop] = value;
+      });
+  
+      const logoEl = document.querySelector("link[rel='icon']");
+      if (logoEl) logoEl.setAttribute("href", siteData.logo);
+  
+      const burger = document.querySelector(".burger");
+      const nav = document.getElementById("navLinks");
+      const dropdown = document.getElementById("dropdownContent");
+  
+      if (burger && nav) {
+        burger.addEventListener("click", () => {
+          nav.classList.toggle("show");
+          if (dropdown) dropdown.style.display = "none";
+        });
+      }
+  
+      // ⬇️ Dropdown açma/kapatma (Artık çalışır!)
+      window.toggleDropdown = function () {
+        if (!dropdown) return;
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      };
+  
+      // ⬇️ Scroll olunca navbar ve dropdown kapanır
+      let lastScrollY = window.scrollY;
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (nav.classList.contains("show") && currentScrollY > lastScrollY) {
+          nav.classList.remove("show");
+          if (dropdown) dropdown.style.display = "none";
+        }
+        lastScrollY = currentScrollY;
+      });
+  
+      // ⬇️ ScrollToTop butonu
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      if (scrollBtn) {
+        window.addEventListener("scroll", () => {
+          scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+        scrollBtn.addEventListener("click", e => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+  
+      // ⬇️ URL parametresine göre içerik bloğu aktive et
+      const rawService = new URLSearchParams(location.search).get("service") || "";
+      const fullUc = rawService.replace(/\+/g, " ").replace(/(^|\s)\S/g, l => l.toUpperCase());
+  
+      const idMap = {
+        "Beyaz Eşya Servisi": "beyaz-esya-servisi",
+        "Buzdolabı Teknik Servisi": "buzdolabi-teknik-servisi",
+        "Çamaşır Makinesi Tamiri": "çamaşır-makinesi",
+        "Bulaşık Makinesi Bakımı": "bulasik-makinesi-bakimi",
+        "Fırın Onarımı": "firin-onarimi",
+        "Klima Servisi": "klima-servisi",
+        "Kombi Servisi": "kombi-servisi",
+        "Televizyon Tamiri": "televizyon-tamiri"
+      };
+  
+      Object.values(idMap).forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.remove("active");
+      });
+  
+      const unknownBlock = document.getElementById("unknown-service");
+      if (unknownBlock) unknownBlock.classList.remove("active");
+  
+      const matchedId = idMap[fullUc];
+  
+      if (matchedId) {
+        const section = document.getElementById(matchedId);
+        if (section) section.classList.add("active");
+  
+        const h1 = section.querySelector("h1.service-title");
+        if (h1) h1.textContent = fullUc;
+  
+        document.title = "Hizmet | " + fullUc;
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute("content", `${fullUc} için profesyonel teknik servis hizmeti.`);
+      } else if (unknownBlock) {
+        document.getElementById("unknownTitle").textContent = fullUc;
+        document.getElementById("unknownText").textContent =
+          `${fullUc} adlı servise hoş geldiniz. Profesyonel destek için hemen bizi arayın. Firmamız ${fullUc} alanında uzman kadrosu ve hızlı müdahale avantajıyla sizlere güvenilir, kaliteli ve çözüm odaklı teknik destek sunar.`;
+  
+        unknownBlock.classList.add("active");
+        document.title = "Hizmet | " + fullUc;
+      }
+    };
+    function toggleMenu() {
+    const dropdown = document.getElementById("dropdownContent");
+    if (dropdown) {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+  }
+  </script>
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Beyaz Eşya Servisi",
+        "image": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg",
+        "url": "https://beyaz-esya-servis-eterna.netlify.app/",
+        "telephone": "+905372040191",
+        "email": "beyazesyaservis@example.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Çiftlikköy Mahallesi Atatürk Caddesi No:10",
+          "addressLocality": "Yenişehir",
+          "addressRegion": "Mersin",
+          "addressCountry": "TR"
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "$$",
+        "servesCuisine": "Teknik Servis",
+        "description": "Beyaz eşya, kombi, klima ve diğer ev cihazları için uzman teknik servis çözümleri."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Ana Sayfa",
+            "item": "https://beyaz-esya-servis-eterna.netlify.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hizmetlerimiz",
+            "item": "https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hangi cihazlar için teknik servis hizmeti sunuyorsunuz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Beyaz eşyalar, kombi, klima, televizyon ve fırın gibi birçok cihaz için servis hizmeti sunuyoruz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Servis hizmetiniz garanti kapsamında mı?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hayır, sadece garantisi sona ermiş cihazlara özel teknik servis hizmeti sunuyoruz."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Hizmetlerimiz",
+        "description": "Beyaz eşya, kombi, klima, televizyon ve daha fazlası için teknik servis hizmetleri sunuyoruz.",
+        "author": {
+          "@type": "Organization",
+          "name": "Beyaz Eşya Servisi"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Beyaz Eşya Servisi",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://beyaz-esya-servis-eterna.netlify.app/favicon.svg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "LocalBusiness",
+          "name": "Beyaz Eşya Servisi",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Çiftlikköy Mahallesi Atatürk Caddesi No:10",
+            "addressLocality": "Yenişehir",
+            "addressRegion": "Mersin",
+            "addressCountry": "TR"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Aslı Güven"
+        },
+        "reviewBody": "Hizmet seçenekleri çok çeşitli. Tüm ihtiyaçlarımızı tek bir yerden çözebildik."
+      },
+      {
+        "@type": "QAPage",
+        "mainEntity": {
+          "@type": "Question",
+          "name": "Beyaz eşya servisinde en sık hangi hizmetler sunuluyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En sık sunulan hizmetler arasında buzdolabı, çamaşır ve bulaşık makinesi tamiri, kombi ve klima servisi yer alır.",
+            "datePublished": "2025-07-24",
+            "author": {
+              "@type": "Person",
+              "name": "Admin"
+            }
+          },
+          "answerCount": 1
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <a id="stickyCall" class="sticky-call" style="display: inline-block; margin-top: 24px; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">📞 Hemen Ara</a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" size="16x16" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hizmet verdiğimiz teknik servis kategorileri. Buzdolabı, çamaşır makinesi, kombi ve daha fazlası." />
+  <meta name="keywords" content="Hizmetler, Teknik Servis, Beyaz Eşya, Kombi, Klima, Tamir, Bakım" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html" />
+  <meta property="og:title" content="Beyaz Eşya Servisi | Hizmet Kategorileri" />
+  <meta property="og:description" content="Beyaz eşyalar, kombi, klima, televizyon gibi birçok cihaz için garantisiz teknik servis hizmetleri. Tüm kategorilerimizi şimdi keşfedin." />
+  <meta property="og:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
+  <meta property="og:site_name" content="Beyaz Eşya Servisi" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://beyaz-esya-servis-eterna.netlify.app/hizmetler.html" />
+  <meta name="twitter:title" content="Beyaz Eşya Servisi | Teknik Servis Hizmetleri" />
+  <meta name="twitter:description" content="Beyaz eşya, kombi, klima, televizyon ve daha fazlası için hızlı ve garantisiz servis çözümleri." />
+  <meta name="twitter:image" content="https://beyaz-esya-servis-eterna.netlify.app/download.jpg" />
+  <meta name="twitter:site" content="@beyazesyaservis" />
+  <meta name="twitter:creator" content="@beyazesyaservis" />
+
+  <title>Hizmetlerimiz | Beyaz Eşya Servisi</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      background-color: #005599;
+      border-radius: 4px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      color: #003366;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: none; /* Hover ile açılmasın, sadece JavaScript ile açılsın */
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eef6ff;
+    }
+
+    .burger {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #003366;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 24px 12px;
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+
+    footer .brand {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    footer .tagline {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    footer nav {
+      margin-bottom: 12px;
+    }
+
+    footer nav a {
+      color: white;
+      margin: 6px 10px;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer .social {
+      margin: 12px 0;
+    }
+
+    footer .social a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #ddd;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    footer .social a:hover {
+      color: #ffffff;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .sticky-call {
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+    .sticky-call:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #004080;
+      }
+
+      .dropdown-content a {
+        color: #fff;
+      }
+      
+    }
+    .hizmet-listesi {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .hizmet-listesi li {
+      background-color: #f0f8ff;
+      border-left: 5px solid #003366;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .hizmet-listesi li:hover {
+      background-color: #e6f3ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hizmet-listesi a {
+      color: #003366;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .hizmet-listesi a::after {
+      content: " →";
+      font-weight: normal;
+      font-size: 16px;
+      color: #0077cc;
+    }
+
+    .hizmet-listesi span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .sticky-call {
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+    .sticky-call:hover {
+      background-color: #218838;
+    }
+    .section-title-line {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 6px;
+}
+
+.sticky-call {
+  position: fixed;
+  left: 50%;
+  bottom: 4%; /* Sayfanın en altından yukarıya olan mesafe */
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
 
 
   </style>
