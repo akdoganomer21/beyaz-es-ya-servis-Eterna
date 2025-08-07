@@ -207,19 +207,24 @@
     }
 
     .sticky-call {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #28a745;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      transition: background 0.3s ease;
-    }
+  position: fixed;
+  top: 90%; /* Sayfanın %85 yüksekliğinde */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+
 
     .sticky-call:hover {
       background-color: #218838;
@@ -345,7 +350,7 @@ svg {
 
     <!-- NEDEN BİZ -->
     <section style="padding: 40px 20px; background: #eef3f8;">
-      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 30px;">Neden Bizi Tercih Etmelisiniz?</h2>
+      <h2 style="text-align: center; color: #003366; font-size: 22px; margin-bottom: 11px;">Neden Bizi Tercih Etmelisiniz?</h2>
       <div class="kutular" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: auto;">
         <div class="tercih-kutu">
           <svg viewBox="0 0 24 24"><path fill="#28a745" d="M6.62 10.79a15.093 15.093 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.66.6 1 1 0 011 1v3.59a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.59a1 1 0 011 1 11.72 11.72 0 00.6 3.66 1 1 0 01-.21 1.11l-2.36 2.36z"/></svg>
@@ -750,6 +755,10 @@ svg {
   </script>
 
   <a id="stickyCall" class="sticky-call" style="display: inline-block; margin-top: 24px; background-color: #198754; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">📞 Hemen Ara</a>
+
+
+
+
 
 </body>
 </html>
