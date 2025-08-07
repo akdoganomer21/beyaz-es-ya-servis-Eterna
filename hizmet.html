@@ -20,18 +20,30 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <style>
+/* Sayfa yüklenirken içeriği gizle */
 html:not(.js-loaded) .service-content {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
 }
-  .service-content.active {
-    display: block;
-    visibility: visible;
-  }
+
+.service-content.active {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+/* Loading göstergesi */
+.loading-indicator {
+  text-align: center;
+  padding: 40px;
+  color: #003366;
+  font-size: 18px;
+}
+
+html.js-loaded .loading-indicator {
+  display: none;
+}
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -129,9 +141,13 @@ html:not(.js-loaded) .service-content {
       margin: 24px auto;
       padding: 20px;
       background: #f0f8ff;
-      border-left: 6px solid #4a90e2;
+      border-left: none;
       border-radius: 6px;
-      min-height: 1000px;
+      min-height: 1200px; /* Loading sırasında layout shift'i önlemek için artırıldı */
+    }
+
+    main.content-active {
+      border-left: 6px solid #4a90e2;
     }
 
     h1 {
@@ -255,11 +271,12 @@ html:not(.js-loaded) .service-content {
 
     .service-content {
       min-height: 400px;
-      display: none;
+      opacity: 0;
+      visibility: hidden;
       width: 100%;
       min-height: 800px; /* mobilde aşağı yukarı içerik kadar */
-  overflow: hidden;
-  transition: all 0.2s ease-in-out;
+      overflow: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
 
     /* Ensure consistent spacing to prevent layout shift */
@@ -383,14 +400,23 @@ html:not(.js-loaded) .service-content {
   margin-top: 6px;
 }
 
+/* Bu kısım yukarıda zaten tanımlandı, tekrar etmeye gerek yok */
+
 .service-content {
   display: none;
 }
-
 .service-content.active {
   display: block;
 }
-
+.loading-indicator {
+  text-align: center;
+  padding: 40px;
+  color: #003366;
+  font-size: 18px;
+}
+.loading-indicator.hidden {
+  display: none;
+}
 
   </style>
   
@@ -427,8 +453,14 @@ html:not(.js-loaded) .service-content {
   </header>
 
   <main>
+    <!-- Loading göstergesi -->
+    <div class="loading-indicator hidden">
+      <div style="margin-bottom: 20px;">⏳</div>
+      <div>Hizmet bilgileri yükleniyor...</div>
+    </div>
+    
     <div>
-      <div id="unknown-service" class="service-content" style="display: none;">
+      <div id="unknown-service" class="service-content">
         <div>
           <h1 id="unknownTitle" class="service-title">Servis</h1>
           <p id="unknownText" style="font-size: 16px; margin-top: 12px">
@@ -2124,7 +2156,8 @@ html:not(.js-loaded) .service-content {
       vergiNo: "1234567890"
     };
   
-    document.addEventListener("DOMContentLoaded", () => {
+    // Sayfa yüklenir yüklenmez çalışacak fonksiyon
+    function initializePage() {
       // === HIZLI VERİ SET ===
       const quickSet = [
         ["call-button", "href", `tel:${siteData.phone}`],
@@ -2193,38 +2226,49 @@ html:not(.js-loaded) .service-content {
   
       document.querySelectorAll(".service-content").forEach(el => {
         el.classList.remove("active");
-        el.style.display = "none";
       });
   
       const unknownBlock = document.getElementById("unknown-service");
-  
+      let found = false;
       if (matchedId && document.getElementById(matchedId)) {
         const section = document.getElementById(matchedId);
         section.classList.add("active");
-        section.style.display = "block";
-  
+        found = true;
         const h1 = section.querySelector("h1.service-title");
         if (h1) h1.textContent = formattedService;
-  
         document.title = "Hizmet | " + formattedService;
         const desc = document.querySelector('meta[name="description"]');
         if (desc) desc.setAttribute("content", `${formattedService} için profesyonel teknik servis hizmeti.`);
       } else if (unknownBlock) {
         unknownBlock.classList.add("active");
-        unknownBlock.style.display = "block";
-  
+        found = true;
         const h1 = unknownBlock.querySelector("h1.service-title");
         const p = unknownBlock.querySelector("p#unknownText");
         if (h1) h1.textContent = formattedService + " Servisi";
         if (p) {
           p.textContent = `${formattedService} servisi cihazlarınızda yaşanan arızalar için hızlı ve güvenilir çözümler sunar. Uzman teknisyenlerimiz, ${formattedService} servisi kapsamında yerinde onarım hizmeti sağlar. Tüm onarımlar garantili şekilde gerçekleştirilir ve cihazınız kısa sürede çalışır hale gelir.`;
         }
-  
         document.title = "Hizmet | " + formattedService;
         const desc = document.querySelector('meta[name="description"]');
         if (desc) desc.setAttribute("content", `${formattedService} için servis bilgisi bulunamadı.`);
       }
-    });
+      // Loading göstergesini kaldır
+      var loading = document.querySelector('.loading-indicator');
+      if (loading) loading.classList.add('hidden');
+      // main border kontrolü
+      var main = document.querySelector('main');
+      if (main) {
+        if (found) main.classList.add('content-active');
+        else main.classList.remove('content-active');
+      }
+    }
+    
+    // Sayfa yüklenir yüklenmez çalıştır
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializePage);
+    } else {
+      initializePage();
+    }
   
     function toggleDropdown() {
       const dropdown = document.getElementById("dropdownContent");
@@ -2232,6 +2276,8 @@ html:not(.js-loaded) .service-content {
         dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
       }
     }
+    
+    // JavaScript yüklendiğini belirt
     document.documentElement.classList.add('js-loaded');
 
   </script>
